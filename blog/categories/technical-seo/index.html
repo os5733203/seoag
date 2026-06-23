@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical SEO | OS SEO</title>
+  <link rel="stylesheet" href="https://os5733203.github.io/aiseo/blog/style.css">
+  <style>
+    main {
+      max-width: 1100px !important; margin: 0 auto !important; padding: 4rem 2rem !important; min-height: 60vh;
+      display: flex !important; gap: 2rem !important; align-items: flex-start !important;
+    }
+    main .article-body { flex: 1; min-width: 0; color: var(--white); }
+    main .article-body h1 { font-size: 2.4rem; margin-bottom: 1.5rem; }
+    main .article-body h2 { font-size: 1.5rem; margin: 2.2rem 0 1rem; color: var(--accent2); }
+    main .article-body p { margin-bottom: 1.2rem; color: var(--muted); font-size: 1.02rem; }
+    main .sidebar { width: 280px !important; flex-shrink: 0 !important; position: sticky; top: 90px; }
+    .author-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.4rem; margin-bottom: 1.5rem;
+      text-align: center;
+      transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s, border-color .3s;
+      position: relative; overflow: hidden;
+    }
+    .author-card::before {
+      content: '❄'; position: absolute; top: -20px; right: 10px;
+      font-size: 2rem; opacity: 0; color: var(--accent2);
+      transition: opacity .4s, transform .4s;
+    }
+    .author-card::after {
+      content: '❄'; position: absolute; bottom: -20px; left: 10px;
+      font-size: 1.4rem; opacity: 0; color: var(--accent3);
+      transition: opacity .5s, transform .5s;
+    }
+    .author-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(79,107,255,0.35);
+      border-color: var(--border-strong);
+    }
+    .author-card:hover::before { opacity: 1; transform: translateY(15px) rotate(20deg); }
+    .author-card:hover::after { opacity: 1; transform: translateY(-15px) rotate(-20deg); }
+    .author-photo {
+      width: 80px; height: 80px; border-radius: 50%;
+      object-fit: cover; border: 2px solid var(--accent2);
+      margin: 0 auto 1rem; display: block;
+    }
+    .author-info h4 { margin-bottom: 4px; font-size: 1.05rem; color: var(--white); }
+    .author-title { color: var(--muted); font-size: .82rem; margin-bottom: 6px; }
+    .author-stars { font-size: .85rem; margin-bottom: 4px; }
+    .author-stars span { color: var(--muted); margin-right: 4px; }
+    .author-clients { color: var(--accent2); font-size: .82rem; font-weight: 600; margin-bottom: 1rem; }
+    .author-actions { display: flex; flex-direction: column; gap: .6rem; margin-top: 1rem; }
+    .author-btn {
+      display: block; padding: .55rem 1rem; border-radius: 10px;
+      font-size: .85rem; font-weight: 700; text-align: center;
+      transition: all .25s;
+    }
+    .author-btn.primary {
+      background: linear-gradient(135deg,var(--accent),var(--accent3));
+      color: #fff; box-shadow: 0 4px 14px rgba(79,107,255,0.35);
+    }
+    .author-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(79,107,255,0.5); }
+    .author-btn.outline {
+      background: rgba(255,255,255,0.03); color: var(--white);
+      border: 1px solid var(--border);
+    }
+    .author-btn.outline:hover { border-color: var(--accent2); background: rgba(0,229,255,0.08); }
+    .related-links {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.2rem;
+      transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+    }
+    .related-links:hover { transform: translateY(-6px); box-shadow: 0 14px 32px rgba(0,229,255,0.18); }
+    .related-links h4 { margin-bottom: .8rem; font-size: .95rem; color: var(--white); }
+    .related-links a {
+      display: block; color: var(--muted); font-size: .88rem;
+      padding: .5rem 0; border-bottom: 1px solid var(--border);
+      transition: color .2s, padding-right .2s;
+    }
+    .related-links a:last-child { border-bottom: none; }
+    .related-links a:hover { color: var(--accent2); padding-right: 6px; }
+    @media (max-width: 860px) {
+      main { flex-direction: column !important; }
+      main .sidebar { width: 100% !important; position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="site-logo" href="https://os5733203.github.io/aiseo/">
+      <img src="https://os5733203.github.io/aiseo/blog/logo.png" alt="OS SEO logo">
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="https://os5733203.github.io/aiseo/" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+      <a href="https://os5733203.github.io/aiseo/blog/posts/technical-seo/first-article/" data-en="Technical SEO" data-ar="سيو تقني">Technical SEO</a>
+      <a href="https://os5733203.github.io/aiseo/blog/posts/link-building/first-article/" data-en="Link Building" data-ar="بناء الروابط">Link Building</a>
+      <a href="https://os5733203.github.io/aiseo/blog/posts/local-seo/first-article/" data-en="Local SEO" data-ar="سيو محلي">Local SEO</a>
+      <a href="https://os5733203.github.io/aiseo/blog/posts/ai-seo/first-article/" data-en="AI SEO" data-ar="ذكاء اصطناعي">AI SEO</a>
+    </nav>
+    <div class="nav-right">
+      
+      
+      
+      
+      
+      
+      
+      <div class="lang-toggle" role="group" aria-label="Language switch">
+        
+          
+            <span class="lang-opt active" data-lang="en" onclick="setLang('en')">EN</span>
+          
+          <span class="lang-opt active" data-lang="ar" onclick="setLang('ar')">AR</span>
+        
+      </div>
+      <a class="nav-cta" href="https://os5733203.github.io/aiseo/#booking" data-en="Free Audit" data-ar="تدقيق مجاني">تدقيق مجاني</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="sidebar">
+      <div class="author-card">
+        <img src="https://os5733203.github.io/aiseo/blog/omar-photo.jpeg" alt="Omar S." class="author-photo">
+        <div class="author-info">
+          <h4>Omar S.</h4>
+          <p class="author-title" data-en="SEO Specialist · Founder of OS SEO" data-ar="SEO Specialist · مؤسس OS SEO">SEO Specialist · مؤسس OS SEO</p>
+          <p class="author-stars">⭐⭐⭐⭐⭐ <span>4.9</span></p>
+          <p class="author-clients" data-en="+47 clients worldwide" data-ar="+47 عميل حول العالم">+47 عميل حول العالم</p>
+          <div class="author-actions">
+            <a href="https://os5733203.github.io/aiseo/#contact" class="author-btn primary" data-en="Contact Me" data-ar="تواصل معي">تواصل معي</a>
+            <a href="https://os5733203.github.io/aiseo/#services" class="author-btn outline" data-en="My Services" data-ar="خدماتي">خدماتي</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="related-links">
+        <h4 data-en="Useful Links" data-ar="روابط مفيدة">روابط مفيدة</h4>
+        <a href="https://os5733203.github.io/aiseo/blog/posts/technical-seo/first-article/" data-en="Browse Technical SEO posts" data-ar="تصفح مقالات Technical SEO">تصفح مقالات Technical SEO</a>
+        <a href="https://os5733203.github.io/aiseo/blog/posts/link-building/first-article/" data-en="Browse Link Building posts" data-ar="تصفح مقالات Link Building">تصفح مقالات Link Building</a>
+        <a href="https://os5733203.github.io/aiseo/blog/posts/local-seo/first-article/" data-en="Browse Local SEO posts" data-ar="تصفح مقالات Local SEO">تصفح مقالات Local SEO</a>
+        <a href="https://os5733203.github.io/aiseo/blog/posts/ai-seo/first-article/" data-en="Browse AI SEO posts" data-ar="تصفح مقالات AI SEO">تصفح مقالات AI SEO</a>
+        <a href="https://os5733203.github.io/aiseo/blog.html" data-en="All Articles" data-ar="كل المقالات">كل المقالات</a>
+      </div>
+    </div>
+
+    <div class="article-body" id="article-content-wrapper">
+      
+  
+  
+
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray"></section>
+    <section class="flex-ns mt5 flex-wrap justify-around">
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          
+<div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Posts</span>
+    
+      <time class="f6 db" datetime="2026-06-23T00:00:00Z">June 23, 2026</time>
+    
+    <h1 class="f3 near-black">
+      <a href="/aiseo/blog/posts/technical-seo/core_web_vitals_optimization_2026_en/" class="link black dim">
+        Core Web Vitals Optimization: How to Improve Website Speed and Google Rankings
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="core-web-vitals-optimization-how-to-improve-website-speed-and-google-rankings">Core Web Vitals Optimization: How to Improve Website Speed and Google Rankings</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Core Web Vitals have become one of the most important ranking factors in modern SEO. Google uses these metrics to measure real user experience on your website, focusing on loading speed, interactivity, and visual stability.</p>
+<p>If your website performs poorly in Core Web Vitals, it may struggle to rank — even if your content and backlinks are strong.</p>
+    </div>
+    <a href="/aiseo/blog/posts/technical-seo/core_web_vitals_optimization_2026_en/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          
+<div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Posts</span>
+    
+      <time class="f6 db" datetime="2026-06-23T00:00:00Z">June 23, 2026</time>
+    
+    <h1 class="f3 near-black">
+      <a href="/aiseo/blog/posts/technical-seo/technical_seo_audit_guide_2026_en/" class="link black dim">
+        Technical SEO Audit: A Complete Guide to Improve Website Performance and Rankings
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="technical-seo-audit-a-complete-guide-to-improve-website-performance-and-rankings">Technical SEO Audit: A Complete Guide to Improve Website Performance and Rankings</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Technical SEO is the foundation of every successful SEO strategy. While content and backlinks are important ranking factors, a website with technical problems can struggle to appear in search results even with high-quality content.</p>
+<p>A <strong>Technical SEO Audit</strong> helps identify hidden issues that prevent search engines from properly crawling, indexing, and ranking your website. From website speed and mobile performance to structured data and security, every technical element affects how Google understands and evaluates your website.</p>
+    </div>
+    <a href="/aiseo/blog/posts/technical-seo/technical_seo_audit_guide_2026_en/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          
+<div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Posts</span>
+    
+      <time class="f6 db" datetime="2026-06-23T00:00:00Z">June 23, 2026</time>
+    
+    <h1 class="f3 near-black">
+      <a href="/aiseo/blog/posts/technical-seo/core_web_vitals_optimization_2026/" class="link black dim">
+        تحسين Core Web Vitals: كيفية تحسين سرعة الموقع وترتيب جوجل
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="تحسين-core-web-vitals-كيفية-تحسين-سرعة-الموقع-وترتيب-جوجل">تحسين Core Web Vitals: كيفية تحسين سرعة الموقع وترتيب جوجل</h1>
+<h2 id="مقدمة">مقدمة</h2>
+<p>أصبحت مؤشرات <strong>Core Web Vitals</strong> من أهم عوامل الترتيب في محركات البحث
+الحديثة. تستخدم جوجل هذه المؤشرات لقياس تجربة المستخدم الفعلية داخل
+الموقع، من حيث سرعة التحميل، التفاعل، واستقرار الصفحة أثناء التصفح.</p>
+<p>إذا كان موقعك يعاني من ضعف في هذه المؤشرات، فقد لا يظهر في نتائج البحث
+الأولى حتى لو كان المحتوى قويًا أو لديك روابط خلفية جيدة.</p>
+<p>في هذا الدليل ستتعلم كيفية تحسين Core Web Vitals خطوة بخطوة لرفع أداء
+موقعك وتحسين ترتيبه في جوجل لعام 2026.</p>
+    </div>
+    <a href="/aiseo/blog/posts/technical-seo/core_web_vitals_optimization_2026/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          
+<div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Posts</span>
+    
+      <time class="f6 db" datetime="2026-06-23T00:00:00Z">June 23, 2026</time>
+    
+    <h1 class="f3 near-black">
+      <a href="/aiseo/blog/posts/technical-seo/technical_seo_audit_guide_2026/" class="link black dim">
+        دليل التدقيق التقني للسيو: كيفية إصلاح مشاكل الموقع وتحسين ترتيب جوجل
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p># دليل التدقيق التقني للسيو: كيفية إصلاح مشاكل الموقع وتحسين ترتيب جوجل</p>
+<p>## مقدمة</p>
+<p>يُعتبر السيو التقني (Technical SEO) الأساس الحقيقي لأي استراتيجية تحسين محركات بحث ناجحة. فحتى لو كان المحتوى قويًا والروابط الخلفية جيدة، فإن وجود مشاكل تقنية في الموقع يمكن أن يمنع ظهور صفحاتك في نتائج البحث.</p>
+<p>التدقيق التقني للسيو هو عملية تحليل شاملة للموقع بهدف اكتشاف الأخطاء التي تؤثر على الزحف (Crawling) والفهرسة (Indexing) وأداء الموقع بشكل عام.</p>
+    </div>
+    <a href="/aiseo/blog/posts/technical-seo/technical_seo_audit_guide_2026/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          
+<div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Posts</span>
+    
+      <time class="f6 db" datetime="2026-06-23T00:00:00Z">June 23, 2026</time>
+    
+    <h1 class="f3 near-black">
+      <a href="/aiseo/blog/posts/technical-seo/website_crawlability_indexing_2026/" class="link black dim">
+        قابلية الزحف والفهرسة: كيفية حل مشاكل الأرشفة وظهور موقعك في نتائج جوجل
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h1 id="قابلية-الزحف-والفهرسة-كيفية-حل-مشاكل-الأرشفة-وظهور-موقعك-في-نتائج-جوجل">قابلية الزحف والفهرسة: كيفية حل مشاكل الأرشفة وظهور موقعك في نتائج جوجل</h1>
+<h2 id="مقدمة">مقدمة</h2>
+<p>يُعد موضوع <strong>قابلية الزحف (Crawlability)</strong> و<strong>الفهرسة (Indexing)</strong> من أهم أساسيات السيو التقني، لأنه ببساطة يحدد ما إذا كان موقعك سيظهر في نتائج البحث أم لا.</p>
+<p>قد تمتلك محتوى قويًا جدًا، ولكن إذا لم تستطع محركات البحث الوصول إلى صفحاتك أو لم تقم بفهرستها بشكل صحيح، فلن يظهر موقعك في جوجل.</p>
+<p>في هذا الدليل ستتعلم كيفية فهم مشاكل الزحف والفهرسة، وكيفية إصلاحها بشكل عملي لتحسين ظهور موقعك في نتائج البحث في عام 2026.</p>
+    </div>
+    <a href="/aiseo/blog/posts/technical-seo/website_crawlability_indexing_2026/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    </article>
+
+      
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="site-logo">
+          <img src="https://os5733203.github.io/aiseo/blog/logo.png" alt="OS SEO logo">
+        </div>
+        <p data-en="Professional SEO specialist helping businesses across Europe, Australia & the Arab world rank higher and grow faster." data-ar="متخصص SEO محترف يساعد الشركات في أوروبا وأستراليا والعالم العربي على التصدر في جوجل والنمو بشكل أسرع.">متخصص SEO محترف يساعد الشركات في أوروبا وأستراليا والعالم العربي على التصدر في جوجل والنمو بشكل أسرع.</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://x.com" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
+          <a href="mailto:os5733203@gmail.com" aria-label="Email">✉</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Pages" data-ar="الصفحات">الصفحات</h4>
+        <a href="https://os5733203.github.io/aiseo/" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+        <a href="https://os5733203.github.io/aiseo/about.html" data-en="About" data-ar="من نحن">من نحن</a>
+        <a href="https://os5733203.github.io/aiseo/portfolio.html" data-en="Portfolio" data-ar="أعمالنا">أعمالنا</a>
+        <a href="https://os5733203.github.io/aiseo/blog.html" data-en="Blog" data-ar="المدونة">المدونة</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Services" data-ar="الخدمات">الخدمات</h4>
+        <a href="https://os5733203.github.io/aiseo/#services" data-en="Technical SEO" data-ar="سيو تقني">سيو تقني</a>
+        <a href="https://os5733203.github.io/aiseo/#services" data-en="Link Building" data-ar="بناء الروابط">بناء الروابط</a>
+        <a href="https://os5733203.github.io/aiseo/#services" data-en="Local SEO" data-ar="السيو المحلي">السيو المحلي</a>
+        <a href="https://os5733203.github.io/aiseo/blog/posts/ai-seo/first-article/" data-en="AI & SEO" data-ar="الذكاء الاصطناعي والسيو">الذكاء الاصطناعي والسيو</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Contact Us" data-ar="تواصل معنا">تواصل معنا</h4>
+        <div class="footer-contact-item"><span class="icon">🌐</span><span data-en="Online SEO agency — serving clients worldwide" data-ar="وكالة سيو أونلاين - نخدم العملاء حول العالم">وكالة سيو أونلاين - نخدم العملاء حول العالم</span></div>
+        <div class="footer-contact-item"><span class="icon">📞</span><span>+201221403257</span></div>
+        <div class="footer-contact-item"><span class="icon">✉️</span><span>os5733203@gmail.com</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-en="© 2026 OS SEO — All rights reserved." data-ar="© 2026 OS SEO — جميع الحقوق محفوظة.">© 2026 OS SEO — جميع الحقوق محفوظة.</p>
+      <div class="footer-bottom-links">
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://x.com" target="_blank">Twitter</a>
+        <a href="mailto:os5733203@gmail.com" data-en="Email" data-ar="إيميل">إيميل</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://os5733203.github.io/aiseo/blog/aiseoa.js"></script>
+</body>
+</html>
