@@ -235,7 +235,7 @@ body[dir="rtl"] .section-tag::before { order: 2; }
 }
 .hero {
   min-height: 700px !important;
-  background-image: url("/aiseo/images/hero-bg.png") !important;
+  background-image: url("images/hero-bg.png") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
