@@ -236,7 +236,7 @@ body[dir="rtl"] .section-tag::before { order: 2; }
 .hero {
   min-height: 700px !important;
   width: 100% !important;
-background-image: url("images/hero-bg.png") !important;
+background-image: url("images/hero-bg.webp") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
