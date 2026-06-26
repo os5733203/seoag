@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="SEO Case Studies by Omar Salah — Real results, real clients, real growth."/>
+<title>Portfolio — OS SEO Case Studies</title>
+<link rel="icon" type="image/png" href="../images/logo.png">
+<link rel="stylesheet" href="../style.css"/>
+<style>
+  .port-hero { padding:5.5rem 2.5rem 2.6rem; max-width:1040px; margin:0 auto; text-align:center; }
+  .port-hero h1 { font-size:clamp(2.2rem,5vw,3.3rem); font-weight:700; letter-spacing:-1.5px; margin-bottom:.85rem; }
+  .port-hero p { color:var(--muted); font-size:1.02rem; max-width:580px; margin:0 auto; }
+
+  .filters { display:flex; gap:.65rem; justify-content:center; flex-wrap:wrap; margin:2.2rem 0; }
+  .filter-btn { background:rgba(255,255,255,.03); border:1px solid var(--border); color:var(--muted); padding:.5rem 1.2rem; border-radius:999px; font-size:.83rem; font-weight:700; cursor:pointer; transition:all .2s; }
+  .filter-btn:hover,.filter-btn.active { background:linear-gradient(135deg,rgba(79,107,255,.2),rgba(0,229,255,.12)); border-color:var(--accent2); color:var(--white); }
+
+  .cases-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:1.6rem; max-width:1040px; margin:0 auto; padding:0 2.5rem 4.2rem; }
+  .case-card { background:var(--card); border:1px solid var(--border); border-radius:18px; overflow:hidden; transition:all .3s cubic-bezier(.2,.8,.2,1); cursor:pointer; }
+  .case-card:hover { border-color:var(--border-strong); transform:translateY(-6px); box-shadow:0 24px 48px rgba(0,0,0,.35); }
+  .case-thumb { height:185px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+  .case-thumb .emoji { font-size:3.6rem; position:relative; z-index:2; }
+  .case-badge { position:absolute; top:13px; right:13px; background:rgba(6,9,26,.85); border:1px solid var(--border); border-radius:8px; padding:.32rem .65rem; font-size:.73rem; font-weight:700; color:var(--accent2); z-index:3; }
+  .case-body { padding:1.6rem; }
+  .case-industry { font-size:.73rem; font-weight:800; color:var(--accent2); text-transform:uppercase; letter-spacing:1.2px; margin-bottom:.45rem; }
+  .case-title { font-weight:700; font-size:1.02rem; line-height:1.38; margin-bottom:.65rem; }
+  .case-country { color:var(--muted); font-size:.81rem; margin-bottom:1.05rem; }
+  .case-metrics { display:grid; grid-template-columns:1fr 1fr 1fr; gap:.55rem; margin-bottom:1.05rem; }
+  .metric { background:rgba(255,255,255,.04); border-radius:10px; padding:.65rem; text-align:center; }
+  .metric-val { font-family:'Space Grotesk',sans-serif; font-size:1.12rem; font-weight:700; color:var(--accent2); }
+  .metric-label { font-size:.68rem; color:var(--muted); margin-top:2px; }
+  .case-tags { display:flex; flex-wrap:wrap; gap:.45rem; }
+  .case-tag { background:rgba(79,107,255,.1); border:1px solid rgba(79,107,255,.3); color:var(--accent2); font-size:.71rem; padding:.22rem .6rem; border-radius:999px; font-weight:700; }
+
+  .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:500; align-items:center; justify-content:center; padding:1rem; }
+  .modal-overlay.open { display:flex; }
+  .modal { background:var(--navy2); border:1px solid var(--border-strong); border-radius:22px; max-width:700px; width:100%; max-height:88vh; overflow-y:auto; padding:2.2rem; position:relative; box-shadow:var(--glow); }
+  .modal-close { position:absolute; top:1.1rem; right:1.1rem; background:rgba(255,255,255,.08); border:none; color:var(--white); width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:1rem; }
+  .modal-emoji { font-size:3.1rem; margin-bottom:.85rem; }
+  .modal h2 { font-size:1.55rem; font-weight:700; margin-bottom:.35rem; }
+  .modal-country { color:var(--muted); font-size:.86rem; margin-bottom:1.6rem; }
+  .modal-section { margin-bottom:1.3rem; }
+  .modal-section h4 { font-size:.81rem; font-weight:800; color:var(--accent2); text-transform:uppercase; letter-spacing:1.2px; margin-bottom:.55rem; }
+  .modal-section p { color:var(--muted); font-size:.89rem; line-height:1.68; }
+  .modal-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:.85rem; margin:1.3rem 0; }
+  .modal-metric { background:rgba(79,107,255,.1); border:1px solid rgba(79,107,255,.3); border-radius:12px; padding:.85rem; text-align:center; }
+  .modal-metric-val { font-family:'Space Grotesk',sans-serif; font-size:1.55rem; font-weight:700; color:var(--accent2); }
+  .modal-metric-label { font-size:.73rem; color:var(--muted); margin-top:2px; }
+
+  .overall { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1.1rem; max-width:1040px; margin:0 auto 3.2rem; padding:0 2.5rem; }
+  .overall-item { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.3rem; text-align:center; }
+  .overall-num { font-family:'Space Grotesk',sans-serif; font-size:1.9rem; font-weight:700; color:var(--accent2); }
+  .overall-label { font-size:.73rem; color:var(--muted); margin-top:3px; }
+
+  @media(max-width:600px){ .cases-grid{padding:0 1.2rem 3rem;} .modal{padding:1.6rem;} }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header class="site-header">
+  <a class="site-logo" href="/">
+    <img src="../images/logo.png" alt="OS SEO logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+    <span class="logo-text" style="display:none;align-items:center;gap:8px"><span class="logo-dot"></span>ai<span>SEO</span>a</span>
+  </a>
+  <nav class="main-nav" aria-label="Primary">
+    <a href="/" data-en="Home" data-ar="الرئيسية">Home</a>
+    <a href="/about/" data-en="About" data-ar="من نحن">About</a>
+    <a href="/portfolio/" class="active" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+    <a href="/#services" data-en="Services" data-ar="الخدمات">Services</a>
+    <a href="/blog/" data-en="Blog" data-ar="المدونة">Blog</a>
+    <a href="/#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-toggle" role="group" aria-label="Language switch">
+      <span class="lang-opt active" data-lang="en" onclick="setLang('en')">EN</span>
+      <span class="lang-opt" data-lang="ar" onclick="setLang('ar')">AR</span>
+    </div>
+    <a class="nav-cta" href="/#booking" data-en="Free Audit" data-ar="تدقيق مجاني">Free Audit</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/" data-en="Home" data-ar="الرئيسية">Home</a>
+  <a href="/about/" data-en="About" data-ar="من نحن">About</a>
+  <a href="/portfolio/" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+  <a href="/#services" data-en="Services" data-ar="الخدمات">Services</a>
+  <a href="/blog/" data-en="Blog" data-ar="المدونة">Blog</a>
+  <a href="/#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+  <div class="lang-toggle">
+    <span class="lang-opt active" data-lang="en" onclick="setLang('en')">EN</span>
+    <span class="lang-opt" data-lang="ar" onclick="setLang('ar')">AR</span>
+  </div>
+</div>
+
+<div class="port-hero fade-in">
+  <div class="section-tag" data-en="Case Studies" data-ar="دراسات حالة">Case Studies</div>
+  <h1><span data-en="Real Results." data-ar="نتائج حقيقية.">Real Results.</span><br><span data-en="Real Clients." data-ar="عملاء حقيقيون.">Real Clients.</span></h1>
+  <p data-en="A selection of SEO campaigns I've led — showing the challenges, strategies and measurable outcomes." data-ar="مجموعة من حملات السيو التي قدتها، تعرض التحديات والاستراتيجيات والنتائج القابلة للقياس.">A selection of SEO campaigns I've led — showing the challenges, strategies and measurable outcomes.</p>
+</div>
+
+<div class="overall fade-in">
+  <div class="overall-item"><div class="overall-num">47+</div><div class="overall-label" data-en="Total Clients" data-ar="إجمالي العملاء">Total Clients</div></div>
+  <div class="overall-item"><div class="overall-num">+280%</div><div class="overall-label" data-en="Avg Traffic Growth" data-ar="متوسط نمو الزيارات">Avg Traffic Growth</div></div>
+  <div class="overall-item"><div class="overall-num">12</div><div class="overall-label" data-en="Countries" data-ar="دولة">Countries</div></div>
+  <div class="overall-item"><div class="overall-num">850+</div><div class="overall-label" data-en="Keywords Ranked" data-ar="كلمة مفتاحية">Keywords Ranked</div></div>
+  <div class="overall-item"><div class="overall-num">4.2x</div><div class="overall-label" data-en="Avg ROI" data-ar="متوسط العائد">Avg ROI</div></div>
+</div>
+
+<div class="filters fade-in">
+  <button class="filter-btn active" onclick="filterCases('all',this)" data-en="All" data-ar="الكل">All</button>
+  <button class="filter-btn" onclick="filterCases('ecommerce',this)" data-en="E-commerce" data-ar="متاجر إلكترونية">E-commerce</button>
+  <button class="filter-btn" onclick="filterCases('saas',this)" data-en="SaaS" data-ar="SaaS">SaaS</button>
+  <button class="filter-btn" onclick="filterCases('local',this)" data-en="Local Business" data-ar="أعمال محلية">Local Business</button>
+  <button class="filter-btn" onclick="filterCases('b2b',this)" data-en="B2B" data-ar="B2B">B2B</button>
+  <button class="filter-btn" onclick="filterCases('mena',this)" data-en="MENA" data-ar="الشرق الأوسط">MENA</button>
+</div>
+
+<div class="cases-grid" id="cases-grid">
+
+  <div class="case-card" data-cat="ecommerce" onclick="showCase('case1')">
+    <div class="case-thumb" style="background:linear-gradient(135deg,#2A3FA8,#0E7490)"><span class="emoji">🛒</span><div class="case-badge">🇬🇧 UK</div></div>
+    <div class="case-body">
+      <div class="case-industry" data-en="E-Commerce" data-ar="متجر إلكتروني">E-Commerce</div>
+      <div class="case-title" data-en="UK Fashion Brand — From 3k to 18k Monthly Organic Visitors" data-ar="ماركة أزياء بريطانية — من 3 إلى 18 ألف زائر شهري">UK Fashion Brand — From 3k to 18k Monthly Organic Visitors</div>
+      <div class="case-country">📍 <span data-en="United Kingdom" data-ar="المملكة المتحدة">United Kingdom</span></div>
+      <div class="case-metrics">
+        <div class="metric"><div class="metric-val">+480%</div><div class="metric-label" data-en="Traffic" data-ar="زيارات">Traffic</div></div>
+        <div class="metric"><div class="metric-val">#1</div><div class="metric-label" data-en="Rankings" data-ar="ترتيب">Rankings</div></div>
+        <div class="metric"><div class="metric-val">8mo</div><div class="metric-label" data-en="Timeline" data-ar="المدة">Timeline</div></div>
+      </div>
+      <div class="case-tags"><span class="case-tag" data-en="Technical SEO" data-ar="سيو تقني">Technical SEO</span><span class="case-tag" data-en="Link Building" data-ar="بناء روابط">Link Building</span></div>
+    </div>
+  </div>
+
+  <div class="case-card" data-cat="saas" onclick="showCase('case2')">
+    <div class="case-thumb" style="background:linear-gradient(135deg,#0F6E4E,#0E7490)"><span class="emoji">💻</span><div class="case-badge">🇦🇺 AU</div></div>
+    <div class="case-body">
+      <div class="case-industry" data-en="SaaS" data-ar="SaaS">SaaS</div>
+      <div class="case-title" data-en="Melbourne SaaS Platform — 5x Organic Leads in 6 Months" data-ar="منصة SaaS في ملبورن — تضاعف العملاء 5 مرات في 6 أشهر">Melbourne SaaS Platform — 5x Organic Leads in 6 Months</div>
+      <div class="case-country">📍 <span data-en="Australia" data-ar="أستراليا">Australia</span></div>
+      <div class="case-metrics">
+        <div class="metric"><div class="metric-val">+340%</div><div class="metric-label" data-en="Traffic" data-ar="زيارات">Traffic</div></div>
+        <div class="metric"><div class="metric-val">5x</div><div class="metric-label" data-en="Leads" data-ar="عملاء">Leads</div></div>
+        <div class="metric"><div class="metric-val">6mo</div><div class="metric-label" data-en="Timeline" data-ar="المدة">Timeline</div></div>
+      </div>
+      <div class="case-tags"><span class="case-tag" data-en="SaaS SEO" data-ar="سيو SaaS">SaaS SEO</span><span class="case-tag" data-en="AI Content" data-ar="محتوى ذكي">AI Content</span></div>
+    </div>
+  </div>
+
+  <div class="case-card" data-cat="local" onclick="showCase('case3')">
+    <div class="case-thumb" style="background:linear-gradient(135deg,#7C3220,#2A3FA8)"><span class="emoji">🏥</span><div class="case-badge">🇩🇪 DE</div></div>
+    <div class="case-body">
+      <div class="case-industry" data-en="Local Business" data-ar="أعمال محلية">Local Business</div>
+      <div class="case-title" data-en="German Medical Clinic — Dominating Local Search in Berlin" data-ar="عيادة طبية ألمانية — تصدر البحث المحلي في برلين">German Medical Clinic — Dominating Local Search in Berlin</div>
+      <div class="case-country">📍 <span data-en="Germany" data-ar="ألمانيا">Germany</span></div>
+      <div class="case-metrics">
+        <div class="metric"><div class="metric-val">+260%</div><div class="metric-label" data-en="Calls" data-ar="مكالمات">Calls</div></div>
+        <div class="metric"><div class="metric-val">#1</div><div class="metric-label" data-en="Maps" data-ar="خرائط">Maps</div></div>
+        <div class="metric"><div class="metric-val">4mo</div><div class="metric-label" data-en="Timeline" data-ar="المدة">Timeline</div></div>
+      </div>
+      <div class="case-tags"><span class="case-tag" data-en="Local SEO" data-ar="سيو محلي">Local SEO</span><span class="case-tag" data-en="Reviews" data-ar="تقييمات">Reviews</span></div>
+    </div>
+  </div>
+
+  <div class="case-card" data-cat="b2b" onclick="showCase('case4')">
+    <div class="case-thumb" style="background:linear-gradient(135deg,#5B2A9C,#0E7490)"><span class="emoji">🏗️</span><div class="case-badge">🇳🇱 NL</div></div>
+    <div class="case-body">
+      <div class="case-industry" data-en="B2B / Construction" data-ar="B2B / إنشاءات">B2B / Construction</div>
+      <div class="case-title" data-en="Netherlands B2B Firm — Tripling Inbound Inquiries via SEO" data-ar="شركة B2B هولندية — مضاعفة الاستفسارات 3 مرات عبر السيو">Netherlands B2B Firm — Tripling Inbound Inquiries via SEO</div>
+      <div class="case-country">📍 <span data-en="Netherlands" data-ar="هولندا">Netherlands</span></div>
+      <div class="case-metrics">
+        <div class="metric"><div class="metric-val">+310%</div><div class="metric-label" data-en="Traffic" data-ar="زيارات">Traffic</div></div>
+        <div class="metric"><div class="metric-val">3x</div><div class="metric-label" data-en="Inquiries" data-ar="استفسارات">Inquiries</div></div>
+        <div class="metric"><div class="metric-val">10mo</div><div class="metric-label" data-en="Timeline" data-ar="المدة">Timeline</div></div>
+      </div>
+      <div class="case-tags"><span class="case-tag" data-en="B2B SEO" data-ar="سيو B2B">B2B SEO</span><span class="case-tag" data-en="Content" data-ar="محتوى">Content</span></div>
+    </div>
+  </div>
+
+  <div class="case-card" data-cat="mena" onclick="showCase('case5')">
+    <div class="case-thumb" style="background:linear-gradient(135deg,#92590D,#2A3FA8)"><span class="emoji">🏪</span><div class="case-badge">🇸🇦 SA</div></div>
+    <div class="case-body">
+      <div class="case-industry" data-en="E-Commerce / MENA" data-ar="متجر إلكتروني / الشرق الأوسط">E-Commerce / MENA</div>
+      <div class="case-title" data-en="Saudi E-Commerce Brand — Ranking #1 for 80+ Arabic Keywords" data-ar="متجر سعودي — التصدر لأكثر من 80 كلمة مفتاحية عربية">Saudi E-Commerce Brand — Ranking #1 for 80+ Arabic Keywords</div>
+      <div class="case-country">📍 <span data-en="Saudi Arabia" data-ar="السعودية">Saudi Arabia</span></div>
+      <div class="case-metrics">
+        <div class="metric"><div class="metric-val">+420%</div><div class="metric-label" data-en="Traffic" data-ar="زيارات">Traffic</div></div>
+        <div class="metric"><div class="metric-val">80+</div><div class="metric-label" data-en="KWs #1" data-ar="كلمات متصدرة">KWs #1</div></div>
+        <div class="metric"><div class="metric-val">7mo</div><div class="metric-label" data-en="Timeline" data-ar="المدة">Timeline</div></div>
+      </div>
+      <div class="case-tags"><span class="case-tag" data-en="Arabic SEO" data-ar="سيو عربي">Arabic SEO</span><span class="case-tag" data-en="MENA Market" data-ar="سوق الشرق الأوسط">MENA Market</span></div>
+    </div>
+  </div>
+
+  <div class="case-card" data-cat="saas" onclick="showCase('case6')">
+    <div class="case-thumb" style="background:linear-gradient(135deg,#0F5C52,#2A3FA8)"><span class="emoji">📱</span><div class="case-badge">🇫🇷 FR</div></div>
+    <div class="case-body">
+      <div class="case-industry" data-en="App / SaaS" data-ar="تطبيق / SaaS">App / SaaS</div>
+      <div class="case-title" data-en="French SaaS App — Growing from 0 to 12k Monthly Organic Users" data-ar="تطبيق SaaS فرنسي — النمو من 0 إلى 12 ألف مستخدم شهري">French SaaS App — Growing from 0 to 12k Monthly Organic Users</div>
+      <div class="case-country">📍 <span data-en="France" data-ar="فرنسا">France</span></div>
+      <div class="case-metrics">
+        <div class="metric"><div class="metric-val">12k</div><div class="metric-label" data-en="Org. Users" data-ar="مستخدمين">Org. Users</div></div>
+        <div class="metric"><div class="metric-val">120+</div><div class="metric-label" data-en="Keywords" data-ar="كلمات">Keywords</div></div>
+        <div class="metric"><div class="metric-val">9mo</div><div class="metric-label" data-en="Timeline" data-ar="المدة">Timeline</div></div>
+      </div>
+      <div class="case-tags"><span class="case-tag" data-en="Technical SEO" data-ar="سيو تقني">Technical SEO</span><span class="case-tag" data-en="AI SEO" data-ar="سيو ذكي">AI SEO</span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal" id="modal-content"></div>
+</div>
+
+<section class="stripe fade-in" style="padding:3.8rem 2.5rem;text-align:center">
+  <div class="section-tag" style="margin-bottom:.5rem;justify-content:center" data-en="Ready?" data-ar="جاهز؟">Ready?</div>
+  <div class="section-title" style="margin-bottom:.85rem" data-en="Want Results Like These?" data-ar="تريد نتائج مثل هذه؟">Want Results Like These?</div>
+  <p style="color:var(--muted);font-size:.96rem;margin-bottom:1.6rem" data-en="Let's talk about your website. Free 30-min strategy session — no commitment." data-ar="لنتحدث عن موقعك. جلسة استراتيجية مجانية لمدة 30 دقيقة، بدون أي التزام.">Let's talk about your website. Free 30-min strategy session — no commitment.</p>
+  <a class="btn-primary" href="/#booking" data-en="Apply for a Free Audit →" data-ar="قدّم على تدقيق مجاني ←">Apply for a Free Audit →</a>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="site-logo">
+        <img src="../images/logo.png" alt="OS SEO logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+        <span class="logo-text" style="display:none;align-items:center;gap:8px"><span class="logo-dot"></span>ai<span style="color:var(--accent2)">SEO</span>a</span>
+      </div>
+      <p data-en="Professional SEO specialist helping businesses across Europe, Australia &amp; the Arab world rank higher and grow faster." data-ar="متخصص SEO محترف يساعد الشركات في أوروبا وأستراليا والعالم العربي على التصدر في جوجل والنمو بشكل أسرع.">Professional SEO specialist helping businesses across Europe, Australia & the Arab world rank higher and grow faster.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://x.com" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
+        <a href="os5733203@gmail.com" aria-label="Email">✉</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 data-en="Pages" data-ar="الصفحات">Pages</h4>
+      <a href="/" data-en="Home" data-ar="الرئيسية">Home</a>
+      <a href="/about/" data-en="About" data-ar="من نحن">About</a>
+      <a href="/portfolio/" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
+      <a href="/blog/" data-en="Blog" data-ar="المدونة">Blog</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-en="Services" data-ar="الخدمات">Services</h4>
+      <a href="/#services" data-en="Technical SEO" data-ar="سيو تقني">Technical SEO</a>
+      <a href="/#services" data-en="Link Building" data-ar="بناء الروابط">Link Building</a>
+      <a href="/#services" data-en="Local SEO" data-ar="السيو المحلي">Local SEO</a>
+      <a href="/#ai-seo" data-en="AI &amp; SEO" data-ar="الذكاء الاصطناعي والسيو">AI & SEO</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h4>
+      <div class="footer-contact-item"><span class="icon">📍</span><span data-en="Online SEO Agency - Serving Clients Worldwide" data-ar="وكالة سيو أونلاين - نخدم العملاء حول العالم">Online SEO Agency - Serving Clients Worldwide</span></div>
+      <div class="footer-contact-item"><span class="icon">📞</span><span>+201221403257</span></div>
+      <div class="footer-contact-item"><span class="icon">✉️</span><span>os5733203@gmail.com</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-en="© 2026 OS SEO— All rights reserved." data-ar="© 2026 OS SEO — جميع الحقوق محفوظة.">© 2026 OS SEO— All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://x.com" target="_blank">Twitter</a>
+      <a href="mailto:hello@OS SEO.com" data-en="Email" data-ar="إيميل">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../aiseoa.js"></script>
+<script>
+const cases = {
+  case1: { emoji:'🛒', titleEn:'UK Fashion Brand', titleAr:'ماركة أزياء بريطانية', country:'🇬🇧 United Kingdom', countryAr:'🇬🇧 المملكة المتحدة',
+    challengeEn:'A UK-based fashion e-commerce brand was stuck on page 3–4 for their main product keywords, with only 3,000 monthly organic visitors despite having a quality product range.',
+    challengeAr:'كانت ماركة أزياء بريطانية عالقة في الصفحة 3-4 لكلماتها الرئيسية، بزيارات شهرية لا تتجاوز 3000 رغم جودة منتجاتها.',
+    strategyEn:'Conducted a full technical audit revealing 200+ crawl errors, duplicate content issues and slow page speeds. Rebuilt the site architecture, fixed all technical issues, implemented a content cluster strategy, and ran an aggressive but white-hat link building campaign.',
+    strategyAr:'أجرينا تدقيقاً تقنياً شاملاً كشف عن أكثر من 200 خطأ زحف ومحتوى مكرر وبطء في التحميل. أعدنا بناء هيكل الموقع وحللنا كل المشاكل التقنية ونفذنا استراتيجية محتوى متكاملة وحملة بناء روابط قوية وآمنة.',
+    resultsEn:'Within 8 months: organic traffic grew from 3,000 to 18,000 monthly visitors. 47 product keywords now rank on page 1. Revenue from organic search increased by 380%.',
+    resultsAr:'في 8 أشهر: نمت الزيارات من 3000 إلى 18000 شهرياً. تتصدر 47 كلمة مفتاحية الصفحة الأولى. زادت الإيرادات من البحث العضوي بنسبة 380%.',
+    metrics:[{val:'+480%',labelEn:'Traffic Growth',labelAr:'نمو الزيارات'},{val:'#1',labelEn:'Rankings',labelAr:'الترتيب'},{val:'+380%',labelEn:'Revenue',labelAr:'الإيرادات'}],
+    tagsEn:['Technical SEO','Link Building','E-commerce SEO'], tagsAr:['سيو تقني','بناء روابط','سيو متاجر'] },
+  case2: { emoji:'💻', titleEn:'Melbourne SaaS Platform', titleAr:'منصة SaaS في ملبورن', country:'🇦🇺 Australia', countryAr:'🇦🇺 أستراليا',
+    challengeEn:'A Melbourne-based SaaS company was completely invisible on Google in a competitive market. Their blog had content but no SEO strategy, and they had zero backlinks.',
+    challengeAr:'كانت شركة SaaS في ملبورن غائبة تماماً عن جوجل في سوق تنافسي. كان لديهم مدونة بدون استراتيجية سيو وبدون أي روابط خلفية.',
+    strategyEn:'Redesigned their content strategy around high-intent keywords, built a pillar-cluster content model, secured 40+ backlinks from tech publications, and optimized all landing pages.',
+    strategyAr:'أعدنا تصميم استراتيجية المحتوى حول الكلمات عالية النية، وبنينا نموذج محتوى متكامل، وحصلنا على أكثر من 40 رابطاً من مواقع تقنية، وحسّنا كل صفحات الهبوط.',
+    resultsEn:'6 months in: 340% traffic increase. 5x more inbound leads from organic search. Now ranking #1 for their 3 most valuable keywords in Australia.',
+    resultsAr:'في 6 أشهر: زيادة الزيارات 340%. 5 مرات أكثر عملاء من البحث العضوي. الآن تتصدر 3 من أهم كلماتها في أستراليا.',
+    metrics:[{val:'+340%',labelEn:'Traffic',labelAr:'زيارات'},{val:'5x',labelEn:'Organic Leads',labelAr:'عملاء عضويين'},{val:'#1',labelEn:'AU Rankings',labelAr:'ترتيب أسترالي'}],
+    tagsEn:['SaaS SEO','International SEO','Link Building'], tagsAr:['سيو SaaS','سيو دولي','بناء روابط'] },
+  case3: { emoji:'🏥', titleEn:'Berlin Medical Clinic', titleAr:'عيادة طبية في برلين', country:'🇩🇪 Germany', countryAr:'🇩🇪 ألمانيا',
+    challengeEn:'A Berlin medical clinic was getting almost no calls from online search. Competitors dominated the Google Maps pack and local organic results.',
+    challengeAr:'كانت عيادة في برلين لا تحصل تقريباً على أي مكالمات من البحث. كان المنافسون يسيطرون على خرائط جوجل والنتائج المحلية.',
+    strategyEn:'Fully optimized their Google Business Profile, built local citations across 60+ directories, gathered 80+ verified reviews, created location-specific landing pages.',
+    strategyAr:'حسّنا ملف Google Business بالكامل، وبنينا استشهادات محلية في أكثر من 60 دليلاً، وجمعنا أكثر من 80 تقييماً موثقاً، وأنشأنا صفحات هبوط مخصصة للموقع.',
+    resultsEn:'Within 4 months: 260% increase in calls from Google, ranked #1 in Google Maps for 15 key medical terms in Berlin.',
+    resultsAr:'في 4 أشهر: زيادة المكالمات من جوجل 260%، وتصدرنا خرائط جوجل لـ 15 مصطلحاً طبياً رئيسياً في برلين.',
+    metrics:[{val:'+260%',labelEn:'Phone Calls',labelAr:'مكالمات'},{val:'#1',labelEn:'Google Maps',labelAr:'خرائط جوجل'},{val:'80+',labelEn:'Reviews',labelAr:'تقييمات'}],
+    tagsEn:['Local SEO','Google Maps','Reviews'], tagsAr:['سيو محلي','خرائط جوجل','تقييمات'] },
+  case4: { emoji:'🏗️', titleEn:'Netherlands B2B Firm', titleAr:'شركة B2B هولندية', country:'🇳🇱 Netherlands', countryAr:'🇳🇱 هولندا',
+    challengeEn:'A Dutch B2B construction company relied entirely on referrals. Their website had no organic presence and ranked for zero commercial keywords.',
+    challengeAr:'كانت شركة إنشاءات B2B هولندية تعتمد كلياً على الإحالات. لم يكن لموقعها أي حضور عضوي ولم تكن تتصدر أي كلمة تجارية.',
+    strategyEn:'Built a comprehensive content strategy targeting B2B construction keywords in Dutch and English, created detailed service pages, case study content, and link building.',
+    strategyAr:'بنينا استراتيجية محتوى شاملة تستهدف كلمات إنشاءات B2B بالهولندية والإنجليزية، وأنشأنا صفحات خدمات مفصلة ومحتوى دراسات حالة وبناء روابط.',
+    resultsEn:'Over 10 months: organic traffic tripled. Inbound inquiries from the website grew by 3x. Now ranking on page 1 for 34 commercial keywords.',
+    resultsAr:'خلال 10 أشهر: تضاعفت الزيارات 3 مرات. الاستفسارات من الموقع زادت 3 مرات. الآن تتصدر 34 كلمة تجارية الصفحة الأولى.',
+    metrics:[{val:'+310%',labelEn:'Traffic',labelAr:'زيارات'},{val:'3x',labelEn:'Inquiries',labelAr:'استفسارات'},{val:'34',labelEn:'KWs on P1',labelAr:'كلمات متصدرة'}],
+    tagsEn:['B2B SEO','Dutch Market','Content Strategy'], tagsAr:['سيو B2B','السوق الهولندي','استراتيجية محتوى'] },
+  case5: { emoji:'🏪', titleEn:'Saudi E-Commerce Brand', titleAr:'متجر إلكتروني سعودي', country:'🇸🇦 Saudi Arabia', countryAr:'🇸🇦 السعودية',
+    challengeEn:'A Saudi e-commerce store wanted to capture Arabic search traffic but had no SEO in Arabic, weak technical foundations, and no backlinks from Arabic websites.',
+    challengeAr:'أراد متجر سعودي الاستفادة من البحث العربي لكنه لم يكن يملك سيو عربي ولا أساسات تقنية قوية ولا روابط من مواقع عربية.',
+    strategyEn:'Full Arabic technical SEO implementation, AI-powered Arabic content generation at scale, targeted link building from MENA-region websites, and hreflang optimization.',
+    strategyAr:'تنفيذ سيو تقني عربي كامل، وإنشاء محتوى عربي بالذكاء الاصطناعي على نطاق واسع، وبناء روابط مستهدفة من مواقع الشرق الأوسط، وتحسين hreflang.',
+    resultsEn:'7 months: 420% traffic increase. Now ranking #1 for 80+ Arabic product keywords. Organic revenue contribution grew from 3% to 41% of total revenue.',
+    resultsAr:'في 7 أشهر: زيادة الزيارات 420%. الآن يتصدر أكثر من 80 كلمة منتج عربية. ارتفعت مساهمة الإيرادات العضوية من 3% إلى 41% من الإجمالي.',
+    metrics:[{val:'+420%',labelEn:'Traffic',labelAr:'زيارات'},{val:'80+',labelEn:'#1 Rankings',labelAr:'كلمات متصدرة'},{val:'41%',labelEn:'Rev. Share',labelAr:'نسبة الإيراد'}],
+    tagsEn:['Arabic SEO','MENA Market','AI Content'], tagsAr:['سيو عربي','سوق الشرق الأوسط','محتوى ذكي'] },
+  case6: { emoji:'📱', titleEn:'French SaaS App', titleAr:'تطبيق SaaS فرنسي', country:'🇫🇷 France', countryAr:'🇫🇷 فرنسا',
+    challengeEn:'A Paris-based startup launched a SaaS productivity app with zero organic presence. They needed to build SEO from scratch in a competitive space.',
+    challengeAr:'أطلقت شركة ناشئة في باريس تطبيق إنتاجية SaaS بدون أي حضور عضوي. احتاجوا لبناء سيو من الصفر في سوق تنافسي.',
+    strategyEn:'Built a topical authority strategy with 60+ SEO-optimized blog posts, AI-assisted content production, technical optimization, and international SEO setup.',
+    strategyAr:'بنينا استراتيجية سلطة موضوعية بأكثر من 60 مقالاً محسّناً للسيو، وإنتاج محتوى بمساعدة الذكاء الاصطناعي، وتحسين تقني، وإعداد سيو دولي.',
+    resultsEn:'9 months: grew from 0 to 12,000 monthly organic users. Ranking in top 3 for 120+ keywords. Free trial signups from organic search: 340/month.',
+    resultsAr:'في 9 أشهر: نمو من 0 إلى 12000 مستخدم شهري. تصدر أعلى 3 نتائج لأكثر من 120 كلمة. تسجيلات تجربة مجانية: 340 شهرياً.',
+    metrics:[{val:'12k',labelEn:'Monthly Users',labelAr:'مستخدمين شهرياً'},{val:'120+',labelEn:'Top-3 KWs',labelAr:'كلمات متصدرة'},{val:'340',labelEn:'Trial Signups/mo',labelAr:'تسجيلات/شهر'}],
+    tagsEn:['SaaS SEO','Technical SEO','AI Content'], tagsAr:['سيو SaaS','سيو تقني','محتوى ذكي'] }
+};
+
+function showCase(id) {
+  const c = cases[id];
+  if (!c) return;
+  const isAr = currentLang === 'ar';
+  const title = isAr ? c.titleAr : c.titleEn;
+  const country = isAr ? c.countryAr : c.country;
+  const challengeLabel = isAr ? 'التحدي' : 'The Challenge';
+  const strategyLabel = isAr ? 'الاستراتيجية' : 'The Strategy';
+  const resultsLabel = isAr ? 'النتائج' : 'The Results';
+  const ctaText = isAr ? 'احصل على نتائج مماثلة ←' : 'Get Similar Results →';
+  const tags = isAr ? c.tagsAr : c.tagsEn;
+
+  const html = `
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-emoji">${c.emoji}</div>
+    <h2>${title}</h2>
+    <div class="modal-country">${country}</div>
+    <div class="modal-metrics">
+      ${c.metrics.map(m => `<div class="modal-metric"><div class="modal-metric-val">${m.val}</div><div class="modal-metric-label">${isAr ? m.labelAr : m.labelEn}</div></div>`).join('')}
+    </div>
+    <div class="modal-section"><h4>${challengeLabel}</h4><p>${isAr ? c.challengeAr : c.challengeEn}</p></div>
+    <div class="modal-section"><h4>${strategyLabel}</h4><p>${isAr ? c.strategyAr : c.strategyEn}</p></div>
+    <div class="modal-section"><h4>${resultsLabel}</h4><p>${isAr ? c.resultsAr : c.resultsEn}</p></div>
+    <div class="case-tags" style="margin-top:1.1rem">${tags.map(t => `<span class="case-tag">${t}</span>`).join('')}</div>
+    <a class="btn-primary" href="/#booking" style="display:block;text-align:center;margin-top:1.6rem">${ctaText}</a>
+  `;
+  openModal(html);
+}
+</script>
+</body>
+</html>
