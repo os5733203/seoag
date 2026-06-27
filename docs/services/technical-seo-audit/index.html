@@ -3,97 +3,166 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<!--
-SEO STRATEGY NOTES (reference only):
-Primary keyword: SEO services FAQ / SEO agency frequently asked questions
-Secondary keywords: how much does SEO cost, how long does SEO take, SEO pricing, SEO contract terms
-Semantic terms: technical SEO, content strategy, link building, local SEO, international SEO, AI-powered SEO, SEO guarantee
-Long-tail queries answered: "do SEO agencies guarantee first page rankings", "is SEO one-time or monthly",
-  "how much should a small business budget for SEO", "what's included in an SEO audit", "can SEO work for international markets"
-Intent: informational + decision-stage trust-building (objection handling before conversion)
-EEAT signals: named reviewer (Omar Salah), last-updated date, transparent pricing ranges, links to in-depth service pages, real contact info
-Conversion opportunities: CTA after pricing block, CTA after guarantees block, final CTA banner
-Image recommendations: text-first page by design, no photo needed; if added, suggested filename "os-seo-faq-cover.jpg",
-  alt "OS SEO frequently asked questions cover image"
-OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover graphic exists
--->
-<meta name="description" content="How much does SEO cost? How long does it take? Get clear answers about OS SEO's pricing, process, timelines, and guarantees before you start a project."/>
-<meta name="robots" content="index, follow, max-image-preview:large"/>
-<link rel="canonical" href="https://seowithomar.com/faq/"/>
+<meta name="description" content="Professional Technical SEO Audit services by OS SEO. Fix crawl errors, Core Web Vitals, indexing issues and site architecture to rank higher on Google."/>
+<meta property="og:title" content="Technical SEO Audit — OS SEO | Fix & Rank Higher"/>
+<meta property="og:description" content="Deep-dive technical SEO audits covering Core Web Vitals, crawl errors, indexing & site architecture. From $299."/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="SEO Services FAQ — Pricing, Timelines & Process | OS SEO"/>
-<meta property="og:description" content="How much does SEO cost? How long does it take? Get clear answers about OS SEO's pricing, process, timelines, and guarantees before you start a project."/>
-<meta property="og:url" content="https://seowithomar.com/faq/"/>
-<meta property="og:image" content="https://seowithomar.com/images/logo.png"/>
+<meta property="og:url" content="https://seowithomar.com/services/technical-seo-audit/"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="SEO Services FAQ — Pricing, Timelines & Process | OS SEO"/>
-<meta name="twitter:description" content="How much does SEO cost? How long does it take? Get clear answers about OS SEO's pricing, process, timelines, and guarantees before you start a project."/>
-<title>SEO Services FAQ — Pricing, Timelines & Process | OS SEO</title>
-<link rel="icon" type="image/png" href="/images/logo.png">
-<link rel="stylesheet" href="/style.css"/>
-<link rel="stylesheet" href="/services.css"/>
+<meta name="twitter:title" content="Technical SEO Audit — OS SEO"/>
+<meta name="twitter:description" content="Fix crawl errors, Core Web Vitals and indexing issues. Professional technical SEO audits from $299."/>
+<title>Technical SEO Audit — OS SEO | Fix Crawl Errors & Rank Higher</title>
+<link rel="canonical" href="https://seowithomar.com/services/technical-seo-audit/"/>
+<link rel="icon" type="image/png" href="../../images/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=Cairo:wght@400;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=Cairo:wght@400;600;700;900&display=swap"></noscript>
+<link rel="stylesheet" href="../../style.css"/>
+<style>
+.svc-hero { padding:5rem 2.5rem 3rem; max-width:1040px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+.svc-hero-text h1 { font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-1.5px; margin-bottom:1rem; line-height:1.1; }
+.svc-hero-text h1 em { color:var(--accent2); font-style:normal; }
+.svc-hero-text p { color:var(--muted); font-size:1rem; line-height:1.75; margin-bottom:1.5rem; }
+.svc-hero-visual { background:rgba(6,9,26,.6); border:1px solid var(--border); border-radius:18px; padding:1.8rem; font-family:monospace; font-size:.82rem; color:var(--accent2); line-height:2; }
+.svc-hero-visual .ok { color:#2EE6A6; }
+.svc-hero-visual .warn { color:#FBBF24; }
+.svc-hero-visual .err { color:#FCA5A5; }
+.svc-hero-visual .comment { color:var(--muted); }
+
+.problems-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.2rem; }
+.problem-card { background:rgba(239,68,68,.06); border:1px solid rgba(239,68,68,.2); border-radius:14px; padding:1.4rem; }
+.problem-icon { font-size:1.5rem; margin-bottom:.6rem; }
+.problem-title { font-weight:700; font-size:.95rem; margin-bottom:.4rem; color:var(--white); }
+.problem-desc { color:var(--muted); font-size:.83rem; line-height:1.6; }
+
+.benefits-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.2rem; }
+.benefit-card { background:rgba(46,230,166,.06); border:1px solid rgba(46,230,166,.2); border-radius:14px; padding:1.4rem; }
+.benefit-icon { font-size:1.5rem; margin-bottom:.6rem; }
+.benefit-title { font-weight:700; font-size:.95rem; margin-bottom:.4rem; color:var(--green); }
+.benefit-desc { color:var(--muted); font-size:.83rem; line-height:1.6; }
+
+.included-list { display:grid; grid-template-columns:1fr 1fr; gap:.85rem; }
+.included-item { display:flex; gap:.75rem; align-items:flex-start; background:rgba(255,255,255,.03); border:1px solid var(--border); border-radius:12px; padding:1rem; }
+.included-check { color:var(--accent2); font-size:1.1rem; flex-shrink:0; margin-top:1px; }
+.included-text { font-size:.87rem; line-height:1.55; }
+.included-text strong { display:block; font-weight:700; margin-bottom:.2rem; }
+.included-text span { color:var(--muted); }
+
+.timeline-steps { display:flex; flex-direction:column; gap:0; }
+.tl-step { display:flex; gap:1.6rem; padding:1.6rem 0; border-bottom:1px solid var(--border); }
+.tl-step:last-child { border:none; }
+.tl-num { font-size:2.2rem; font-weight:800; color:rgba(79,107,255,.3); min-width:56px; font-family:'Space Grotesk',sans-serif; line-height:1; flex-shrink:0; }
+.tl-content h3 { font-size:1.05rem; font-weight:700; margin-bottom:.35rem; }
+.tl-content p { color:var(--muted); font-size:.87rem; line-height:1.65; }
+
+.tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1rem; }
+.tool-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.1rem; text-align:center; transition:all .25s; }
+.tool-card:hover { border-color:var(--border-strong); transform:translateY(-3px); }
+.tool-name { font-weight:700; font-size:.88rem; margin-top:.5rem; }
+.tool-desc { color:var(--muted); font-size:.75rem; margin-top:.2rem; }
+
+.pricing-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.4rem; }
+.pricing-card { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:2rem; position:relative; transition:all .3s; }
+.pricing-card.featured { border-color:var(--accent2); box-shadow:0 0 30px rgba(0,229,255,.15); }
+.pricing-card.featured::before { content:'Most Popular'; position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; font-size:.72rem; font-weight:800; padding:.3rem 1rem; border-radius:999px; white-space:nowrap; }
+.pricing-name { font-size:.82rem; font-weight:800; color:var(--accent2); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:.6rem; }
+.pricing-price { font-family:'Space Grotesk',sans-serif; font-size:2.4rem; font-weight:700; margin-bottom:.3rem; }
+.pricing-price span { font-size:1rem; color:var(--muted); font-weight:500; }
+.pricing-desc { color:var(--muted); font-size:.85rem; margin-bottom:1.4rem; line-height:1.6; }
+.pricing-features { list-style:none; margin-bottom:1.6rem; }
+.pricing-features li { display:flex; gap:.6rem; align-items:flex-start; font-size:.86rem; margin-bottom:.65rem; color:var(--muted); }
+.pricing-features li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; }
+
+.faq-list { display:flex; flex-direction:column; gap:.85rem; }
+.faq-item { background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden; }
+.faq-q { padding:1.2rem 1.4rem; font-weight:700; font-size:.95rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; transition:color .2s; }
+.faq-q:hover { color:var(--accent2); }
+.faq-q .faq-icon { color:var(--accent2); font-size:1.1rem; flex-shrink:0; }
+.faq-a { padding:0 1.4rem 1.2rem; color:var(--muted); font-size:.88rem; line-height:1.7; display:none; }
+.faq-item.open .faq-a { display:block; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+
+.related-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; }
+.related-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.2rem; display:flex; gap:.85rem; align-items:center; transition:all .25s; }
+.related-card:hover { border-color:var(--border-strong); transform:translateY(-3px); }
+.related-icon { font-size:1.6rem; flex-shrink:0; }
+.related-info { font-size:.87rem; }
+.related-info strong { display:block; font-weight:700; margin-bottom:.15rem; }
+.related-info span { color:var(--muted); font-size:.78rem; }
+
+.industries-locations { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+.il-section h3 { font-size:.82rem; font-weight:800; color:var(--accent2); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:1rem; }
+.il-list { display:flex; flex-wrap:wrap; gap:.5rem; }
+.il-tag { background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:8px; padding:.4rem .85rem; font-size:.82rem; color:var(--muted); }
+
+.breadcrumb { display:flex; align-items:center; gap:.5rem; font-size:.82rem; color:var(--muted); max-width:1040px; margin:0 auto; padding:1.5rem 2.5rem 0; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted); transition:color .2s; }
+.breadcrumb a:hover { color:var(--accent2); }
+.breadcrumb span { color:var(--white); }
+.breadcrumb-sep { color:var(--border-strong); }
+
+@media(max-width:860px){ .svc-hero{grid-template-columns:1fr;} .included-list{grid-template-columns:1fr;} .industries-locations{grid-template-columns:1fr;} }
+@media(max-width:600px){ .svc-hero{padding:3rem 1.2rem 2rem;} .breadcrumb{padding:1.2rem 1.2rem 0;} }
+</style>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://seowithomar.com/"},
-    {"@type":"ListItem","position":2,"name":"FAQ","item":"https://seowithomar.com/faq/"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "SEO Services FAQ — Pricing, Timelines & Process | OS SEO",
-  "description": "How much does SEO cost? How long does it take? Get clear answers about OS SEO's pricing, process, timelines, and guarantees before you start a project.",
-  "url": "https://seowithomar.com/faq/",
-  "isPartOf": {"@type": "WebSite", "name": "OS SEO", "url": "https://seowithomar.com/"},
-  "about": {"@type": "Thing", "name": "SEO services"},
-  "datePublished": "2026-01-20",
-  "dateModified": "2026-06-27"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"What SEO services does OS SEO offer?","acceptedAnswer":{"@type":"Answer","text":"OS SEO offers technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program depending on your goals."}},
-    {"@type":"Question","name":"How much does SEO cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on the service and scope. Technical SEO audits start at $450 as a one-time project. Ongoing programs like content strategy or local SEO typically start around $600 to $1,800 per month. Enterprise and multi-market projects are quoted individually after a free consultation."}},
-    {"@type":"Question","name":"How much should a small business budget for SEO?","acceptedAnswer":{"@type":"Answer","text":"Most small businesses see meaningful traction starting at $600–$1,000 per month for a focused program such as local SEO or a single content strategy track. Businesses competing in more saturated markets, or pursuing multiple service lines at once, typically budget $1,800 or more per month."}},
-    {"@type":"Question","name":"How long does it take to see SEO results?","acceptedAnswer":{"@type":"Answer","text":"Technical fixes can show crawl and indexing improvements within a few weeks. Content and link building typically take 3 to 6 months to mature into stable rankings, depending on competition, existing domain authority, and consistency of execution."}},
-    {"@type":"Question","name":"Is SEO a one-time service or a monthly commitment?","acceptedAnswer":{"@type":"Answer","text":"Both models exist. Technical SEO audits are usually one-time projects with a clear deliverable. Content strategy, link building, and local SEO are structured as ongoing monthly engagements, since organic visibility compounds with consistent, sustained effort."}},
-    {"@type":"Question","name":"Why does SEO take longer than paid ads?","acceptedAnswer":{"@type":"Answer","text":"Paid ads buy temporary visibility the moment a campaign launches. SEO builds durable assets — technical infrastructure, content, and authority — that search engines need time to crawl, evaluate, and trust, but that keep compounding long after the work is done."}},
-    {"@type":"Question","name":"Do SEO agencies guarantee first-page Google rankings?","acceptedAnswer":{"@type":"Answer","text":"No ethical SEO provider can guarantee specific rankings, because Google's algorithm sits outside any agency's control. What OS SEO guarantees instead is a transparent, data-driven process that consistently strengthens the technical and content foundations that rankings are built on."}},
-    {"@type":"Question","name":"Do you work with businesses outside your home country?","acceptedAnswer":{"@type":"Answer","text":"Yes. OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content, communication, and reporting."}},
-    {"@type":"Question","name":"Can SEO work for businesses targeting multiple countries?","acceptedAnswer":{"@type":"Answer","text":"Yes, with the right international SEO setup. This typically involves hreflang implementation, market-specific keyword research, and localized content rather than simply translating an existing site."}},
-    {"@type":"Question","name":"What's included in a free audit?","acceptedAnswer":{"@type":"Answer","text":"A free audit covers a high-level review of your site's biggest technical and content opportunities, along with a recommendation on which service would create the most impact for your specific situation."}},
-    {"@type":"Question","name":"Which industries do you work with?","acceptedAnswer":{"@type":"Answer","text":"We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, adapting SEO strategy to the specific search behavior of each industry."}},
-    {"@type":"Question","name":"What information do you need from me to get started?","acceptedAnswer":{"@type":"Answer","text":"Typically read-only access to Google Search Console and Analytics, a short call to understand your business goals, and any existing brand or content guidelines. Everything else is handled by our team."}},
-    {"@type":"Question","name":"How do you report on SEO progress?","acceptedAnswer":{"@type":"Answer","text":"Clients receive regular reporting covering rankings, organic traffic, and completed deliverables, with a monthly or bi-weekly call depending on the engagement size, so progress is never a black box."}},
-    {"@type":"Question","name":"Can I cancel an ongoing SEO engagement?","acceptedAnswer":{"@type":"Answer","text":"Yes. Monthly engagements run without long-term lock-in, so you can pause or end the engagement with notice as outlined in your agreement."}}
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Technical SEO Audit",
+      "provider": { "@type": "ProfessionalService", "name": "OS SEO", "url": "https://seowithomar.com" },
+      "description": "Deep-dive technical SEO audit covering Core Web Vitals, crawl errors, indexing issues, site architecture and page speed — with a full action plan.",
+      "url": "https://seowithomar.com/services/technical-seo-audit/",
+      "offers": [
+        { "@type": "Offer", "name": "Starter Audit", "price": "299", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Full Audit", "price": "599", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Enterprise Audit", "price": "999", "priceCurrency": "USD" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://seowithomar.com/services/technical-seo-audit/",
+      "url": "https://seowithomar.com/services/technical-seo-audit/",
+      "name": "Technical SEO Audit — OS SEO",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seowithomar.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://seowithomar.com/services/" },
+          { "@type": "ListItem", "position": 3, "name": "Technical SEO Audit", "item": "https://seowithomar.com/services/technical-seo-audit/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What does a technical SEO audit include?", "acceptedAnswer": { "@type": "Answer", "text": "Our technical SEO audit covers Core Web Vitals, crawl errors, indexing issues, site architecture, internal linking, page speed, mobile usability, structured data, and more. You receive a full report with prioritized recommendations." } },
+        { "@type": "Question", "name": "How long does a technical SEO audit take?", "acceptedAnswer": { "@type": "Answer", "text": "Depending on the size of your website, a technical SEO audit typically takes 5–10 business days. You will receive a comprehensive report with actionable fixes." } },
+        { "@type": "Question", "name": "Will you fix the issues found in the audit?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our Full Audit and Enterprise Audit packages include implementation support where we fix the identified issues directly on your website." } },
+        { "@type": "Question", "name": "How much does a technical SEO audit cost?", "acceptedAnswer": { "@type": "Answer", "text": "Our Starter Audit starts at $299. The Full Audit with implementation support starts at $599, and our Enterprise Audit for large websites starts at $999." } }
+      ]
+    }
   ]
 }
 </script>
 </head>
 <body>
 
-<!-- ═══════════════ HEADER ═══════════════ -->
 <header class="site-header">
   <a class="site-logo" href="/">
-    <img src="/images/logo.png" alt="OS SEO — SEO agency logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+    <img src="../../images/logo.webp" alt="OS SEO logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
     <span class="logo-text" style="display:none;align-items:center;gap:8px"><span class="logo-dot"></span>ai<span>SEO</span>a</span>
   </a>
   <nav class="main-nav" aria-label="Primary">
     <a href="/" data-en="Home" data-ar="الرئيسية">Home</a>
     <a href="/about/" data-en="About" data-ar="من نحن">About</a>
     <a href="/portfolio/" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
-    <a href="/#services" data-en="Services" data-ar="الخدمات">Services</a>
+    <a href="/services/" class="active" data-en="Services" data-ar="الخدمات">Services</a>
     <a href="/blog/" data-en="Blog" data-ar="المدونة">Blog</a>
-    <a href="/faq/" class="active" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+    <a href="/#contact" data-en="Contact" data-ar="تواصل">Contact</a>
   </nav>
   <div class="nav-right">
     <div class="lang-toggle" role="group" aria-label="Language switch">
@@ -108,167 +177,342 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
   <a href="/" data-en="Home" data-ar="الرئيسية">Home</a>
   <a href="/about/" data-en="About" data-ar="من نحن">About</a>
   <a href="/portfolio/" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
-  <a href="/#services" data-en="Services" data-ar="الخدمات">Services</a>
+  <a href="/services/" data-en="Services" data-ar="الخدمات">Services</a>
   <a href="/blog/" data-en="Blog" data-ar="المدونة">Blog</a>
-  <a href="/faq/" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+  <a href="/#contact" data-en="Contact" data-ar="تواصل">Contact</a>
   <div class="lang-toggle">
     <span class="lang-opt active" data-lang="en" onclick="setLang('en')">EN</span>
     <span class="lang-opt" data-lang="ar" onclick="setLang('ar')">AR</span>
   </div>
 </div>
 
+<main id="main-content">
+
 <nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="/">Home</a><span class="sep">/</span><span class="current">FAQ</span>
+  <a href="/" data-en="Home" data-ar="الرئيسية">Home</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="/services/" data-en="Services" data-ar="الخدمات">Services</a>
+  <span class="breadcrumb-sep">›</span>
+  <span data-en="Technical SEO Audit" data-ar="تدقيق SEO تقني">Technical SEO Audit</span>
 </nav>
 
+<!-- HERO -->
 <div class="svc-hero fade-in">
-  <div class="section-tag" data-en="Pricing, Process &amp; Guarantees" data-ar="الأسعار وخطوات الشغل والضمانات">Pricing, Process & Guarantees</div>
-  <h1 data-en="SEO Services FAQ" data-ar="الأسئلة الشائعة عن خدمات السيو">SEO Services FAQ</h1>
-  <p class="lead" data-en="Straight answers about SEO pricing, timelines, contracts, and what actually happens once you sign up — written for people evaluating an SEO partner, not search engines." data-ar="إجابات واضحة عن أسعار السيو والمدة الزمنية والعقود وما يحدث فعليًا بعد التعاقد — مكتوبة لمن يقيّم شريك سيو، لا لمحركات البحث فقط.">Straight answers about SEO pricing, timelines, contracts, and what actually happens once you sign up — written for people evaluating an SEO partner, not search engines.</p>
-  <p style="margin-top:1.4rem;font-size:.78rem;color:var(--muted)">Reviewed by <strong style="color:var(--white)">Omar Salah</strong>, SEO Specialist · Last updated June 27, 2026 · 6 min read</p>
+  <div class="svc-hero-text">
+    <div class="section-tag" data-en="Technical SEO" data-ar="سيو تقني">Technical SEO</div>
+    <h1 data-en="Technical SEO Audit That <em>Actually Fixes</em> Your Website" data-ar="تدقيق SEO تقني <em>يصلح موقعك فعلاً</em>">Technical SEO Audit That <em>Actually Fixes</em> Your Website</h1>
+    <p data-en="Hidden technical issues are silently killing your rankings. Our deep-dive audits uncover every crawl error, indexing problem, speed issue and structural flaw — then give you a precise action plan to fix them all." data-ar="المشاكل التقنية الخفية تقتل ترتيبك في صمت. تدقيقاتنا المعمّقة تكشف كل خطأ زحف ومشكلة فهرسة وبطء تحميل وخلل هيكلي — ثم تعطيك خطة عمل دقيقة لإصلاحها جميعاً.">Hidden technical issues are silently killing your rankings. Our deep-dive audits uncover every crawl error, indexing problem, speed issue and structural flaw — then give you a precise action plan to fix them all.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a class="btn-primary" href="/#booking" data-en="Get a Free Audit" data-ar="احصل على تدقيق مجاني">Get a Free Audit</a>
+      <a class="btn-outline" href="/services/" data-en="All Services" data-ar="كل الخدمات">All Services</a>
+    </div>
+  </div>
+  <div class="svc-hero-visual">
+    <span class="comment"># Technical SEO Audit Report</span><br>
+    <span class="err">✗ Crawl errors found: 47</span><br>
+    <span class="err">✗ Pages not indexed: 23</span><br>
+    <span class="warn">⚠ Core Web Vitals: FAIL</span><br>
+    <span class="warn">⚠ Mobile score: 61/100</span><br>
+    <span class="warn">⚠ Missing canonical: 18 pages</span><br>
+    <span class="err">✗ Broken internal links: 34</span><br><br>
+    <span class="comment"># After OS SEO Audit:</span><br>
+    <span class="ok">✓ All crawl errors fixed</span><br>
+    <span class="ok">✓ Core Web Vitals: PASSED</span><br>
+    <span class="ok">✓ Mobile score: 98/100</span><br>
+    <span class="ok">✓ Rankings: ↑ 34% in 60 days</span>
+  </div>
 </div>
 
-<nav class="svc-toc fade-in" aria-label="Table of contents" style="max-width:760px;margin:0 auto 2rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem;">
-  <strong style="font-size:.85rem;display:block;margin-bottom:.6rem">On this page</strong>
-  <div style="display:flex;flex-wrap:wrap;gap:.5rem .9rem;font-size:.8rem">
-    <a href="#pricing" style="color:var(--muted);text-decoration:none">Pricing & Investment</a>
-    <a href="#timeline" style="color:var(--muted);text-decoration:none">Timeline & Results</a>
-    <a href="#process" style="color:var(--muted);text-decoration:none">Working Together</a>
-    <a href="#expertise" style="color:var(--muted);text-decoration:none">Services & Expertise</a>
-    <a href="#trust" style="color:var(--muted);text-decoration:none">Trust & Guarantees</a>
+<!-- PROBLEMS WE SOLVE -->
+<section class="section fade-in">
+  <div class="section-tag" data-en="Problems We Solve" data-ar="المشاكل التي نحلها">Problems We Solve</div>
+  <div class="section-title" data-en="Is Your Website Suffering From These?" data-ar="هل موقعك يعاني من هذه المشاكل؟">Is Your Website Suffering From These?</div>
+  <div class="section-sub" data-en="These are the most common technical issues that prevent websites from ranking — and we fix all of them." data-ar="هذه أكثر المشاكل التقنية شيوعاً التي تمنع المواقع من التصدر — ونحن نصلحها جميعاً.">These are the most common technical issues that prevent websites from ranking — and we fix all of them.</div>
+  <div class="problems-grid">
+    <div class="problem-card">
+      <div class="problem-icon">🐛</div>
+      <div class="problem-title" data-en="Crawl Errors & Blocked Pages" data-ar="أخطاء الزحف والصفحات المحجوبة">Crawl Errors & Blocked Pages</div>
+      <div class="problem-desc" data-en="Googlebot can't crawl your pages, so they never get indexed. We identify and fix every crawl block, robots.txt error and noindex tag." data-ar="جوجل لا يستطيع زحف صفحاتك فلا تُفهرس. نحدد ونصلح كل حجب زحف وأخطاء robots.txt وعلامات noindex.">Googlebot can't crawl your pages, so they never get indexed. We identify and fix every crawl block, robots.txt error and noindex tag.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">🐌</div>
+      <div class="problem-title" data-en="Slow Page Speed & Poor Core Web Vitals" data-ar="بطء تحميل الصفحات وضعف Core Web Vitals">Slow Page Speed & Poor Core Web Vitals</div>
+      <div class="problem-desc" data-en="Page speed is a Google ranking factor. We optimise LCP, FID and CLS scores to meet Google's standards and improve user experience." data-ar="سرعة الصفحة عامل ترتيب في جوجل. نحسّن معدلات LCP وFID وCLS لتلبية معايير جوجل وتحسين تجربة المستخدم.">Page speed is a Google ranking factor. We optimise LCP, FID and CLS scores to meet Google's standards and improve user experience.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">📄</div>
+      <div class="problem-title" data-en="Duplicate Content & Canonical Issues" data-ar="المحتوى المكرر ومشاكل Canonical">Duplicate Content & Canonical Issues</div>
+      <div class="problem-desc" data-en="Duplicate pages split your ranking power. We consolidate content and implement correct canonical tags to concentrate your SEO authority." data-ar="الصفحات المكررة تشتت قوة ترتيبك. نوحّد المحتوى ونطبّق علامات canonical صحيحة لتركيز سلطة SEO.">Duplicate pages split your ranking power. We consolidate content and implement correct canonical tags to concentrate your SEO authority.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">🏗️</div>
+      <div class="problem-title" data-en="Poor Site Architecture" data-ar="هيكل موقع ضعيف">Poor Site Architecture</div>
+      <div class="problem-desc" data-en="A confusing site structure wastes crawl budget and dilutes link equity. We redesign your URL structure and internal linking for maximum SEO impact." data-ar="الهيكل المربك يضيع ميزانية الزحف ويخفف قيمة الروابط. نعيد تصميم بنية URL والربط الداخلي لأقصى تأثير SEO.">A confusing site structure wastes crawl budget and dilutes link equity. We redesign your URL structure and internal linking for maximum SEO impact.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">📱</div>
+      <div class="problem-title" data-en="Mobile Usability Problems" data-ar="مشاكل قابلية الاستخدام على الجوال">Mobile Usability Problems</div>
+      <div class="problem-desc" data-en="Google uses mobile-first indexing. If your site fails on mobile, your rankings suffer. We audit and fix every mobile usability issue." data-ar="جوجل يستخدم الفهرسة المحورية على الجوال. إذا فشل موقعك على الجوال، يتأثر ترتيبك. نراجع ونصلح كل مشكلة قابلية استخدام.">Google uses mobile-first indexing. If your site fails on mobile, your rankings suffer. We audit and fix every mobile usability issue.</div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">🔗</div>
+      <div class="problem-title" data-en="Broken Links & Redirect Chains" data-ar="الروابط المعطلة وسلاسل إعادة التوجيه">Broken Links & Redirect Chains</div>
+      <div class="problem-desc" data-en="Broken links frustrate users and waste crawl budget. Redirect chains slow down your site. We find and fix every broken link and chain." data-ar="الروابط المعطلة تزعج المستخدمين وتضيع ميزانية الزحف. سلاسل إعادة التوجيه تبطئ موقعك. نجد ونصلح كل رابط معطل وسلسلة.">Broken links frustrate users and waste crawl budget. Redirect chains slow down your site. We find and fix every broken link and chain.</div>
+    </div>
   </div>
-</nav>
+</section>
 
-<section class="svc-section fade-in" id="pricing">
-  <h2 class="section-title" data-en="Pricing &amp; Investment" data-ar="الأسعار والتكلفة">Pricing & Investment</h2>
-  <p class="section-sub" data-en="What SEO actually costs, and how to budget realistically." data-ar="كم تكلفة السيو فعليًا، وكيف تضع ميزانية واقعية.">What SEO actually costs, and how to budget realistically.</p>
+<!-- BENEFITS -->
+<section class="stripe fade-in">
+  <div class="section">
+    <div class="section-tag" data-en="Benefits" data-ar="الفوائد">Benefits</div>
+    <div class="section-title" data-en="What You Gain From a Technical SEO Audit" data-ar="ما تكسبه من تدقيق SEO تقني">What You Gain From a Technical SEO Audit</div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">📈</div>
+        <div class="benefit-title" data-en="Higher Rankings" data-ar="ترتيب أعلى">Higher Rankings</div>
+        <div class="benefit-desc" data-en="Fixing technical issues removes the barriers preventing Google from ranking your pages — results typically visible within 30–60 days." data-ar="إصلاح المشاكل التقنية يزيل العوائق التي تمنع جوجل من ترتيب صفحاتك — النتائج مرئية عادةً خلال 30-60 يوماً.">Fixing technical issues removes the barriers preventing Google from ranking your pages — results typically visible within 30–60 days.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <div class="benefit-title" data-en="Faster Website" data-ar="موقع أسرع">Faster Website</div>
+        <div class="benefit-desc" data-en="Page speed improvements directly reduce bounce rates and increase conversions — not just rankings." data-ar="تحسينات سرعة الصفحة تقلل معدل الارتداد مباشرة وتزيد التحويلات — وليس فقط الترتيب.">Page speed improvements directly reduce bounce rates and increase conversions — not just rankings.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔒</div>
+        <div class="benefit-title" data-en="Future-Proof Foundation" data-ar="أساس مستقبلي">Future-Proof Foundation</div>
+        <div class="benefit-desc" data-en="A technically sound website is resilient to algorithm updates and scales cleanly as you add new content and pages." data-ar="موقع سليم تقنياً مرن أمام تحديثات الخوارزميات ويتوسع بسهولة مع إضافة محتوى وصفحات جديدة.">A technically sound website is resilient to algorithm updates and scales cleanly as you add new content and pages.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📊</div>
+        <div class="benefit-title" data-en="Better Crawl Efficiency" data-ar="كفاءة زحف أفضل">Better Crawl Efficiency</div>
+        <div class="benefit-desc" data-en="When Googlebot crawls efficiently, more of your important pages get indexed — and your SEO investment goes further." data-ar="عندما يزحف Googlebot بكفاءة، يُفهرس المزيد من صفحاتك المهمة — واستثمارك في SEO يذهب أبعد.">When Googlebot crawls efficiently, more of your important pages get indexed — and your SEO investment goes further.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section fade-in">
+  <div class="section-tag" data-en="What's Included" data-ar="ما يشمله التدقيق">What's Included</div>
+  <div class="section-title" data-en="Every Technical SEO Audit Covers" data-ar="كل تدقيق SEO تقني يشمل">Every Technical SEO Audit Covers</div>
+  <div class="section-sub" data-en="A complete technical review across every dimension that affects your Google rankings." data-ar="مراجعة تقنية شاملة عبر كل بُعد يؤثر على ترتيبك في جوجل.">A complete technical review across every dimension that affects your Google rankings.</div>
+  <div class="included-list">
+    <div class="included-item"><span class="included-check">✓</span><div class="included-text"><strong data-en="Core Web Vitals Analysis" data-ar="تحليل Core Web Vitals">Core Web Vitals Analysis</strong><span data-en="LCP, FID, CLS scoring and full optimisation plan" data-ar="قياس LCP وFID وCLS وخطة تحسين كاملة">LCP, FID, CLS scoring and full optimisation plan</span></div></div>
+    <div class="included-item"><span class="included-check">✓</span><div class="included-text"><strong data-en="Crawlability & Indexing Audit" data-ar="تدقيق قابلية الزحف والفهرسة">Crawlability & Indexing Audit</strong><span data-en="robots.txt, sitemap, crawl errors, index coverage" data-ar="robots.txt وخريطة الموقع وأخطاء الزحف وتغطية الفهرس">robots.txt, sitemap, crawl errors, index coverage</span></div></div>
+    <div class="included-item"><span class="included-check">✓</span><div class="included-text"><strong data-en="Site Architecture Review" data-ar="مراجعة هيكل الموقع">Site Architecture Review</strong><span data-en="URL structure, internal linking, crawl depth" data-ar="بنية URL والربط الداخلي وعمق الزحف">URL structure, internal linking, crawl depth</span></div></div>
+    <div class="included-item"><span class="included-check">✓</span><div class="included-text"><strong data-en="Duplicate Content Check" data-ar="فحص المحتوى المكرر">Duplicate Content Check</strong><span data-en="Canonical tags, hreflang, thin content detection" data-ar="علامات canonical وhreflang واكتشاف المحتوى الرقيق">Canonical tags, hreflang, thin content detection</span></div></div>
+    <div class="included-item"><span class="included-check">✓</span><div class="included-text"><strong data-en="Mobile Usability Testing" data-ar="اختبار قابلية الاستخدام على الجوال">Mobile Usability Testing</strong><span data-en="Mobile-first indexing readiness and UX issues" data-ar="جاهزية الفهرسة المحورية على الجوال ومشاكل UX">Mobile-first indexing readiness and UX issues</span></div></div>
+    <div class="included-item"><span class="included-check">✓</span><div class="included-text"><strong data-en="Structured Data Audit" data-ar="تدقيق البيانات المنظمة">Structured Data Audit</strong><span data-en="Schema markup validation and recommendations" data-ar="التحقق من صحة Schema وتوصيات التحسين">Schema markup validation and recommendations</span></div></div>
+    <div class="included-item"><span class="included-check">✓</span><div class="included-text"><strong data-en="Security & HTTPS Check" data-ar="فحص الأمان وHTTPS">Security & HTTPS Check</strong><span data-en="SSL certificate, mixed content, security headers" data-ar="شهادة SSL والمحتوى المختلط وترويسات الأمان">SSL certificate, mixed content, security headers</span></div></div>
+    <div class="included-item"><span class="included-check">✓</span><div class="included-text"><strong data-en="Prioritised Action Plan" data-ar="خطة عمل مرتبة حسب الأولوية">Prioritised Action Plan</strong><span data-en="Every issue ranked by impact and fix difficulty" data-ar="كل مشكلة مرتبة حسب التأثير وصعوبة الإصلاح">Every issue ranked by impact and fix difficulty</span></div></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="stripe fade-in">
+  <div class="section">
+    <div class="section-tag" data-en="Our Process" data-ar="منهجيتنا">Our Process</div>
+    <div class="section-title" data-en="How the Technical SEO Audit Works" data-ar="كيف يعمل تدقيق SEO التقني">How the Technical SEO Audit Works</div>
+    <div class="timeline-steps">
+      <div class="tl-step">
+        <div class="tl-num">01</div>
+        <div class="tl-content">
+          <h3 data-en="Discovery & Access" data-ar="الاستكشاف والوصول">Discovery & Access</h3>
+          <p data-en="We gather access to Google Search Console, Google Analytics and your CMS. We run an initial crawl of your entire website to map its current state." data-ar="نحصل على صلاحية الوصول إلى Google Search Console وGoogle Analytics ونظام إدارة المحتوى. ننفّذ زحفاً أولياً لموقعك بالكامل لرسم خريطة حالته الحالية.">We gather access to Google Search Console, Google Analytics and your CMS. We run an initial crawl of your entire website to map its current state.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-num">02</div>
+        <div class="tl-content">
+          <h3 data-en="Deep Technical Analysis" data-ar="التحليل التقني المعمّق">Deep Technical Analysis</h3>
+          <p data-en="Using Screaming Frog, Ahrefs, SEMrush and Google's own tools, we conduct a 200+ point technical analysis covering every ranking factor." data-ar="باستخدام Screaming Frog وAhrefs وSEMrush وأدوات جوجل الخاصة، ننفّذ تحليلاً تقنياً بأكثر من 200 نقطة يغطي كل عامل ترتيب.">Using Screaming Frog, Ahrefs, SEMrush and Google's own tools, we conduct a 200+ point technical analysis covering every ranking factor.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-num">03</div>
+        <div class="tl-content">
+          <h3 data-en="Report & Priority Roadmap" data-ar="التقرير وخارطة طريق الأولويات">Report & Priority Roadmap</h3>
+          <p data-en="You receive a detailed audit report with every issue documented, its impact explained, and a prioritised fix list — ranked by what will move rankings fastest." data-ar="تستلم تقرير تدقيق مفصّلاً مع توثيق كل مشكلة وشرح تأثيرها وقائمة إصلاح مرتبة حسب الأولوية — مرتبة بما سيرفع الترتيب أسرع.">You receive a detailed audit report with every issue documented, its impact explained, and a prioritised fix list — ranked by what will move rankings fastest.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-num">04</div>
+        <div class="tl-content">
+          <h3 data-en="Implementation (Optional)" data-ar="التنفيذ (اختياري)">Implementation (Optional)</h3>
+          <p data-en="On Full Audit and Enterprise plans, we fix every identified issue directly — handling technical implementation across your CMS, server and code." data-ar="في خطط التدقيق الكامل والمؤسسي، نصلح كل مشكلة محددة مباشرةً — نتولى التنفيذ التقني عبر نظام إدارة المحتوى والخادم والكود.">On Full Audit and Enterprise plans, we fix every identified issue directly — handling technical implementation across your CMS, server and code.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-num">05</div>
+        <div class="tl-content">
+          <h3 data-en="30-Day Follow-Up" data-ar="متابعة بعد 30 يوماً">30-Day Follow-Up</h3>
+          <p data-en="We recheck your website 30 days after implementation to confirm all fixes are working and measure the ranking impact." data-ar="نعيد فحص موقعك بعد 30 يوماً من التنفيذ للتأكد من عمل جميع الإصلاحات وقياس تأثير الترتيب.">We recheck your website 30 days after implementation to confirm all fixes are working and measure the ranking impact.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="section fade-in">
+  <div class="section-tag" data-en="SEO Tools" data-ar="أدوات SEO">SEO Tools</div>
+  <div class="section-title" data-en="Tools We Use in Every Audit" data-ar="الأدوات التي نستخدمها في كل تدقيق">Tools We Use in Every Audit</div>
+  <div class="tools-grid">
+    <div class="tool-card"><div style="font-size:1.8rem">🐸</div><div class="tool-name">Screaming Frog</div><div class="tool-desc" data-en="Full site crawl" data-ar="زحف كامل للموقع">Full site crawl</div></div>
+    <div class="tool-card"><div style="font-size:1.8rem">📊</div><div class="tool-name">Ahrefs</div><div class="tool-desc" data-en="Backlinks & indexing" data-ar="روابط خلفية وفهرسة">Backlinks & indexing</div></div>
+    <div class="tool-card"><div style="font-size:1.8rem">🔍</div><div class="tool-name">SEMrush</div><div class="tool-desc" data-en="Site audit & keywords" data-ar="تدقيق الموقع والكلمات">Site audit & keywords</div></div>
+    <div class="tool-card"><div style="font-size:1.8rem">🔎</div><div class="tool-name">Google Search Console</div><div class="tool-desc" data-en="Index & crawl data" data-ar="بيانات الفهرس والزحف">Index & crawl data</div></div>
+    <div class="tool-card"><div style="font-size:1.8rem">⚡</div><div class="tool-name">PageSpeed Insights</div><div class="tool-desc" data-en="Core Web Vitals" data-ar="مؤشرات الأداء الأساسية">Core Web Vitals</div></div>
+    <div class="tool-card"><div style="font-size:1.8rem">📱</div><div class="tool-name">Mobile-Friendly Test</div><div class="tool-desc" data-en="Mobile usability" data-ar="قابلية الاستخدام على الجوال">Mobile usability</div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="stripe fade-in">
+  <div class="section">
+    <div class="section-tag" data-en="Pricing" data-ar="الأسعار">Pricing</div>
+    <div class="section-title" data-en="Technical SEO Audit Packages" data-ar="باقات تدقيق SEO التقني">Technical SEO Audit Packages</div>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <div class="pricing-name" data-en="Starter" data-ar="مبتدئ">Starter</div>
+        <div class="pricing-price">$299<span data-en=" one-time" data-ar=" مرة واحدة"> one-time</span></div>
+        <div class="pricing-desc" data-en="For small websites up to 100 pages. Full audit report with prioritised recommendations." data-ar="للمواقع الصغيرة حتى 100 صفحة. تقرير تدقيق كامل مع توصيات مرتبة حسب الأولوية.">For small websites up to 100 pages. Full audit report with prioritised recommendations.</div>
+        <ul class="pricing-features">
+          <li data-en="200+ point technical audit" data-ar="تدقيق تقني بأكثر من 200 نقطة">200+ point technical audit</li>
+          <li data-en="Core Web Vitals analysis" data-ar="تحليل Core Web Vitals">Core Web Vitals analysis</li>
+          <li data-en="Crawl & indexing report" data-ar="تقرير الزحف والفهرسة">Crawl & indexing report</li>
+          <li data-en="Prioritised fix list" data-ar="قائمة إصلاح مرتبة">Prioritised fix list</li>
+          <li data-en="Delivered in 5 business days" data-ar="تُسلَّم خلال 5 أيام عمل">Delivered in 5 business days</li>
+        </ul>
+        <a class="btn-outline" href="/#booking" style="width:100%;text-align:center" data-en="Get Started" data-ar="ابدأ الآن">Get Started</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-name" data-en="Full Audit" data-ar="تدقيق كامل">Full Audit</div>
+        <div class="pricing-price">$599<span data-en=" one-time" data-ar=" مرة واحدة"> one-time</span></div>
+        <div class="pricing-desc" data-en="For websites up to 500 pages. Audit + full implementation of all fixes." data-ar="للمواقع حتى 500 صفحة. تدقيق + تنفيذ كامل لجميع الإصلاحات.">For websites up to 500 pages. Audit + full implementation of all fixes.</div>
+        <ul class="pricing-features">
+          <li data-en="Everything in Starter" data-ar="كل شيء في الخطة المبتدئة">Everything in Starter</li>
+          <li data-en="Full implementation of fixes" data-ar="تنفيذ كامل للإصلاحات">Full implementation of fixes</li>
+          <li data-en="Schema markup setup" data-ar="إعداد Schema markup">Schema markup setup</li>
+          <li data-en="30-day follow-up audit" data-ar="تدقيق متابعة بعد 30 يوماً">30-day follow-up audit</li>
+          <li data-en="Video walkthrough call" data-ar="مكالمة شرح بالفيديو">Video walkthrough call</li>
+        </ul>
+        <a class="btn-primary" href="/#booking" style="width:100%;text-align:center" data-en="Get Started" data-ar="ابدأ الآن">Get Started</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name" data-en="Enterprise" data-ar="مؤسسي">Enterprise</div>
+        <div class="pricing-price">$999<span data-en=" one-time" data-ar=" مرة واحدة"> one-time</span></div>
+        <div class="pricing-desc" data-en="For large websites 500+ pages. Deep audit, full fixes, and ongoing monthly monitoring." data-ar="للمواقع الكبيرة بأكثر من 500 صفحة. تدقيق معمّق وإصلاحات كاملة ومراقبة شهرية مستمرة.">For large websites 500+ pages. Deep audit, full fixes, and ongoing monthly monitoring.</div>
+        <ul class="pricing-features">
+          <li data-en="Everything in Full Audit" data-ar="كل شيء في التدقيق الكامل">Everything in Full Audit</li>
+          <li data-en="Unlimited pages covered" data-ar="صفحات غير محدودة">Unlimited pages covered</li>
+          <li data-en="Monthly monitoring reports" data-ar="تقارير مراقبة شهرية">Monthly monitoring reports</li>
+          <li data-en="Priority support" data-ar="دعم ذو أولوية">Priority support</li>
+          <li data-en="Competitor technical comparison" data-ar="مقارنة تقنية مع المنافسين">Competitor technical comparison</li>
+        </ul>
+        <a class="btn-outline" href="/#booking" style="width:100%;text-align:center" data-en="Get Started" data-ar="ابدأ الآن">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section fade-in">
+  <div class="section-tag" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</div>
+  <div class="section-title" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</div>
   <div class="faq-list">
-
-    <div class="faq-item open">
-      <div class="faq-q"><span data-en="How much does SEO cost?" data-ar="كم تكلفة خدمات السيو؟">How much does SEO cost?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Pricing depends on the service and scope. A standalone technical SEO audit starts at $450 as a one-time project. Ongoing programs — content strategy, link building, local SEO — typically start around $600 to $1,800 per month. Enterprise and multi-market projects are quoted individually after a free consultation." data-ar="تختلف التكلفة حسب الخدمة والنطاق. يبدأ التدقيق التقني المستقل من 450 دولار كدفعة واحدة. أما البرامج المستمرة فتبدأ غالبًا من 600 إلى 1800 دولار شهريًا. المشاريع الكبيرة والمتعددة الأسواق يتم تسعيرها بشكل فردي بعد استشارة مجانية.">Pricing depends on the service and scope. A standalone technical SEO audit starts at $450 as a one-time project. Ongoing programs — content strategy, link building, local SEO — typically start around $600 to $1,800 per month. Enterprise and multi-market projects are quoted individually after a free consultation. See exact tier pricing on each <a href="/services/">service page</a>, starting with our <a href="/services/technical-seo-audit/">Technical SEO Audit service</a>.</p></div>
-    </div>
-
     <div class="faq-item">
-      <div class="faq-q"><span data-en="How much should a small business budget for SEO?" data-ar="كم يجب أن تخصص الشركات الصغيرة لميزانية السيو؟">How much should a small business budget for SEO?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Most small businesses see meaningful traction starting at $600–$1,000 per month for a focused program such as local SEO or a single content track. Businesses competing in more saturated markets typically budget $1,800 or more per month." data-ar="غالبًا تبدأ الشركات الصغيرة في رؤية نتائج ملموسة بميزانية 600–1000 دولار شهريًا. الشركات في أسواق أكثر تنافسية تحتاج غالبًا 1800 دولار أو أكثر شهريًا.">Most small businesses see meaningful traction starting at $600–$1,000 per month for a focused program such as <a href="/services/local-seo/">local SEO</a> or a single content track. Businesses competing in more saturated markets, or running multiple service lines at once, typically budget $1,800 or more per month for faster, more comprehensive movement.</p></div>
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-en="What does a technical SEO audit include?" data-ar="ما الذي يشمله تدقيق SEO التقني؟">What does a technical SEO audit include?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a" data-en="Our technical SEO audit covers Core Web Vitals, crawl errors, indexing issues, site architecture, internal linking, page speed, mobile usability, structured data, canonical tags, and more. You receive a full report with prioritised recommendations." data-ar="يشمل تدقيق SEO التقني الخاص بنا: Core Web Vitals وأخطاء الزحف ومشاكل الفهرسة وبنية الموقع والربط الداخلي وسرعة الصفحة وقابلية الاستخدام على الجوال والبيانات المنظمة وعلامات canonical والمزيد. تستلم تقريراً كاملاً مع توصيات مرتبة.">Our technical SEO audit covers Core Web Vitals, crawl errors, indexing issues, site architecture, internal linking, page speed, mobile usability, structured data, canonical tags, and more. You receive a full report with prioritised recommendations.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Is SEO a one-time service or a monthly commitment?" data-ar="هل السيو خدمة لمرة واحدة أم التزام شهري؟">Is SEO a one-time service or a monthly commitment?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Both models exist side by side. Technical SEO audits are usually one-time projects with a clear deliverable. Content strategy, link building, and local SEO are structured as ongoing monthly engagements, since organic visibility compounds with consistent effort." data-ar="كلا النموذجين متاح. التدقيق التقني غالبًا مشروع لمرة واحدة. أما استراتيجية المحتوى وبناء الروابط والسيو المحلي فهي عقود شهرية مستمرة لأن النتائج تتراكم مع الاستمرارية.">Both models exist side by side. Technical SEO audits are usually one-time projects with a clear, finite deliverable. <a href="/services/content-strategy/">Content strategy</a>, link building, and local SEO are structured as ongoing monthly engagements, since organic visibility compounds with consistent, sustained effort rather than a single fix.</p></div>
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-en="How long does a technical SEO audit take?" data-ar="كم يستغرق تدقيق SEO التقني؟">How long does a technical SEO audit take?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a" data-en="Depending on the size of your website, a technical SEO audit typically takes 5–10 business days. You will receive a comprehensive report with actionable fixes." data-ar="حسب حجم موقعك، يستغرق تدقيق SEO التقني عادةً 5-10 أيام عمل. ستستلم تقريراً شاملاً مع إصلاحات قابلة للتنفيذ.">Depending on the size of your website, a technical SEO audit typically takes 5–10 business days. You will receive a comprehensive report with actionable fixes.</div>
     </div>
-
-  </div>
-</section>
-
-<section class="svc-section alt fade-in" id="timeline">
-  <h2 class="section-title" data-en="Timeline &amp; Results" data-ar="المدة الزمنية والنتائج">Timeline & Results</h2>
-  <p class="section-sub" data-en="A realistic view of how fast SEO actually moves." data-ar="نظرة واقعية على سرعة ظهور نتائج السيو فعليًا.">A realistic view of how fast SEO actually moves.</p>
-  <div class="faq-list">
-
     <div class="faq-item">
-      <div class="faq-q"><span data-en="How long does it take to see SEO results?" data-ar="كم تستغرق نتائج السيو لتظهر؟">How long does it take to see SEO results?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Technical fixes can show crawl and indexing improvements within a few weeks of implementation. Content and link building typically take 3 to 6 months to mature into stable rankings, depending on competition, your existing domain authority, and consistency of execution." data-ar="التحسينات التقنية يمكن أن تظهر نتائجها خلال أسابيع قليلة. أما المحتوى وبناء الروابط فيستغرقان غالبًا من 3 إلى 6 أشهر للوصول لترتيب مستقر، حسب المنافسة وقوة الدومين الحالية واستمرارية التنفيذ.">Technical fixes can show crawl and indexing improvements within a few weeks of implementation. Content and link building typically take 3 to 6 months to mature into stable rankings, depending on competition level, your existing domain authority, and how consistently the strategy is executed.</p></div>
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-en="Will you fix the issues found in the audit?" data-ar="هل ستصلح المشاكل المكتشفة في التدقيق؟">Will you fix the issues found in the audit?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a" data-en="Yes. Our Full Audit and Enterprise Audit packages include implementation support where we fix the identified issues directly on your website." data-ar="نعم. باقات التدقيق الكامل والمؤسسي تشمل دعم التنفيذ حيث نصلح المشاكل المحددة مباشرة على موقعك.">Yes. Our Full Audit and Enterprise Audit packages include implementation support where we fix the identified issues directly on your website.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Why does SEO take longer than paid ads?" data-ar="لماذا يستغرق السيو وقتًا أطول من الإعلانات المدفوعة؟">Why does SEO take longer than paid ads?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Paid ads buy temporary visibility the moment a campaign goes live. SEO instead builds durable assets — technical infrastructure, content, and authority — that search engines need time to crawl, evaluate, and trust. The tradeoff is that SEO traffic keeps compounding long after the work is done, unlike ad spend." data-ar="الإعلانات المدفوعة تشتري ظهورًا مؤقتًا فور تشغيل الحملة. السيو يبني أصولًا دائمة تحتاج محركات البحث وقتًا لتقييمها والوثوق بها، لكن الفائدة أن ترافيك السيو يستمر بالتراكم بعد انتهاء العمل.">Paid ads buy temporary visibility the moment a campaign goes live. SEO instead builds durable assets — technical infrastructure, content, and authority — that search engines need time to crawl, evaluate, and trust. The tradeoff is that SEO traffic keeps compounding long after the work is done, unlike ad spend.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q"><span data-en="How do you report on SEO progress?" data-ar="كيف تقدمون تقارير عن تقدم السيو؟">How do you report on SEO progress?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Clients receive regular reporting covering rankings, organic traffic, and completed deliverables, with a monthly or bi-weekly call depending on engagement size — so progress is never a black box." data-ar="يحصل العملاء على تقارير دورية تغطي الترتيب والترافيك العضوي والمخرجات المكتملة، مع مكالمة شهرية أو نصف شهرية حسب حجم التعاقد.">Clients receive regular reporting covering rankings, organic traffic, and completed deliverables, with a monthly or bi-weekly call depending on engagement size — so progress is never a black box and you always know exactly what's been done and why.</p></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="svc-section fade-in" id="process">
-  <h2 class="section-title" data-en="Working Together" data-ar="طريقة العمل معنا">Working Together</h2>
-  <p class="section-sub" data-en="What's expected from you, and what we handle." data-ar="ماذا يُتوقع منك، وماذا نتولاه نحن.">What's expected from you, and what we handle.</p>
-  <div class="faq-list">
-
-    <div class="faq-item">
-      <div class="faq-q"><span data-en="What information do you need from me to get started?" data-ar="ما المعلومات التي تحتاجونها للبدء؟">What information do you need from me to get started?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Typically just read-only access to Google Search Console and Analytics, a short discovery call to understand your business goals, and any existing brand or content guidelines you'd like us to follow." data-ar="غالبًا فقط صلاحية قراءة لحساب Google Search Console و Analytics، ومكالمة تعارف قصيرة لفهم أهداف نشاطك، وأي إرشادات للهوية أو المحتوى تريد منا اتباعها.">Typically just read-only access to Google Search Console and Analytics, a short discovery call to understand your business goals, and any existing brand or content guidelines you'd like us to follow. Everything else — research, strategy, and execution — is handled by our team.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q"><span data-en="What's included in a free audit?" data-ar="ماذا يشمل التدقيق المجاني؟">What's included in a free audit?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="A free audit covers a high-level review of your site's biggest technical and content opportunities, along with a clear recommendation on which service would create the most impact for your situation — no obligation to proceed." data-ar="يشمل التدقيق المجاني نظرة عامة على أكبر الفرص في موقعك، مع توصية واضحة بالخدمة الأكثر تأثيرًا لحالتك — دون أي التزام بالاستمرار.">A free audit covers a high-level review of your site's biggest technical and content opportunities, along with a clear recommendation on which service would create the most impact for your specific situation — no obligation to proceed.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q"><span data-en="Can I cancel an ongoing SEO engagement?" data-ar="هل يمكنني إلغاء عقد سيو مستمر؟">Can I cancel an ongoing SEO engagement?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Yes. Monthly engagements run without long-term lock-in, so you can pause or end the engagement with notice as outlined in your agreement. We'd simply ask for the chance to understand any concerns first." data-ar="نعم. العقود الشهرية لا تتضمن التزامًا طويل الأمد، فيمكنك إيقاف أو إنهاء التعاون بإشعار مسبق حسب الاتفاقية.">Yes. Monthly engagements run without long-term lock-in, so you can pause or end the engagement with notice as outlined in your agreement. We'd simply ask for the chance to understand any concerns first, since most issues can be resolved by adjusting scope or priorities.</p></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="svc-section alt fade-in" id="expertise">
-  <h2 class="section-title" data-en="Services &amp; Expertise" data-ar="الخدمات والخبرة">Services & Expertise</h2>
-  <p class="section-sub" data-en="What we specialize in, and who we work best with." data-ar="ما الذي نتخصص فيه، ومع من نعمل بأفضل شكل.">What we specialize in, and who we work best with.</p>
-  <div class="faq-list">
-
-    <div class="faq-item">
-      <div class="faq-q"><span data-en="What SEO services does OS SEO offer?" data-ar="ما هي خدمات السيو التي تقدمها OS SEO؟">What SEO services does OS SEO offer?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="We offer technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program." data-ar="نقدم تدقيق السيو التقني، استراتيجية المحتوى، بناء الروابط، السيو المحلي، السيو المعتمد على الذكاء الاصطناعي، والسيو الدولي.">We offer technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program — explore the full breakdown on our <a href="/services/">services page</a>.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q"><span data-en="Can SEO work for businesses targeting multiple countries?" data-ar="هل يمكن أن ينجح السيو للشركات التي تستهدف عدة دول؟">Can SEO work for businesses targeting multiple countries?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Yes, with the right setup. This typically involves hreflang implementation, market-specific keyword research, and genuinely localized content rather than simply translating an existing site." data-ar="نعم، مع الإعداد الصحيح. يتضمن ذلك غالبًا تطبيق hreflang، وأبحاث كلمات مفتاحية خاصة بكل سوق، ومحتوى محلي حقيقي بدل الترجمة المباشرة فقط.">Yes, with the right setup. This typically involves hreflang implementation, market-specific keyword research, and genuinely localized content rather than simply translating an existing site — see our <a href="/services/international-seo/">international SEO service</a> for the full approach.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q"><span data-en="Which industries do you work with?" data-ar="ما هي القطاعات التي تعملون معها؟">Which industries do you work with?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, adapting strategy to the specific search behavior of each industry." data-ar="عملنا مع قطاعات متعددة مثل الخدمات المنزلية والشركات التجارية المحلية والـ SaaS والتجارة الإلكترونية والخدمات المهنية.">We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, adapting strategy to the specific search behavior of each industry. You can see examples of completed work on our <a href="/portfolio/">portfolio page</a>.</p></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="svc-section fade-in" id="trust">
-  <h2 class="section-title" data-en="Trust &amp; Guarantees" data-ar="الثقة والضمانات">Trust & Guarantees</h2>
-  <p class="section-sub" data-en="What we can promise, and what no honest agency ever will." data-ar="ما الذي نضمنه، وما لا تضمنه أي وكالة محترفة أبدًا.">What we can promise, and what no honest agency ever will.</p>
-  <div class="faq-list">
-
-    <div class="faq-item">
-      <div class="faq-q"><span data-en="Do SEO agencies guarantee first-page Google rankings?" data-ar="هل تضمن وكالات السيو الترتيب في الصفحة الأولى بجوجل؟">Do SEO agencies guarantee first-page Google rankings?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="No ethical SEO provider can guarantee specific rankings, because Google's algorithm sits outside any agency's control — a position confirmed directly by Google's own Search Central guidance. What OS SEO guarantees instead is a transparent, data-driven process that consistently strengthens the technical and content foundations that rankings are actually built on." data-ar="لا تستطيع أي وكالة سيو ملتزمة بالأخلاقيات ضمان ترتيب معين، لأن خوارزمية جوجل خارج تحكم أي وكالة. ما تضمنه OS SEO هو عملية شفافة ومبنية على البيانات تُقوّي باستمرار الأساسات التي يُبنى عليها الترتيب فعليًا.">No ethical SEO provider can guarantee specific rankings, because Google's algorithm sits outside any agency's control — a position confirmed directly by <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener">Google's own Search Central guidance</a>. What OS SEO guarantees instead is a transparent, data-driven process that consistently strengthens the technical and content foundations that rankings are actually built on.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q"><span data-en="Do you work with businesses outside your home country?" data-ar="هل تعملون مع شركات خارج بلدكم؟">Do you work with businesses outside your home country?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Yes. OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content, communication, and reporting throughout the engagement." data-ar="نعم. تعمل OS SEO مع عملاء في أوروبا وأستراليا والعالم العربي، وتدعم المحتوى والتواصل باللغتين العربية والإنجليزية طوال فترة التعاون.">Yes. OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content, communication, and reporting throughout the engagement.</p></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="svc-section alt fade-in">
-  <div class="svc-cta">
-    <h3 data-en="Still have a question?" data-ar="لسه عندك سؤال؟">Still have a question?</h3>
-    <p data-en="Get in touch directly and we'll get back to you within one business day — or book a free audit to see exactly where your site stands today." data-ar="تواصل معنا مباشرة وسنرد عليك خلال يوم عمل واحد — أو اطلب تدقيقًا مجانيًا لمعرفة وضع موقعك الحالي بدقة.">Get in touch directly and we'll get back to you within one business day — or book a free audit to see exactly where your site stands today.</p>
-    <div class="hero-ctas">
-      <a href="/#booking" class="btn-primary" data-en="Get a Free Audit" data-ar="اطلب تدقيقًا مجانيًا">Get a Free Audit</a>
-      <a href="/#contact" class="btn-outline" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a>
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-en="How soon will I see results after the audit?" data-ar="متى أرى النتائج بعد التدقيق؟">How soon will I see results after the audit?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a" data-en="Most clients see measurable ranking improvements within 30–60 days of implementing the fixes. The speed of results depends on how severe the technical issues were and how competitive your niche is." data-ar="معظم العملاء يرون تحسينات قابلة للقياس في الترتيب خلال 30-60 يوماً من تطبيق الإصلاحات. سرعة النتائج تعتمد على شدة المشاكل التقنية ومدى تنافسية مجالك.">Most clients see measurable ranking improvements within 30–60 days of implementing the fixes. The speed of results depends on how severe the technical issues were and how competitive your niche is.</div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer class="site-footer">
+<!-- RELATED SERVICES -->
+<section class="section fade-in">
+  <div class="section-tag" data-en="Related Services" data-ar="خدمات ذات صلة">Related Services</div>
+  <div class="section-title" data-en="Pair With These Services for Better Results" data-ar="اجمعها مع هذه الخدمات لنتائج أفضل">Pair With These Services for Better Results</div>
+  <div class="related-grid">
+    <a class="related-card" href="/services/local-seo/"><div class="related-icon">📍</div><div class="related-info"><strong data-en="Local SEO" data-ar="السيو المحلي">Local SEO</strong><span data-en="Rank in Google Maps" data-ar="تصدر خرائط جوجل">Rank in Google Maps</span></div></a>
+    <a class="related-card" href="/services/ai-powered-seo/"><div class="related-icon">🤖</div><div class="related-info"><strong data-en="AI-Powered SEO" data-ar="سيو الذكاء الاصطناعي">AI-Powered SEO</strong><span data-en="Scale with AI tools" data-ar="توسّع بأدوات الذكاء الاصطناعي">Scale with AI tools</span></div></a>
+    <a class="related-card" href="/services/international-seo/"><div class="related-icon">🌍</div><div class="related-info"><strong data-en="International SEO" data-ar="السيو الدولي">International SEO</strong><span data-en="Expand globally" data-ar="توسّع دولياً">Expand globally</span></div></a>
+    <a class="related-card" href="/services/content-strategy/"><div class="related-icon">📝</div><div class="related-info"><strong data-en="Content Strategy" data-ar="استراتيجية المحتوى">Content Strategy</strong><span data-en="Build topical authority" data-ar="بناء السلطة الموضوعية">Build topical authority</span></div></a>
+  </div>
+</section>
+
+<!-- INDUSTRIES & LOCATIONS -->
+<section class="stripe fade-in">
+  <div class="section">
+    <div class="industries-locations">
+      <div class="il-section">
+        <h3 data-en="Industries We Serve" data-ar="القطاعات التي نخدمها">Industries We Serve</h3>
+        <div class="il-list">
+          <span class="il-tag" data-en="Dentists & Clinics" data-ar="عيادات الأسنان والمصحات">Dentists & Clinics</span>
+          <span class="il-tag" data-en="Law Firms" data-ar="مكاتب المحاماة">Law Firms</span>
+          <span class="il-tag" data-en="SaaS Companies" data-ar="شركات SaaS">SaaS Companies</span>
+          <span class="il-tag" data-en="E-commerce" data-ar="المتاجر الإلكترونية">E-commerce</span>
+          <span class="il-tag" data-en="Real Estate" data-ar="العقارات">Real Estate</span>
+          <span class="il-tag" data-en="Healthcare" data-ar="الرعاية الصحية">Healthcare</span>
+        </div>
+      </div>
+      <div class="il-section">
+        <h3 data-en="Locations We Serve" data-ar="المناطق التي نخدمها">Locations We Serve</h3>
+        <div class="il-list">
+          <span class="il-tag">🇬🇧 United Kingdom</span>
+          <span class="il-tag">🇦🇺 Australia</span>
+          <span class="il-tag">🇩🇪 Germany</span>
+          <span class="il-tag">🇫🇷 France</span>
+          <span class="il-tag">🇮🇪 Ireland</span>
+          <span class="il-tag">🇳🇱 Netherlands</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section fade-in" style="text-align:center">
+  <div class="section-tag" style="justify-content:center" data-en="Get Started" data-ar="ابدأ الآن">Get Started</div>
+  <div class="section-title" data-en="Ready to Fix Your Technical SEO?" data-ar="جاهز لإصلاح SEO التقني لموقعك؟">Ready to Fix Your Technical SEO?</div>
+  <p style="color:var(--muted);font-size:.96rem;margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto" data-en="Start with a free consultation. We'll review your website, identify the biggest technical issues, and show you exactly how we can fix them." data-ar="ابدأ باستشارة مجانية. سنراجع موقعك ونحدد أكبر المشاكل التقنية ونريك بالضبط كيف يمكننا إصلاحها.">Start with a free consultation. We'll review your website, identify the biggest technical issues, and show you exactly how we can fix them.</p>
+  <a class="btn-primary" href="/#booking" data-en="Get a Free Technical Audit →" data-ar="احصل على تدقيق تقني مجاني ←">Get a Free Technical Audit →</a>
+</section>
+
+</main>
+
+<footer class="site-footer" id="contact">
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="site-logo">
-        <img src="/images/logo.png" alt="OS SEO logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+        <img src="../../images/logo.webp" alt="OS SEO logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
         <span class="logo-text" style="display:none;align-items:center;gap:8px"><span class="logo-dot"></span>ai<span style="color:var(--accent2)">SEO</span>a</span>
       </div>
-      <p data-en="Professional SEO specialist helping businesses across Europe, Australia &amp; the Arab world rank higher and grow faster." data-ar="متخصص SEO محترف يساعد الشركات في أوروبا وأستراليا والعالم العربي على التصدر في جوجل والنمو بشكل أسرع.">Professional SEO specialist helping businesses across Europe, Australia & the Arab world rank higher and grow faster.</p>
+      <p data-en="Professional SEO specialist helping businesses across Europe, Australia & the Arab world rank higher and grow faster." data-ar="متخصص SEO محترف يساعد الشركات في أوروبا وأستراليا والعالم العربي على التصدر في جوجل والنمو بشكل أسرع.">Professional SEO specialist helping businesses across Europe, Australia & the Arab world rank higher and grow faster.</p>
       <div class="footer-social">
         <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
         <a href="https://x.com" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
@@ -276,19 +520,20 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
       </div>
     </div>
     <div class="footer-col">
+      <h4 data-en="Services" data-ar="الخدمات">Services</h4>
+      <a href="/services/technical-seo-audit/" data-en="Technical SEO" data-ar="سيو تقني">Technical SEO</a>
+      <a href="/services/link-building/" data-en="Link Building" data-ar="بناء الروابط">Link Building</a>
+      <a href="/services/local-seo/" data-en="Local SEO" data-ar="السيو المحلي">Local SEO</a>
+      <a href="/services/ai-powered-seo/" data-en="AI SEO" data-ar="سيو الذكاء الاصطناعي">AI SEO</a>
+      <a href="/services/content-strategy/" data-en="Content Strategy" data-ar="استراتيجية المحتوى">Content Strategy</a>
+      <a href="/services/international-seo/" data-en="International SEO" data-ar="السيو الدولي">International SEO</a>
+    </div>
+    <div class="footer-col">
       <h4 data-en="Pages" data-ar="الصفحات">Pages</h4>
       <a href="/" data-en="Home" data-ar="الرئيسية">Home</a>
       <a href="/about/" data-en="About" data-ar="من نحن">About</a>
       <a href="/portfolio/" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
       <a href="/blog/" data-en="Blog" data-ar="المدونة">Blog</a>
-      <a href="/faq/" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
-    </div>
-    <div class="footer-col">
-      <h4 data-en="Services" data-ar="الخدمات">Services</h4>
-      <a href="/#services" data-en="Technical SEO" data-ar="سيو تقني">Technical SEO</a>
-      <a href="/#services" data-en="Link Building" data-ar="بناء الروابط">Link Building</a>
-      <a href="/#services" data-en="Local SEO" data-ar="السيو المحلي">Local SEO</a>
-      <a href="/#ai-seo" data-en="AI &amp; SEO" data-ar="الذكاء الاصطناعي والسيو">AI & SEO</a>
     </div>
     <div class="footer-col">
       <h4 data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h4>
@@ -302,15 +547,17 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
     <div class="footer-bottom-links">
       <a href="https://linkedin.com" target="_blank">LinkedIn</a>
       <a href="https://x.com" target="_blank">Twitter</a>
-      <a href="mailto:hello@seowithomar.com" data-en="Email" data-ar="إيميل">Email</a>
+      <a href="mailto:os5733203@gmail.com" data-en="Email" data-ar="إيميل">Email</a>
     </div>
   </div>
 </footer>
-<script src="/aiseoa.js"></script>
+
+<script src="../../aiseoa.js"></script>
 <script>
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
-  });
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
 </script>
 </body>
 </html>
