@@ -3,21 +3,62 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Answers to common questions about working with OS SEO — pricing, process, timelines, and what to expect from our SEO services."/>
+<!--
+SEO STRATEGY NOTES (reference only):
+Primary keyword: SEO services FAQ / SEO agency frequently asked questions
+Secondary keywords: how much does SEO cost, how long does SEO take, SEO pricing, SEO contract terms
+Semantic terms: technical SEO, content strategy, link building, local SEO, international SEO, AI-powered SEO, SEO guarantee
+Long-tail queries answered: "do SEO agencies guarantee first page rankings", "is SEO one-time or monthly",
+  "how much should a small business budget for SEO", "what's included in an SEO audit", "can SEO work for international markets"
+Intent: informational + decision-stage trust-building (objection handling before conversion)
+EEAT signals: named reviewer (Omar Salah), last-updated date, transparent pricing ranges, links to in-depth service pages, real contact info
+Conversion opportunities: CTA after pricing block, CTA after guarantees block, final CTA banner
+Image recommendations: text-first page by design, no photo needed; if added, suggested filename "os-seo-faq-cover.jpg",
+  alt "OS SEO frequently asked questions cover image"
+OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover graphic exists
+-->
+<meta name="description" content="How much does SEO cost? How long does it take? Get clear answers about OS SEO's pricing, process, timelines, and guarantees before you start a project."/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <link rel="canonical" href="https://seowithomar.com/faq/"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Frequently Asked Questions | OS SEO"/>
-<meta property="og:description" content="Answers to common questions about working with OS SEO — pricing, process, timelines, and what to expect from our SEO services."/>
+<meta property="og:title" content="SEO Services FAQ — Pricing, Timelines & Process | OS SEO"/>
+<meta property="og:description" content="How much does SEO cost? How long does it take? Get clear answers about OS SEO's pricing, process, timelines, and guarantees before you start a project."/>
 <meta property="og:url" content="https://seowithomar.com/faq/"/>
 <meta property="og:image" content="https://seowithomar.com/images/logo.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Frequently Asked Questions | OS SEO"/>
-<meta name="twitter:description" content="Answers to common questions about working with OS SEO — pricing, process, timelines, and what to expect from our SEO services."/>
-<title>FAQ — Frequently Asked Questions | OS SEO</title>
+<meta name="twitter:title" content="SEO Services FAQ — Pricing, Timelines & Process | OS SEO"/>
+<meta name="twitter:description" content="How much does SEO cost? How long does it take? Get clear answers about OS SEO's pricing, process, timelines, and guarantees before you start a project."/>
+<title>SEO Services FAQ — Pricing, Timelines & Process | OS SEO</title>
 <link rel="icon" type="image/png" href="/images/logo.png">
 <link rel="stylesheet" href="/style.css"/>
-<link rel="stylesheet" href="/services.css"/>
+<style>
+.breadcrumb { max-width:1040px; margin:0 auto; padding:1.6rem 2.5rem 0; font-size:.82rem; color:var(--muted); }
+.breadcrumb a { color:var(--muted); text-decoration:none; }
+.breadcrumb a:hover { color:var(--accent2); }
+.breadcrumb span.sep { margin:0 .4rem; opacity:.5; }
+.breadcrumb span.current { color:var(--white); font-weight:600; }
+.svc-hero { padding:3.2rem 2.5rem 3rem; max-width:1040px; margin:0 auto; text-align:center; }
+.svc-hero h1 { font-size:clamp(2.1rem,4.8vw,3rem); font-weight:700; letter-spacing:-1.2px; margin:.9rem 0 1rem; line-height:1.15; }
+.svc-hero p.lead { color:var(--muted); font-size:1.05rem; max-width:640px; margin:0 auto 1.8rem; line-height:1.7; }
+.svc-hero .hero-ctas { display:flex; gap:.9rem; justify-content:center; flex-wrap:wrap; }
+.svc-section { max-width:1040px; margin:0 auto; padding:3.2rem 2.5rem; }
+.svc-section.alt { background:rgba(255,255,255,.015); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.svc-section .section-title { margin-bottom:.6rem; }
+.svc-section .section-sub { margin-bottom:2.2rem; color:var(--muted); }
+.faq-list { max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:.7rem; }
+.faq-item { background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden; }
+.faq-q { padding:1.1rem 1.4rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:.92rem; }
+.faq-q .plus { transition:transform .25s; color:var(--accent2); font-size:1.2rem; flex-shrink:0; margin-left:1rem; }
+.faq-item.open .faq-q .plus { transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .3s ease; }
+.faq-item.open .faq-a { max-height:600px; }
+.faq-a p { padding:0 1.4rem 1.1rem; color:var(--muted); font-size:.86rem; line-height:1.7; margin:0; }
+.svc-cta { text-align:center; background:linear-gradient(135deg,rgba(79,107,255,.16),rgba(0,229,255,.07)); border:1px solid var(--border-strong); border-radius:20px; padding:3rem 2rem; max-width:760px; margin:0 auto; }
+.svc-cta h3 { font-size:1.5rem; font-weight:700; margin-bottom:.7rem; }
+.svc-cta p { color:var(--muted); margin-bottom:1.6rem; font-size:.93rem; }
+@media(max-width:680px){ .svc-hero, .svc-section, .breadcrumb { padding-left:1.2rem; padding-right:1.2rem; } }
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,16 +72,35 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "SEO Services FAQ — Pricing, Timelines & Process | OS SEO",
+  "description": "How much does SEO cost? How long does it take? Get clear answers about OS SEO's pricing, process, timelines, and guarantees before you start a project.",
+  "url": "https://seowithomar.com/faq/",
+  "isPartOf": {"@type": "WebSite", "name": "OS SEO", "url": "https://seowithomar.com/"},
+  "about": {"@type": "Thing", "name": "SEO services"},
+  "datePublished": "2026-01-20",
+  "dateModified": "2026-06-27"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {"@type":"Question","name":"What SEO services does OS SEO offer?","acceptedAnswer":{"@type":"Answer","text":"OS SEO offers technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program depending on your goals."}},
-    {"@type":"Question","name":"How much do your SEO services cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on the service and scope — technical audits start at $450 one-time, while ongoing content and SEO programs typically start around $600–$1,800 per month. Every project starts with a free consultation to scope exact pricing for your situation."}},
-    {"@type":"Question","name":"How long does it take to see SEO results?","acceptedAnswer":{"@type":"Answer","text":"Technical fixes can show crawl and indexing improvements within weeks. Content and link building typically take 3–6 months to mature in rankings, as this depends on competition, domain authority, and how consistently the strategy is executed."}},
-    {"@type":"Question","name":"Do you work with businesses outside your home country?","acceptedAnswer":{"@type":"Answer","text":"Yes — OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content and communication."}},
-    {"@type":"Question","name":"Do you offer one-time projects or only ongoing contracts?","acceptedAnswer":{"@type":"Answer","text":"Both. Technical SEO audits are typically one-time projects, while content strategy, link building, and local SEO are usually structured as ongoing monthly engagements since SEO compounds over time."}},
-    {"@type":"Question","name":"Can you guarantee first-page Google rankings?","acceptedAnswer":{"@type":"Answer","text":"No ethical SEO provider can guarantee specific rankings, since Google's algorithm is outside any agency's control. What we guarantee is a transparent, data-driven process that consistently improves the technical and content foundations rankings are built on."}},
-    {"@type":"Question","name":"What's included in a free audit?","acceptedAnswer":{"@type":"Answer","text":"A free audit gives you a high-level review of your site's biggest technical and content opportunities, along with a recommendation on which service would have the most impact for your specific situation."}},
-    {"@type":"Question","name":"Which industries do you work with?","acceptedAnswer":{"@type":"Answer","text":"We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, with experience adapting SEO strategy to industry-specific search behavior."}}
+    {"@type":"Question","name":"How much does SEO cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on the service and scope. Technical SEO audits start at $450 as a one-time project. Ongoing programs like content strategy or local SEO typically start around $600 to $1,800 per month. Enterprise and multi-market projects are quoted individually after a free consultation."}},
+    {"@type":"Question","name":"How much should a small business budget for SEO?","acceptedAnswer":{"@type":"Answer","text":"Most small businesses see meaningful traction starting at $600–$1,000 per month for a focused program such as local SEO or a single content strategy track. Businesses competing in more saturated markets, or pursuing multiple service lines at once, typically budget $1,800 or more per month."}},
+    {"@type":"Question","name":"How long does it take to see SEO results?","acceptedAnswer":{"@type":"Answer","text":"Technical fixes can show crawl and indexing improvements within a few weeks. Content and link building typically take 3 to 6 months to mature into stable rankings, depending on competition, existing domain authority, and consistency of execution."}},
+    {"@type":"Question","name":"Is SEO a one-time service or a monthly commitment?","acceptedAnswer":{"@type":"Answer","text":"Both models exist. Technical SEO audits are usually one-time projects with a clear deliverable. Content strategy, link building, and local SEO are structured as ongoing monthly engagements, since organic visibility compounds with consistent, sustained effort."}},
+    {"@type":"Question","name":"Why does SEO take longer than paid ads?","acceptedAnswer":{"@type":"Answer","text":"Paid ads buy temporary visibility the moment a campaign launches. SEO builds durable assets — technical infrastructure, content, and authority — that search engines need time to crawl, evaluate, and trust, but that keep compounding long after the work is done."}},
+    {"@type":"Question","name":"Do SEO agencies guarantee first-page Google rankings?","acceptedAnswer":{"@type":"Answer","text":"No ethical SEO provider can guarantee specific rankings, because Google's algorithm sits outside any agency's control. What OS SEO guarantees instead is a transparent, data-driven process that consistently strengthens the technical and content foundations that rankings are built on."}},
+    {"@type":"Question","name":"Do you work with businesses outside your home country?","acceptedAnswer":{"@type":"Answer","text":"Yes. OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content, communication, and reporting."}},
+    {"@type":"Question","name":"Can SEO work for businesses targeting multiple countries?","acceptedAnswer":{"@type":"Answer","text":"Yes, with the right international SEO setup. This typically involves hreflang implementation, market-specific keyword research, and localized content rather than simply translating an existing site."}},
+    {"@type":"Question","name":"What's included in a free audit?","acceptedAnswer":{"@type":"Answer","text":"A free audit covers a high-level review of your site's biggest technical and content opportunities, along with a recommendation on which service would create the most impact for your specific situation."}},
+    {"@type":"Question","name":"Which industries do you work with?","acceptedAnswer":{"@type":"Answer","text":"We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, adapting SEO strategy to the specific search behavior of each industry."}},
+    {"@type":"Question","name":"What information do you need from me to get started?","acceptedAnswer":{"@type":"Answer","text":"Typically read-only access to Google Search Console and Analytics, a short call to understand your business goals, and any existing brand or content guidelines. Everything else is handled by our team."}},
+    {"@type":"Question","name":"How do you report on SEO progress?","acceptedAnswer":{"@type":"Answer","text":"Clients receive regular reporting covering rankings, organic traffic, and completed deliverables, with a monthly or bi-weekly call depending on the engagement size, so progress is never a black box."}},
+    {"@type":"Question","name":"Can I cancel an ongoing SEO engagement?","acceptedAnswer":{"@type":"Answer","text":"Yes. Monthly engagements run without long-term lock-in, so you can pause or end the engagement with notice as outlined in your agreement."}}
   ]
 }
 </script>
@@ -50,7 +110,7 @@
 <!-- ═══════════════ HEADER ═══════════════ -->
 <header class="site-header">
   <a class="site-logo" href="/">
-    <img src="/images/logo.png" alt="OS SEO logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+    <img src="/images/logo.png" alt="OS SEO — SEO agency logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
     <span class="logo-text" style="display:none;align-items:center;gap:8px"><span class="logo-dot"></span>ai<span>SEO</span>a</span>
   </a>
   <nav class="main-nav" aria-label="Primary">
@@ -88,52 +148,128 @@
 </nav>
 
 <div class="svc-hero fade-in">
-  <div class="section-tag" data-en="Got Questions?" data-ar="عندك أسئلة؟">Got Questions?</div>
-  <h1 data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h1>
-  <p class="lead" data-en="Everything you need to know about working with OS SEO — pricing, process, timelines, and what to expect." data-ar="كل اللي محتاج تعرفه عن العمل مع OS SEO — الأسعار، خطوات الشغل، المدة، وماذا تتوقع.">Everything you need to know about working with OS SEO — pricing, process, timelines, and what to expect.</p>
+  <div class="section-tag" data-en="Pricing, Process &amp; Guarantees" data-ar="الأسعار وخطوات الشغل والضمانات">Pricing, Process & Guarantees</div>
+  <h1 data-en="SEO Services FAQ" data-ar="الأسئلة الشائعة عن خدمات السيو">SEO Services FAQ</h1>
+  <p class="lead" data-en="Straight answers about SEO pricing, timelines, contracts, and what actually happens once you sign up — written for people evaluating an SEO partner, not search engines." data-ar="إجابات واضحة عن أسعار السيو والمدة الزمنية والعقود وما يحدث فعليًا بعد التعاقد — مكتوبة لمن يقيّم شريك سيو، لا لمحركات البحث فقط.">Straight answers about SEO pricing, timelines, contracts, and what actually happens once you sign up — written for people evaluating an SEO partner, not search engines.</p>
+  <p style="margin-top:1.4rem;font-size:.78rem;color:var(--muted)">Reviewed by <strong style="color:var(--white)">Omar Salah</strong>, SEO Specialist · Last updated June 27, 2026 · 6 min read</p>
 </div>
 
-<section class="svc-section fade-in">
+<nav class="svc-toc fade-in" aria-label="Table of contents" style="max-width:760px;margin:0 auto 2rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem;">
+  <strong style="font-size:.85rem;display:block;margin-bottom:.6rem">On this page</strong>
+  <div style="display:flex;flex-wrap:wrap;gap:.5rem .9rem;font-size:.8rem">
+    <a href="#pricing" style="color:var(--muted);text-decoration:none">Pricing & Investment</a>
+    <a href="#timeline" style="color:var(--muted);text-decoration:none">Timeline & Results</a>
+    <a href="#process" style="color:var(--muted);text-decoration:none">Working Together</a>
+    <a href="#expertise" style="color:var(--muted);text-decoration:none">Services & Expertise</a>
+    <a href="#trust" style="color:var(--muted);text-decoration:none">Trust & Guarantees</a>
+  </div>
+</nav>
+
+<section class="svc-section fade-in" id="pricing">
+  <h2 class="section-title" data-en="Pricing &amp; Investment" data-ar="الأسعار والتكلفة">Pricing & Investment</h2>
+  <p class="section-sub" data-en="What SEO actually costs, and how to budget realistically." data-ar="كم تكلفة السيو فعليًا، وكيف تضع ميزانية واقعية.">What SEO actually costs, and how to budget realistically.</p>
+  <div class="faq-list">
+
+    <div class="faq-item open">
+      <div class="faq-q"><span data-en="How much does SEO cost?" data-ar="كم تكلفة خدمات السيو؟">How much does SEO cost?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="Pricing depends on the service and scope. A standalone technical SEO audit starts at $450 as a one-time project. Ongoing programs — content strategy, link building, local SEO — typically start around $600 to $1,800 per month. Enterprise and multi-market projects are quoted individually after a free consultation." data-ar="تختلف التكلفة حسب الخدمة والنطاق. يبدأ التدقيق التقني المستقل من 450 دولار كدفعة واحدة. أما البرامج المستمرة فتبدأ غالبًا من 600 إلى 1800 دولار شهريًا. المشاريع الكبيرة والمتعددة الأسواق يتم تسعيرها بشكل فردي بعد استشارة مجانية.">Pricing depends on the service and scope. A standalone technical SEO audit starts at $450 as a one-time project. Ongoing programs — content strategy, link building, local SEO — typically start around $600 to $1,800 per month. Enterprise and multi-market projects are quoted individually after a free consultation. See exact tier pricing on each <a href="/services/">service page</a>, starting with our <a href="/services/technical-seo-audit/">Technical SEO Audit service</a>.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q"><span data-en="How much should a small business budget for SEO?" data-ar="كم يجب أن تخصص الشركات الصغيرة لميزانية السيو؟">How much should a small business budget for SEO?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="Most small businesses see meaningful traction starting at $600–$1,000 per month for a focused program such as local SEO or a single content track. Businesses competing in more saturated markets typically budget $1,800 or more per month." data-ar="غالبًا تبدأ الشركات الصغيرة في رؤية نتائج ملموسة بميزانية 600–1000 دولار شهريًا. الشركات في أسواق أكثر تنافسية تحتاج غالبًا 1800 دولار أو أكثر شهريًا.">Most small businesses see meaningful traction starting at $600–$1,000 per month for a focused program such as <a href="/services/local-seo/">local SEO</a> or a single content track. Businesses competing in more saturated markets, or running multiple service lines at once, typically budget $1,800 or more per month for faster, more comprehensive movement.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q"><span data-en="Is SEO a one-time service or a monthly commitment?" data-ar="هل السيو خدمة لمرة واحدة أم التزام شهري؟">Is SEO a one-time service or a monthly commitment?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="Both models exist side by side. Technical SEO audits are usually one-time projects with a clear deliverable. Content strategy, link building, and local SEO are structured as ongoing monthly engagements, since organic visibility compounds with consistent effort." data-ar="كلا النموذجين متاح. التدقيق التقني غالبًا مشروع لمرة واحدة. أما استراتيجية المحتوى وبناء الروابط والسيو المحلي فهي عقود شهرية مستمرة لأن النتائج تتراكم مع الاستمرارية.">Both models exist side by side. Technical SEO audits are usually one-time projects with a clear, finite deliverable. <a href="/services/content-strategy/">Content strategy</a>, link building, and local SEO are structured as ongoing monthly engagements, since organic visibility compounds with consistent, sustained effort rather than a single fix.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="svc-section alt fade-in" id="timeline">
+  <h2 class="section-title" data-en="Timeline &amp; Results" data-ar="المدة الزمنية والنتائج">Timeline & Results</h2>
+  <p class="section-sub" data-en="A realistic view of how fast SEO actually moves." data-ar="نظرة واقعية على سرعة ظهور نتائج السيو فعليًا.">A realistic view of how fast SEO actually moves.</p>
   <div class="faq-list">
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="What SEO services does OS SEO offer?" data-ar="ما هي خدمات السيو التي تقدمها OS SEO؟">What SEO services does OS SEO offer?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="OS SEO offers technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program depending on your goals." data-ar="تقدم OS SEO خدمات تدقيق السيو التقني، استراتيجية المحتوى، بناء الروابط، السيو المحلي، السيو المعتمد على الذكاء الاصطناعي، والسيو الدولي. يمكن تنفيذ كل خدمة بشكل منفصل أو دمجها في برنامج سيو شامل حسب أهدافك.">OS SEO offers technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program depending on your goals.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q"><span data-en="How much do your SEO services cost?" data-ar="كم تكلفة خدمات السيو لديكم؟">How much do your SEO services cost?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Pricing depends on the service and scope — technical audits start at $450 one-time, while ongoing content and SEO programs typically start around $600–$1,800 per month. Every project starts with a free consultation to scope exact pricing for your situation." data-ar="تختلف الأسعار حسب الخدمة والنطاق — يبدأ التدقيق التقني من 450 دولار كدفعة واحدة، أما برامج المحتوى والسيو المستمرة فتبدأ غالبًا من 600 إلى 1800 دولار شهريًا. كل مشروع يبدأ باستشارة مجانية لتحديد السعر الدقيق لحالتك.">Pricing depends on the service and scope — technical audits start at $450 one-time, while ongoing content and SEO programs typically start around $600–$1,800 per month. Every project starts with a free consultation to scope exact pricing for your situation.</p></div>
-    </div>
-
-    <div class="faq-item">
       <div class="faq-q"><span data-en="How long does it take to see SEO results?" data-ar="كم تستغرق نتائج السيو لتظهر؟">How long does it take to see SEO results?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Technical fixes can show crawl and indexing improvements within weeks. Content and link building typically take 3–6 months to mature in rankings, as this depends on competition, domain authority, and how consistently the strategy is executed." data-ar="التحسينات التقنية يمكن أن تظهر نتائجها في الزحف والفهرسة خلال أسابيع. أما المحتوى وبناء الروابط فيستغرقان غالبًا من 3 إلى 6 أشهر ليصلا لترتيب ناضج في جوجل، حسب المنافسة وقوة الدومين واستمرارية تنفيذ الاستراتيجية.">Technical fixes can show crawl and indexing improvements within weeks. Content and link building typically take 3–6 months to mature in rankings, as this depends on competition, domain authority, and how consistently the strategy is executed.</p></div>
+      <div class="faq-a"><p data-en="Technical fixes can show crawl and indexing improvements within a few weeks of implementation. Content and link building typically take 3 to 6 months to mature into stable rankings, depending on competition, your existing domain authority, and consistency of execution." data-ar="التحسينات التقنية يمكن أن تظهر نتائجها خلال أسابيع قليلة. أما المحتوى وبناء الروابط فيستغرقان غالبًا من 3 إلى 6 أشهر للوصول لترتيب مستقر، حسب المنافسة وقوة الدومين الحالية واستمرارية التنفيذ.">Technical fixes can show crawl and indexing improvements within a few weeks of implementation. Content and link building typically take 3 to 6 months to mature into stable rankings, depending on competition level, your existing domain authority, and how consistently the strategy is executed.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Do you work with businesses outside your home country?" data-ar="هل تعملون مع شركات خارج بلدكم؟">Do you work with businesses outside your home country?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Yes — OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content and communication." data-ar="نعم — تعمل OS SEO مع عملاء في أوروبا وأستراليا والعالم العربي، وتدعم التواصل والمحتوى باللغتين العربية والإنجليزية.">Yes — OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content and communication.</p></div>
+      <div class="faq-q"><span data-en="Why does SEO take longer than paid ads?" data-ar="لماذا يستغرق السيو وقتًا أطول من الإعلانات المدفوعة؟">Why does SEO take longer than paid ads?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="Paid ads buy temporary visibility the moment a campaign goes live. SEO instead builds durable assets — technical infrastructure, content, and authority — that search engines need time to crawl, evaluate, and trust. The tradeoff is that SEO traffic keeps compounding long after the work is done, unlike ad spend." data-ar="الإعلانات المدفوعة تشتري ظهورًا مؤقتًا فور تشغيل الحملة. السيو يبني أصولًا دائمة تحتاج محركات البحث وقتًا لتقييمها والوثوق بها، لكن الفائدة أن ترافيك السيو يستمر بالتراكم بعد انتهاء العمل.">Paid ads buy temporary visibility the moment a campaign goes live. SEO instead builds durable assets — technical infrastructure, content, and authority — that search engines need time to crawl, evaluate, and trust. The tradeoff is that SEO traffic keeps compounding long after the work is done, unlike ad spend.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Do you offer one-time projects or only ongoing contracts?" data-ar="هل تقدمون مشاريع لمرة واحدة أم عقود مستمرة فقط؟">Do you offer one-time projects or only ongoing contracts?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Both. Technical SEO audits are typically one-time projects, while content strategy, link building, and local SEO are usually structured as ongoing monthly engagements since SEO compounds over time." data-ar="كلاهما متاح. تدقيق السيو التقني يكون غالبًا مشروعًا لمرة واحدة، بينما استراتيجية المحتوى وبناء الروابط والسيو المحلي تكون عادةً عقودًا شهرية مستمرة لأن نتائج السيو تتراكم مع الوقت.">Both. Technical SEO audits are typically one-time projects, while content strategy, link building, and local SEO are usually structured as ongoing monthly engagements since SEO compounds over time.</p></div>
+      <div class="faq-q"><span data-en="How do you report on SEO progress?" data-ar="كيف تقدمون تقارير عن تقدم السيو؟">How do you report on SEO progress?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="Clients receive regular reporting covering rankings, organic traffic, and completed deliverables, with a monthly or bi-weekly call depending on engagement size — so progress is never a black box." data-ar="يحصل العملاء على تقارير دورية تغطي الترتيب والترافيك العضوي والمخرجات المكتملة، مع مكالمة شهرية أو نصف شهرية حسب حجم التعاقد.">Clients receive regular reporting covering rankings, organic traffic, and completed deliverables, with a monthly or bi-weekly call depending on engagement size — so progress is never a black box and you always know exactly what's been done and why.</p></div>
     </div>
 
+  </div>
+</section>
+
+<section class="svc-section fade-in" id="process">
+  <h2 class="section-title" data-en="Working Together" data-ar="طريقة العمل معنا">Working Together</h2>
+  <p class="section-sub" data-en="What's expected from you, and what we handle." data-ar="ماذا يُتوقع منك، وماذا نتولاه نحن.">What's expected from you, and what we handle.</p>
+  <div class="faq-list">
+
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Can you guarantee first-page Google rankings?" data-ar="هل تضمنون الترتيب في الصفحة الأولى بجوجل؟">Can you guarantee first-page Google rankings?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="No ethical SEO provider can guarantee specific rankings, since Google's algorithm is outside any agency's control. What we guarantee is a transparent, data-driven process that consistently improves the technical and content foundations rankings are built on." data-ar="لا يمكن لأي مزود سيو ملتزم بالأخلاقيات أن يضمن ترتيبًا محددًا، لأن خوارزمية جوجل خارج تحكم أي وكالة. ما نضمنه هو عملية شفافة ومبنية على البيانات تُحسّن باستمرار الأساسات التقنية والمحتوى التي يُبنى عليها الترتيب.">No ethical SEO provider can guarantee specific rankings, since Google's algorithm is outside any agency's control. What we guarantee is a transparent, data-driven process that consistently improves the technical and content foundations rankings are built on.</p></div>
+      <div class="faq-q"><span data-en="What information do you need from me to get started?" data-ar="ما المعلومات التي تحتاجونها للبدء؟">What information do you need from me to get started?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="Typically just read-only access to Google Search Console and Analytics, a short discovery call to understand your business goals, and any existing brand or content guidelines you'd like us to follow." data-ar="غالبًا فقط صلاحية قراءة لحساب Google Search Console و Analytics، ومكالمة تعارف قصيرة لفهم أهداف نشاطك، وأي إرشادات للهوية أو المحتوى تريد منا اتباعها.">Typically just read-only access to Google Search Console and Analytics, a short discovery call to understand your business goals, and any existing brand or content guidelines you'd like us to follow. Everything else — research, strategy, and execution — is handled by our team.</p></div>
     </div>
 
     <div class="faq-item">
       <div class="faq-q"><span data-en="What's included in a free audit?" data-ar="ماذا يشمل التدقيق المجاني؟">What's included in a free audit?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="A free audit gives you a high-level review of your site's biggest technical and content opportunities, along with a recommendation on which service would have the most impact for your specific situation." data-ar="يقدم لك التدقيق المجاني نظرة عامة على أكبر الفرص التقنية والمتعلقة بالمحتوى في موقعك، مع توصية بالخدمة الأكثر تأثيرًا لحالتك الخاصة.">A free audit gives you a high-level review of your site's biggest technical and content opportunities, along with a recommendation on which service would have the most impact for your specific situation.</p></div>
+      <div class="faq-a"><p data-en="A free audit covers a high-level review of your site's biggest technical and content opportunities, along with a clear recommendation on which service would create the most impact for your situation — no obligation to proceed." data-ar="يشمل التدقيق المجاني نظرة عامة على أكبر الفرص في موقعك، مع توصية واضحة بالخدمة الأكثر تأثيرًا لحالتك — دون أي التزام بالاستمرار.">A free audit covers a high-level review of your site's biggest technical and content opportunities, along with a clear recommendation on which service would create the most impact for your specific situation — no obligation to proceed.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q"><span data-en="Can I cancel an ongoing SEO engagement?" data-ar="هل يمكنني إلغاء عقد سيو مستمر؟">Can I cancel an ongoing SEO engagement?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="Yes. Monthly engagements run without long-term lock-in, so you can pause or end the engagement with notice as outlined in your agreement. We'd simply ask for the chance to understand any concerns first." data-ar="نعم. العقود الشهرية لا تتضمن التزامًا طويل الأمد، فيمكنك إيقاف أو إنهاء التعاون بإشعار مسبق حسب الاتفاقية.">Yes. Monthly engagements run without long-term lock-in, so you can pause or end the engagement with notice as outlined in your agreement. We'd simply ask for the chance to understand any concerns first, since most issues can be resolved by adjusting scope or priorities.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="svc-section alt fade-in" id="expertise">
+  <h2 class="section-title" data-en="Services &amp; Expertise" data-ar="الخدمات والخبرة">Services & Expertise</h2>
+  <p class="section-sub" data-en="What we specialize in, and who we work best with." data-ar="ما الذي نتخصص فيه، ومع من نعمل بأفضل شكل.">What we specialize in, and who we work best with.</p>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q"><span data-en="What SEO services does OS SEO offer?" data-ar="ما هي خدمات السيو التي تقدمها OS SEO؟">What SEO services does OS SEO offer?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="We offer technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program." data-ar="نقدم تدقيق السيو التقني، استراتيجية المحتوى، بناء الروابط، السيو المحلي، السيو المعتمد على الذكاء الاصطناعي، والسيو الدولي.">We offer technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program — explore the full breakdown on our <a href="/services/">services page</a>.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q"><span data-en="Can SEO work for businesses targeting multiple countries?" data-ar="هل يمكن أن ينجح السيو للشركات التي تستهدف عدة دول؟">Can SEO work for businesses targeting multiple countries?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="Yes, with the right setup. This typically involves hreflang implementation, market-specific keyword research, and genuinely localized content rather than simply translating an existing site." data-ar="نعم، مع الإعداد الصحيح. يتضمن ذلك غالبًا تطبيق hreflang، وأبحاث كلمات مفتاحية خاصة بكل سوق، ومحتوى محلي حقيقي بدل الترجمة المباشرة فقط.">Yes, with the right setup. This typically involves hreflang implementation, market-specific keyword research, and genuinely localized content rather than simply translating an existing site — see our <a href="/services/international-seo/">international SEO service</a> for the full approach.</p></div>
     </div>
 
     <div class="faq-item">
       <div class="faq-q"><span data-en="Which industries do you work with?" data-ar="ما هي القطاعات التي تعملون معها؟">Which industries do you work with?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, with experience adapting SEO strategy to industry-specific search behavior." data-ar="عملنا مع قطاعات متعددة مثل الخدمات المنزلية والشركات التجارية المحلية والـ SaaS والتجارة الإلكترونية والخدمات المهنية، مع خبرة في تكييف استراتيجية السيو حسب سلوك البحث الخاص بكل قطاع.">We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, with experience adapting SEO strategy to industry-specific search behavior.</p></div>
+      <div class="faq-a"><p data-en="We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, adapting strategy to the specific search behavior of each industry." data-ar="عملنا مع قطاعات متعددة مثل الخدمات المنزلية والشركات التجارية المحلية والـ SaaS والتجارة الإلكترونية والخدمات المهنية.">We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, adapting strategy to the specific search behavior of each industry. You can see examples of completed work on our <a href="/portfolio/">portfolio page</a>.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="svc-section fade-in" id="trust">
+  <h2 class="section-title" data-en="Trust &amp; Guarantees" data-ar="الثقة والضمانات">Trust & Guarantees</h2>
+  <p class="section-sub" data-en="What we can promise, and what no honest agency ever will." data-ar="ما الذي نضمنه، وما لا تضمنه أي وكالة محترفة أبدًا.">What we can promise, and what no honest agency ever will.</p>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q"><span data-en="Do SEO agencies guarantee first-page Google rankings?" data-ar="هل تضمن وكالات السيو الترتيب في الصفحة الأولى بجوجل؟">Do SEO agencies guarantee first-page Google rankings?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="No ethical SEO provider can guarantee specific rankings, because Google's algorithm sits outside any agency's control — a position confirmed directly by Google's own Search Central guidance. What OS SEO guarantees instead is a transparent, data-driven process that consistently strengthens the technical and content foundations that rankings are actually built on." data-ar="لا تستطيع أي وكالة سيو ملتزمة بالأخلاقيات ضمان ترتيب معين، لأن خوارزمية جوجل خارج تحكم أي وكالة. ما تضمنه OS SEO هو عملية شفافة ومبنية على البيانات تُقوّي باستمرار الأساسات التي يُبنى عليها الترتيب فعليًا.">No ethical SEO provider can guarantee specific rankings, because Google's algorithm sits outside any agency's control — a position confirmed directly by <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener">Google's own Search Central guidance</a>. What OS SEO guarantees instead is a transparent, data-driven process that consistently strengthens the technical and content foundations that rankings are actually built on.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q"><span data-en="Do you work with businesses outside your home country?" data-ar="هل تعملون مع شركات خارج بلدكم؟">Do you work with businesses outside your home country?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p data-en="Yes. OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content, communication, and reporting throughout the engagement." data-ar="نعم. تعمل OS SEO مع عملاء في أوروبا وأستراليا والعالم العربي، وتدعم المحتوى والتواصل باللغتين العربية والإنجليزية طوال فترة التعاون.">Yes. OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content, communication, and reporting throughout the engagement.</p></div>
     </div>
 
   </div>
@@ -142,8 +278,11 @@
 <section class="svc-section alt fade-in">
   <div class="svc-cta">
     <h3 data-en="Still have a question?" data-ar="لسه عندك سؤال؟">Still have a question?</h3>
-    <p data-en="Get in touch directly and we'll get back to you within one business day." data-ar="تواصل معنا مباشرة وسنرد عليك خلال يوم عمل واحد.">Get in touch directly and we'll get back to you within one business day.</p>
-    <a href="/#contact" class="btn-primary" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a>
+    <p data-en="Get in touch directly and we'll get back to you within one business day — or book a free audit to see exactly where your site stands today." data-ar="تواصل معنا مباشرة وسنرد عليك خلال يوم عمل واحد — أو اطلب تدقيقًا مجانيًا لمعرفة وضع موقعك الحالي بدقة.">Get in touch directly and we'll get back to you within one business day — or book a free audit to see exactly where your site stands today.</p>
+    <div class="hero-ctas">
+      <a href="/#booking" class="btn-primary" data-en="Get a Free Audit" data-ar="اطلب تدقيقًا مجانيًا">Get a Free Audit</a>
+      <a href="/#contact" class="btn-outline" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a>
+    </div>
   </div>
 </section>
 
