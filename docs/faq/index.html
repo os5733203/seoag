@@ -32,6 +32,7 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
 <link rel="icon" type="image/png" href="/images/logo.png">
 <link rel="stylesheet" href="/style.css"/>
 <style>
+html { scroll-behavior:smooth; }
 .breadcrumb { max-width:1040px; margin:0 auto; padding:1.6rem 2.5rem 0; font-size:.82rem; color:var(--muted); }
 .breadcrumb a { color:var(--muted); text-decoration:none; }
 .breadcrumb a:hover { color:var(--accent2); }
@@ -41,22 +42,60 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
 .svc-hero h1 { font-size:clamp(2.1rem,4.8vw,3rem); font-weight:700; letter-spacing:-1.2px; margin:.9rem 0 1rem; line-height:1.15; }
 .svc-hero p.lead { color:var(--muted); font-size:1.05rem; max-width:640px; margin:0 auto 1.8rem; line-height:1.7; }
 .svc-hero .hero-ctas { display:flex; gap:.9rem; justify-content:center; flex-wrap:wrap; }
+.faq-meta-row { display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem .9rem; margin-top:1.2rem; font-size:.78rem; color:var(--muted); }
+.faq-meta-row .pill { background:var(--card); border:1px solid var(--border); border-radius:999px; padding:.35rem .9rem; }
+.faq-meta-row strong { color:var(--white); }
+.faq-search-wrap { max-width:560px; margin:1.8rem auto 0; position:relative; }
+.faq-search-wrap input { width:100%; box-sizing:border-box; background:var(--card); border:1px solid var(--border); border-radius:999px; padding:.85rem 1.4rem .85rem 2.6rem; color:var(--white); font-size:.9rem; outline:none; transition:border-color .2s; }
+.faq-search-wrap input:focus { border-color:var(--accent2); }
+.faq-search-wrap .search-icon { position:absolute; left:1.1rem; top:50%; transform:translateY(-50%); color:var(--muted); font-size:.95rem; pointer-events:none; }
+.faq-no-results { text-align:center; color:var(--muted); font-size:.88rem; padding:2rem 0; display:none; }
 .svc-section { max-width:1040px; margin:0 auto; padding:3.2rem 2.5rem; }
 .svc-section.alt { background:rgba(255,255,255,.015); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .svc-section .section-title { margin-bottom:.6rem; }
 .svc-section .section-sub { margin-bottom:2.2rem; color:var(--muted); }
+.svc-toc a { transition:color .2s; }
+.svc-toc a.active { color:var(--accent2) !important; font-weight:700; }
 .faq-list { max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:.7rem; }
-.faq-item { background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden; }
-.faq-q { padding:1.1rem 1.4rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:.92rem; }
-.faq-q .plus { transition:transform .25s; color:var(--accent2); font-size:1.2rem; flex-shrink:0; margin-left:1rem; }
-.faq-item.open .faq-q .plus { transform:rotate(45deg); }
-.faq-a { max-height:0; overflow:hidden; transition:max-height .3s ease; }
-.faq-item.open .faq-a { max-height:600px; }
+.faq-item { background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden; position:relative; transition:border-color .25s, box-shadow .25s, transform .25s; }
+.faq-item::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--accent),var(--accent2)); opacity:0; transition:opacity .25s; }
+.faq-item:hover { border-color:var(--border-strong); box-shadow:0 10px 30px -15px rgba(0,0,0,.45); transform:translateY(-1px); }
+.faq-item:hover::before, .faq-item.open::before { opacity:1; }
+.faq-q { all:unset; display:flex; box-sizing:border-box; width:100%; padding:1.1rem 1.4rem; cursor:pointer; justify-content:space-between; align-items:center; font-weight:700; font-size:.92rem; color:var(--white); font-family:inherit; }
+.faq-q:focus-visible { outline:2px solid var(--accent2); outline-offset:-2px; }
+.faq-q .chevron { transition:transform .3s ease; color:var(--accent2); flex-shrink:0; margin-left:1rem; display:flex; }
+.faq-item.open .faq-q .chevron { transform:rotate(180deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .35s cubic-bezier(.4,0,.2,1), opacity .3s ease; opacity:0; }
+.faq-item.open .faq-a { max-height:600px; opacity:1; }
 .faq-a p { padding:0 1.4rem 1.1rem; color:var(--muted); font-size:.86rem; line-height:1.7; margin:0; }
+.faq-item.faq-hidden { display:none; }
+.related-svc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; max-width:1040px; margin:0 auto; }
+.related-svc-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.2rem 1.3rem; text-decoration:none; display:block; transition:all .25s; }
+.related-svc-card:hover { border-color:var(--accent2); transform:translateY(-3px); box-shadow:0 10px 30px -15px rgba(0,0,0,.45); }
+.related-svc-card .tag { font-size:.68rem; font-weight:800; color:var(--accent2); text-transform:uppercase; letter-spacing:1px; margin-bottom:.4rem; }
+.related-svc-card h4 { font-size:.92rem; font-weight:700; color:var(--white); margin:0; }
+.author-box { max-width:760px; margin:0 auto; background:var(--card); border:1px solid var(--border); border-radius:18px; padding:1.8rem; display:flex; gap:1.2rem; align-items:flex-start; }
+.author-box .avatar { width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent3)); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.3rem; color:#fff; flex-shrink:0; }
+.author-box h4 { margin:0 0 .2rem; font-size:1rem; font-weight:700; color:var(--white); }
+.author-box .role { font-size:.8rem; color:var(--accent2); font-weight:600; margin-bottom:.6rem; }
+.author-box .tags { display:flex; gap:.5rem; flex-wrap:wrap; }
+.author-box .tags span { font-size:.72rem; background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:999px; padding:.25rem .7rem; color:var(--muted); }
+.read-next-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; max-width:1040px; margin:0 auto; }
+.read-next-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.2rem 1.3rem; text-decoration:none; display:block; transition:all .25s; }
+.read-next-card:hover { border-color:var(--accent2); transform:translateY(-3px); }
+.read-next-card .tag { font-size:.68rem; font-weight:800; color:var(--accent2); text-transform:uppercase; letter-spacing:1px; margin-bottom:.4rem; }
+.read-next-card h4 { font-size:.92rem; font-weight:700; color:var(--white); margin:0; }
 .svc-cta { text-align:center; background:linear-gradient(135deg,rgba(79,107,255,.16),rgba(0,229,255,.07)); border:1px solid var(--border-strong); border-radius:20px; padding:3rem 2rem; max-width:760px; margin:0 auto; }
 .svc-cta h3 { font-size:1.5rem; font-weight:700; margin-bottom:.7rem; }
 .svc-cta p { color:var(--muted); margin-bottom:1.6rem; font-size:.93rem; }
-@media(max-width:680px){ .svc-hero, .svc-section, .breadcrumb { padding-left:1.2rem; padding-right:1.2rem; } }
+.floating-cta { position:fixed; bottom:1.4rem; right:1.4rem; z-index:500; opacity:0; transform:translateY(12px); pointer-events:none; transition:opacity .3s, transform .3s; }
+.floating-cta.show { opacity:1; transform:translateY(0); pointer-events:auto; }
+@media(max-width:680px){
+  .svc-hero, .svc-section, .breadcrumb { padding-left:1.2rem; padding-right:1.2rem; }
+  .author-box { flex-direction:column; }
+  .floating-cta { right:.9rem; bottom:.9rem; }
+  .floating-cta .btn-primary { padding:.7rem 1.1rem; font-size:.82rem; }
+}
 </style>
 
 <script type="application/ld+json">
@@ -152,6 +191,20 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
   <h1 data-en="SEO Services FAQ" data-ar="الأسئلة الشائعة عن خدمات السيو">SEO Services FAQ</h1>
   <p class="lead" data-en="Straight answers about SEO pricing, timelines, contracts, and what actually happens once you sign up — written for people evaluating an SEO partner, not search engines." data-ar="إجابات واضحة عن أسعار السيو والمدة الزمنية والعقود وما يحدث فعليًا بعد التعاقد — مكتوبة لمن يقيّم شريك سيو، لا لمحركات البحث فقط.">Straight answers about SEO pricing, timelines, contracts, and what actually happens once you sign up — written for people evaluating an SEO partner, not search engines.</p>
   <p style="margin-top:1.4rem;font-size:.78rem;color:var(--muted)">Reviewed by <strong style="color:var(--white)">Omar Salah</strong>, SEO Specialist · Last updated June 27, 2026 · 6 min read</p>
+  <div class="hero-ctas" style="margin-top:1.6rem">
+    <a href="/#booking" class="btn-primary" data-en="Get Free SEO Audit" data-ar="اطلب تدقيق سيو مجاني">Get Free SEO Audit</a>
+    <a href="/services/" class="btn-outline" data-en="View SEO Services" data-ar="استعرض خدمات السيو">View SEO Services</a>
+  </div>
+  <div class="faq-meta-row">
+    <span class="pill" id="faqCountPill"><strong>14</strong> <span data-en="Frequently Asked Questions" data-ar="أسئلة شائعة">Frequently Asked Questions</span></span>
+    <span class="pill" data-en="Last Updated: June 2026" data-ar="آخر تحديث: يونيو 2026">Last Updated: June 2026</span>
+    <span class="pill" data-en="6 min read" data-ar="٦ دقائق قراءة">6 min read</span>
+  </div>
+  <div class="faq-search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="faqSearchInput" placeholder="Search questions and answers..." aria-label="Search FAQ" data-en-placeholder="Search questions and answers..." data-ar-placeholder="ابحث في الأسئلة والإجابات...">
+  </div>
+  <p class="faq-no-results" id="faqNoResults" data-en="No questions match your search." data-ar="لا توجد أسئلة مطابقة لبحثك.">No questions match your search.</p>
 </div>
 
 <nav class="svc-toc fade-in" aria-label="Table of contents" style="max-width:760px;margin:0 auto 2rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem;">
@@ -171,20 +224,32 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
   <div class="faq-list">
 
     <div class="faq-item open">
-      <div class="faq-q"><span data-en="How much does SEO cost?" data-ar="كم تكلفة خدمات السيو؟">How much does SEO cost?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Pricing depends on the service and scope. A standalone technical SEO audit starts at $450 as a one-time project. Ongoing programs — content strategy, link building, local SEO — typically start around $600 to $1,800 per month. Enterprise and multi-market projects are quoted individually after a free consultation." data-ar="تختلف التكلفة حسب الخدمة والنطاق. يبدأ التدقيق التقني المستقل من 450 دولار كدفعة واحدة. أما البرامج المستمرة فتبدأ غالبًا من 600 إلى 1800 دولار شهريًا. المشاريع الكبيرة والمتعددة الأسواق يتم تسعيرها بشكل فردي بعد استشارة مجانية.">Pricing depends on the service and scope. A standalone technical SEO audit starts at $450 as a one-time project. Ongoing programs — content strategy, link building, local SEO — typically start around $600 to $1,800 per month. Enterprise and multi-market projects are quoted individually after a free consultation. See exact tier pricing on each <a href="/services/">service page</a>, starting with our <a href="/services/technical-seo-audit/">Technical SEO Audit service</a>.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-1" id="faq-btn-1"><span data-en="How much does SEO cost?" data-ar="كم تكلفة خدمات السيو؟">How much does SEO cost?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1"><p data-en="Pricing depends on the service and scope. A standalone technical SEO audit starts at $450 as a one-time project. Ongoing programs — content strategy, link building, local SEO — typically start around $600 to $1,800 per month. Enterprise and multi-market projects are quoted individually after a free consultation." data-ar="تختلف التكلفة حسب الخدمة والنطاق. يبدأ التدقيق التقني المستقل من 450 دولار كدفعة واحدة. أما البرامج المستمرة فتبدأ غالبًا من 600 إلى 1800 دولار شهريًا. المشاريع الكبيرة والمتعددة الأسواق يتم تسعيرها بشكل فردي بعد استشارة مجانية.">Pricing depends on the service and scope. A standalone technical SEO audit starts at $450 as a one-time project. Ongoing programs — content strategy, link building, local SEO — typically start around $600 to $1,800 per month. Enterprise and multi-market projects are quoted individually after a free consultation. See exact tier pricing on each <a href="/services/">service page</a>, starting with our <a href="/services/technical-seo-audit/">Technical SEO Audit service</a>.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="How much should a small business budget for SEO?" data-ar="كم يجب أن تخصص الشركات الصغيرة لميزانية السيو؟">How much should a small business budget for SEO?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Most small businesses see meaningful traction starting at $600–$1,000 per month for a focused program such as local SEO or a single content track. Businesses competing in more saturated markets typically budget $1,800 or more per month." data-ar="غالبًا تبدأ الشركات الصغيرة في رؤية نتائج ملموسة بميزانية 600–1000 دولار شهريًا. الشركات في أسواق أكثر تنافسية تحتاج غالبًا 1800 دولار أو أكثر شهريًا.">Most small businesses see meaningful traction starting at $600–$1,000 per month for a focused program such as <a href="/services/local-seo/">local SEO</a> or a single content track. Businesses competing in more saturated markets, or running multiple service lines at once, typically budget $1,800 or more per month for faster, more comprehensive movement.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-2" id="faq-btn-2"><span data-en="How much should a small business budget for SEO?" data-ar="كم يجب أن تخصص الشركات الصغيرة لميزانية السيو؟">How much should a small business budget for SEO?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2"><p data-en="Most small businesses see meaningful traction starting at $600–$1,000 per month for a focused program such as local SEO or a single content track. Businesses competing in more saturated markets typically budget $1,800 or more per month." data-ar="غالبًا تبدأ الشركات الصغيرة في رؤية نتائج ملموسة بميزانية 600–1000 دولار شهريًا. الشركات في أسواق أكثر تنافسية تحتاج غالبًا 1800 دولار أو أكثر شهريًا.">Most small businesses see meaningful traction starting at $600–$1,000 per month for a focused program such as <a href="/services/local-seo/">local SEO</a> or a single content track. Businesses competing in more saturated markets, or running multiple service lines at once, typically budget $1,800 or more per month for faster, more comprehensive movement.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Is SEO a one-time service or a monthly commitment?" data-ar="هل السيو خدمة لمرة واحدة أم التزام شهري؟">Is SEO a one-time service or a monthly commitment?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Both models exist side by side. Technical SEO audits are usually one-time projects with a clear deliverable. Content strategy, link building, and local SEO are structured as ongoing monthly engagements, since organic visibility compounds with consistent effort." data-ar="كلا النموذجين متاح. التدقيق التقني غالبًا مشروع لمرة واحدة. أما استراتيجية المحتوى وبناء الروابط والسيو المحلي فهي عقود شهرية مستمرة لأن النتائج تتراكم مع الاستمرارية.">Both models exist side by side. Technical SEO audits are usually one-time projects with a clear, finite deliverable. <a href="/services/content-strategy/">Content strategy</a>, link building, and local SEO are structured as ongoing monthly engagements, since organic visibility compounds with consistent, sustained effort rather than a single fix.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-3" id="faq-btn-3"><span data-en="Is SEO a one-time service or a monthly commitment?" data-ar="هل السيو خدمة لمرة واحدة أم التزام شهري؟">Is SEO a one-time service or a monthly commitment?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3"><p data-en="Both models exist side by side. Technical SEO audits are usually one-time projects with a clear deliverable. Content strategy, link building, and local SEO are structured as ongoing monthly engagements, since organic visibility compounds with consistent effort." data-ar="كلا النموذجين متاح. التدقيق التقني غالبًا مشروع لمرة واحدة. أما استراتيجية المحتوى وبناء الروابط والسيو المحلي فهي عقود شهرية مستمرة لأن النتائج تتراكم مع الاستمرارية.">Both models exist side by side. Technical SEO audits are usually one-time projects with a clear, finite deliverable. <a href="/services/content-strategy/">Content strategy</a>, link building, and local SEO are structured as ongoing monthly engagements, since organic visibility compounds with consistent, sustained effort rather than a single fix.</p></div>
     </div>
 
+  </div>
+</section>
+
+<section class="svc-section alt fade-in" id="related-services" aria-label="Related SEO Services">
+  <h2 class="section-title" data-en="Related Services" data-ar="خدمات ذات صلة">Related Services</h2>
+  <p class="section-sub" data-en="Explore the SEO services referenced throughout these answers." data-ar="تعرّف على خدمات السيو المذكورة في هذه الأسئلة.">Explore the SEO services referenced throughout these answers.</p>
+  <div class="related-svc-grid">
+    <a href="/services/technical-seo-audit/" class="related-svc-card"><div class="tag">Service</div><h4>🛠️ Technical SEO Audit</h4></a>
+    <a href="/services/local-seo/" class="related-svc-card"><div class="tag">Service</div><h4>📍 Local SEO</h4></a>
+    <a href="/services/content-strategy/" class="related-svc-card"><div class="tag">Service</div><h4>✍️ Content Strategy</h4></a>
+    <a href="/services/link-building/" class="related-svc-card"><div class="tag">Service</div><h4>🔗 Link Building</h4></a>
+    <a href="/services/international-seo/" class="related-svc-card"><div class="tag">Service</div><h4>🌍 International SEO</h4></a>
   </div>
 </section>
 
@@ -194,18 +259,18 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
   <div class="faq-list">
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="How long does it take to see SEO results?" data-ar="كم تستغرق نتائج السيو لتظهر؟">How long does it take to see SEO results?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Technical fixes can show crawl and indexing improvements within a few weeks of implementation. Content and link building typically take 3 to 6 months to mature into stable rankings, depending on competition, your existing domain authority, and consistency of execution." data-ar="التحسينات التقنية يمكن أن تظهر نتائجها خلال أسابيع قليلة. أما المحتوى وبناء الروابط فيستغرقان غالبًا من 3 إلى 6 أشهر للوصول لترتيب مستقر، حسب المنافسة وقوة الدومين الحالية واستمرارية التنفيذ.">Technical fixes can show crawl and indexing improvements within a few weeks of implementation. Content and link building typically take 3 to 6 months to mature into stable rankings, depending on competition level, your existing domain authority, and how consistently the strategy is executed.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-4" id="faq-btn-4"><span data-en="How long does it take to see SEO results?" data-ar="كم تستغرق نتائج السيو لتظهر؟">How long does it take to see SEO results?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4"><p data-en="Technical fixes can show crawl and indexing improvements within a few weeks of implementation. Content and link building typically take 3 to 6 months to mature into stable rankings, depending on competition, your existing domain authority, and consistency of execution." data-ar="التحسينات التقنية يمكن أن تظهر نتائجها خلال أسابيع قليلة. أما المحتوى وبناء الروابط فيستغرقان غالبًا من 3 إلى 6 أشهر للوصول لترتيب مستقر، حسب المنافسة وقوة الدومين الحالية واستمرارية التنفيذ.">Technical fixes can show crawl and indexing improvements within a few weeks of implementation. Content and link building typically take 3 to 6 months to mature into stable rankings, depending on competition level, your existing domain authority, and how consistently the strategy is executed.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Why does SEO take longer than paid ads?" data-ar="لماذا يستغرق السيو وقتًا أطول من الإعلانات المدفوعة؟">Why does SEO take longer than paid ads?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Paid ads buy temporary visibility the moment a campaign goes live. SEO instead builds durable assets — technical infrastructure, content, and authority — that search engines need time to crawl, evaluate, and trust. The tradeoff is that SEO traffic keeps compounding long after the work is done, unlike ad spend." data-ar="الإعلانات المدفوعة تشتري ظهورًا مؤقتًا فور تشغيل الحملة. السيو يبني أصولًا دائمة تحتاج محركات البحث وقتًا لتقييمها والوثوق بها، لكن الفائدة أن ترافيك السيو يستمر بالتراكم بعد انتهاء العمل.">Paid ads buy temporary visibility the moment a campaign goes live. SEO instead builds durable assets — technical infrastructure, content, and authority — that search engines need time to crawl, evaluate, and trust. The tradeoff is that SEO traffic keeps compounding long after the work is done, unlike ad spend.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-5" id="faq-btn-5"><span data-en="Why does SEO take longer than paid ads?" data-ar="لماذا يستغرق السيو وقتًا أطول من الإعلانات المدفوعة؟">Why does SEO take longer than paid ads?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5"><p data-en="Paid ads buy temporary visibility the moment a campaign goes live. SEO instead builds durable assets — technical infrastructure, content, and authority — that search engines need time to crawl, evaluate, and trust. The tradeoff is that SEO traffic keeps compounding long after the work is done, unlike ad spend." data-ar="الإعلانات المدفوعة تشتري ظهورًا مؤقتًا فور تشغيل الحملة. السيو يبني أصولًا دائمة تحتاج محركات البحث وقتًا لتقييمها والوثوق بها، لكن الفائدة أن ترافيك السيو يستمر بالتراكم بعد انتهاء العمل.">Paid ads buy temporary visibility the moment a campaign goes live. SEO instead builds durable assets — technical infrastructure, content, and authority — that search engines need time to crawl, evaluate, and trust. The tradeoff is that SEO traffic keeps compounding long after the work is done, unlike ad spend.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="How do you report on SEO progress?" data-ar="كيف تقدمون تقارير عن تقدم السيو؟">How do you report on SEO progress?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Clients receive regular reporting covering rankings, organic traffic, and completed deliverables, with a monthly or bi-weekly call depending on engagement size — so progress is never a black box." data-ar="يحصل العملاء على تقارير دورية تغطي الترتيب والترافيك العضوي والمخرجات المكتملة، مع مكالمة شهرية أو نصف شهرية حسب حجم التعاقد.">Clients receive regular reporting covering rankings, organic traffic, and completed deliverables, with a monthly or bi-weekly call depending on engagement size — so progress is never a black box and you always know exactly what's been done and why.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-6" id="faq-btn-6"><span data-en="How do you report on SEO progress?" data-ar="كيف تقدمون تقارير عن تقدم السيو؟">How do you report on SEO progress?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6"><p data-en="Clients receive regular reporting covering rankings, organic traffic, and completed deliverables, with a monthly or bi-weekly call depending on engagement size — so progress is never a black box." data-ar="يحصل العملاء على تقارير دورية تغطي الترتيب والترافيك العضوي والمخرجات المكتملة، مع مكالمة شهرية أو نصف شهرية حسب حجم التعاقد.">Clients receive regular reporting covering rankings, organic traffic, and completed deliverables, with a monthly or bi-weekly call depending on engagement size — so progress is never a black box and you always know exactly what's been done and why.</p></div>
     </div>
 
   </div>
@@ -217,18 +282,18 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
   <div class="faq-list">
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="What information do you need from me to get started?" data-ar="ما المعلومات التي تحتاجونها للبدء؟">What information do you need from me to get started?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Typically just read-only access to Google Search Console and Analytics, a short discovery call to understand your business goals, and any existing brand or content guidelines you'd like us to follow." data-ar="غالبًا فقط صلاحية قراءة لحساب Google Search Console و Analytics، ومكالمة تعارف قصيرة لفهم أهداف نشاطك، وأي إرشادات للهوية أو المحتوى تريد منا اتباعها.">Typically just read-only access to Google Search Console and Analytics, a short discovery call to understand your business goals, and any existing brand or content guidelines you'd like us to follow. Everything else — research, strategy, and execution — is handled by our team.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-7" id="faq-btn-7"><span data-en="What information do you need from me to get started?" data-ar="ما المعلومات التي تحتاجونها للبدء؟">What information do you need from me to get started?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-7" role="region" aria-labelledby="faq-btn-7"><p data-en="Typically just read-only access to Google Search Console and Analytics, a short discovery call to understand your business goals, and any existing brand or content guidelines you'd like us to follow." data-ar="غالبًا فقط صلاحية قراءة لحساب Google Search Console و Analytics، ومكالمة تعارف قصيرة لفهم أهداف نشاطك، وأي إرشادات للهوية أو المحتوى تريد منا اتباعها.">Typically just read-only access to Google Search Console and Analytics, a short discovery call to understand your business goals, and any existing brand or content guidelines you'd like us to follow. Everything else — research, strategy, and execution — is handled by our team.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="What's included in a free audit?" data-ar="ماذا يشمل التدقيق المجاني؟">What's included in a free audit?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="A free audit covers a high-level review of your site's biggest technical and content opportunities, along with a clear recommendation on which service would create the most impact for your situation — no obligation to proceed." data-ar="يشمل التدقيق المجاني نظرة عامة على أكبر الفرص في موقعك، مع توصية واضحة بالخدمة الأكثر تأثيرًا لحالتك — دون أي التزام بالاستمرار.">A free audit covers a high-level review of your site's biggest technical and content opportunities, along with a clear recommendation on which service would create the most impact for your specific situation — no obligation to proceed.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-8" id="faq-btn-8"><span data-en="What's included in a free audit?" data-ar="ماذا يشمل التدقيق المجاني؟">What's included in a free audit?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-8" role="region" aria-labelledby="faq-btn-8"><p data-en="A free audit covers a high-level review of your site's biggest technical and content opportunities, along with a clear recommendation on which service would create the most impact for your situation — no obligation to proceed." data-ar="يشمل التدقيق المجاني نظرة عامة على أكبر الفرص في موقعك، مع توصية واضحة بالخدمة الأكثر تأثيرًا لحالتك — دون أي التزام بالاستمرار.">A free audit covers a high-level review of your site's biggest technical and content opportunities, along with a clear recommendation on which service would create the most impact for your specific situation — no obligation to proceed.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Can I cancel an ongoing SEO engagement?" data-ar="هل يمكنني إلغاء عقد سيو مستمر؟">Can I cancel an ongoing SEO engagement?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Yes. Monthly engagements run without long-term lock-in, so you can pause or end the engagement with notice as outlined in your agreement. We'd simply ask for the chance to understand any concerns first." data-ar="نعم. العقود الشهرية لا تتضمن التزامًا طويل الأمد، فيمكنك إيقاف أو إنهاء التعاون بإشعار مسبق حسب الاتفاقية.">Yes. Monthly engagements run without long-term lock-in, so you can pause or end the engagement with notice as outlined in your agreement. We'd simply ask for the chance to understand any concerns first, since most issues can be resolved by adjusting scope or priorities.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-9" id="faq-btn-9"><span data-en="Can I cancel an ongoing SEO engagement?" data-ar="هل يمكنني إلغاء عقد سيو مستمر؟">Can I cancel an ongoing SEO engagement?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-9" role="region" aria-labelledby="faq-btn-9"><p data-en="Yes. Monthly engagements run without long-term lock-in, so you can pause or end the engagement with notice as outlined in your agreement. We'd simply ask for the chance to understand any concerns first." data-ar="نعم. العقود الشهرية لا تتضمن التزامًا طويل الأمد، فيمكنك إيقاف أو إنهاء التعاون بإشعار مسبق حسب الاتفاقية.">Yes. Monthly engagements run without long-term lock-in, so you can pause or end the engagement with notice as outlined in your agreement. We'd simply ask for the chance to understand any concerns first, since most issues can be resolved by adjusting scope or priorities.</p></div>
     </div>
 
   </div>
@@ -240,18 +305,18 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
   <div class="faq-list">
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="What SEO services does OS SEO offer?" data-ar="ما هي خدمات السيو التي تقدمها OS SEO؟">What SEO services does OS SEO offer?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="We offer technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program." data-ar="نقدم تدقيق السيو التقني، استراتيجية المحتوى، بناء الروابط، السيو المحلي، السيو المعتمد على الذكاء الاصطناعي، والسيو الدولي.">We offer technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program — explore the full breakdown on our <a href="/services/">services page</a>.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-10" id="faq-btn-10"><span data-en="What SEO services does OS SEO offer?" data-ar="ما هي خدمات السيو التي تقدمها OS SEO؟">What SEO services does OS SEO offer?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-10" role="region" aria-labelledby="faq-btn-10"><p data-en="We offer technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program." data-ar="نقدم تدقيق السيو التقني، استراتيجية المحتوى، بناء الروابط، السيو المحلي، السيو المعتمد على الذكاء الاصطناعي، والسيو الدولي.">We offer technical SEO audits, content strategy, link building, local SEO, AI-powered SEO, and international SEO. Each service can be delivered standalone or combined into a full SEO program — explore the full breakdown on our <a href="/services/">services page</a>.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Can SEO work for businesses targeting multiple countries?" data-ar="هل يمكن أن ينجح السيو للشركات التي تستهدف عدة دول؟">Can SEO work for businesses targeting multiple countries?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Yes, with the right setup. This typically involves hreflang implementation, market-specific keyword research, and genuinely localized content rather than simply translating an existing site." data-ar="نعم، مع الإعداد الصحيح. يتضمن ذلك غالبًا تطبيق hreflang، وأبحاث كلمات مفتاحية خاصة بكل سوق، ومحتوى محلي حقيقي بدل الترجمة المباشرة فقط.">Yes, with the right setup. This typically involves hreflang implementation, market-specific keyword research, and genuinely localized content rather than simply translating an existing site — see our <a href="/services/international-seo/">international SEO service</a> for the full approach.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-11" id="faq-btn-11"><span data-en="Can SEO work for businesses targeting multiple countries?" data-ar="هل يمكن أن ينجح السيو للشركات التي تستهدف عدة دول؟">Can SEO work for businesses targeting multiple countries?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-11" role="region" aria-labelledby="faq-btn-11"><p data-en="Yes, with the right setup. This typically involves hreflang implementation, market-specific keyword research, and genuinely localized content rather than simply translating an existing site." data-ar="نعم، مع الإعداد الصحيح. يتضمن ذلك غالبًا تطبيق hreflang، وأبحاث كلمات مفتاحية خاصة بكل سوق، ومحتوى محلي حقيقي بدل الترجمة المباشرة فقط.">Yes, with the right setup. This typically involves hreflang implementation, market-specific keyword research, and genuinely localized content rather than simply translating an existing site — see our <a href="/services/international-seo/">international SEO service</a> for the full approach.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Which industries do you work with?" data-ar="ما هي القطاعات التي تعملون معها؟">Which industries do you work with?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, adapting strategy to the specific search behavior of each industry." data-ar="عملنا مع قطاعات متعددة مثل الخدمات المنزلية والشركات التجارية المحلية والـ SaaS والتجارة الإلكترونية والخدمات المهنية.">We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, adapting strategy to the specific search behavior of each industry. You can see examples of completed work on our <a href="/portfolio/">portfolio page</a>.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-12" id="faq-btn-12"><span data-en="Which industries do you work with?" data-ar="ما هي القطاعات التي تعملون معها؟">Which industries do you work with?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-12" role="region" aria-labelledby="faq-btn-12"><p data-en="We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, adapting strategy to the specific search behavior of each industry." data-ar="عملنا مع قطاعات متعددة مثل الخدمات المنزلية والشركات التجارية المحلية والـ SaaS والتجارة الإلكترونية والخدمات المهنية.">We've worked across home services, local trade businesses, SaaS, ecommerce, and professional services, adapting strategy to the specific search behavior of each industry. You can see examples of completed work on our <a href="/portfolio/">portfolio page</a>.</p></div>
     </div>
 
   </div>
@@ -263,13 +328,13 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
   <div class="faq-list">
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Do SEO agencies guarantee first-page Google rankings?" data-ar="هل تضمن وكالات السيو الترتيب في الصفحة الأولى بجوجل؟">Do SEO agencies guarantee first-page Google rankings?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="No ethical SEO provider can guarantee specific rankings, because Google's algorithm sits outside any agency's control — a position confirmed directly by Google's own Search Central guidance. What OS SEO guarantees instead is a transparent, data-driven process that consistently strengthens the technical and content foundations that rankings are actually built on." data-ar="لا تستطيع أي وكالة سيو ملتزمة بالأخلاقيات ضمان ترتيب معين، لأن خوارزمية جوجل خارج تحكم أي وكالة. ما تضمنه OS SEO هو عملية شفافة ومبنية على البيانات تُقوّي باستمرار الأساسات التي يُبنى عليها الترتيب فعليًا.">No ethical SEO provider can guarantee specific rankings, because Google's algorithm sits outside any agency's control — a position confirmed directly by <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener">Google's own Search Central guidance</a>. What OS SEO guarantees instead is a transparent, data-driven process that consistently strengthens the technical and content foundations that rankings are actually built on.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-13" id="faq-btn-13"><span data-en="Do SEO agencies guarantee first-page Google rankings?" data-ar="هل تضمن وكالات السيو الترتيب في الصفحة الأولى بجوجل؟">Do SEO agencies guarantee first-page Google rankings?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-13" role="region" aria-labelledby="faq-btn-13"><p data-en="No ethical SEO provider can guarantee specific rankings, because Google's algorithm sits outside any agency's control — a position confirmed directly by Google's own Search Central guidance. What OS SEO guarantees instead is a transparent, data-driven process that consistently strengthens the technical and content foundations that rankings are actually built on." data-ar="لا تستطيع أي وكالة سيو ملتزمة بالأخلاقيات ضمان ترتيب معين، لأن خوارزمية جوجل خارج تحكم أي وكالة. ما تضمنه OS SEO هو عملية شفافة ومبنية على البيانات تُقوّي باستمرار الأساسات التي يُبنى عليها الترتيب فعليًا.">No ethical SEO provider can guarantee specific rankings, because Google's algorithm sits outside any agency's control — a position confirmed directly by <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener">Google's own Search Central guidance</a>. What OS SEO guarantees instead is a transparent, data-driven process that consistently strengthens the technical and content foundations that rankings are actually built on.</p></div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q"><span data-en="Do you work with businesses outside your home country?" data-ar="هل تعملون مع شركات خارج بلدكم؟">Do you work with businesses outside your home country?</span><span class="plus">+</span></div>
-      <div class="faq-a"><p data-en="Yes. OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content, communication, and reporting throughout the engagement." data-ar="نعم. تعمل OS SEO مع عملاء في أوروبا وأستراليا والعالم العربي، وتدعم المحتوى والتواصل باللغتين العربية والإنجليزية طوال فترة التعاون.">Yes. OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content, communication, and reporting throughout the engagement.</p></div>
+      <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-ans-14" id="faq-btn-14"><span data-en="Do you work with businesses outside your home country?" data-ar="هل تعملون مع شركات خارج بلدكم؟">Do you work with businesses outside your home country?</span><svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="faq-a" id="faq-ans-14" role="region" aria-labelledby="faq-btn-14"><p data-en="Yes. OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content, communication, and reporting throughout the engagement." data-ar="نعم. تعمل OS SEO مع عملاء في أوروبا وأستراليا والعالم العربي، وتدعم المحتوى والتواصل باللغتين العربية والإنجليزية طوال فترة التعاون.">Yes. OS SEO works with clients across Europe, Australia, and the Arab world, and supports both English and Arabic content, communication, and reporting throughout the engagement.</p></div>
     </div>
 
   </div>
@@ -282,6 +347,32 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
     <div class="hero-ctas">
       <a href="/#booking" class="btn-primary" data-en="Get a Free Audit" data-ar="اطلب تدقيقًا مجانيًا">Get a Free Audit</a>
       <a href="/#contact" class="btn-outline" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<section class="svc-section fade-in" aria-label="Read next">
+  <h2 class="section-title" data-en="Read Next" data-ar="اقرأ أيضًا">Read Next</h2>
+  <p class="section-sub" data-en="Go deeper on the topics covered in this FAQ." data-ar="تعرّف أكثر على المواضيع المذكورة في هذه الصفحة.">Go deeper on the topics covered in this FAQ.</p>
+  <div class="read-next-grid">
+    <a href="/services/technical-seo-audit/" class="read-next-card"><div class="tag">Guide</div><h4>Technical SEO Audit</h4></a>
+    <a href="/services/local-seo/" class="read-next-card"><div class="tag">Guide</div><h4>Local SEO Guide</h4></a>
+    <a href="/faq/#pricing" class="read-next-card"><div class="tag">Guide</div><h4>SEO Pricing Guide</h4></a>
+    <a href="/services/international-seo/" class="read-next-card"><div class="tag">Guide</div><h4>International SEO</h4></a>
+  </div>
+</section>
+
+<section class="svc-section alt fade-in" aria-label="About the author">
+  <div class="author-box">
+    <div class="avatar">OS</div>
+    <div>
+      <h4>Omar Salah</h4>
+      <div class="role">SEO Specialist</div>
+      <div class="tags">
+        <span>Technical SEO</span>
+        <span>AI SEO</span>
+        <span>International SEO</span>
+      </div>
     </div>
   </div>
 </section>
@@ -332,11 +423,70 @@ OG image: /images/logo.png (existing brand asset) until a dedicated FAQ cover gr
     </div>
   </div>
 </footer>
+<a href="/#booking" class="floating-cta btn-primary" id="floatingCta" data-en="Free Audit" data-ar="تدقيق مجاني">Free Audit</a>
+
 <script src="/aiseoa.js"></script>
 <script>
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+(function(){
+  // Accordion: accessible toggle with aria-expanded
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
   });
+
+  // Live search across questions and answers, no external libraries
+  var searchInput = document.getElementById('faqSearchInput');
+  var allItems = Array.from(document.querySelectorAll('.faq-item'));
+  var allSections = Array.from(document.querySelectorAll('.svc-section')).filter(function(s){ return s.querySelector('.faq-list'); });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function(){
+      var q = searchInput.value.trim().toLowerCase();
+      allItems.forEach(function(item){
+        var text = item.textContent.toLowerCase();
+        var match = q === '' || text.indexOf(q) !== -1;
+        item.classList.toggle('faq-hidden', !match);
+        if (q !== '' && match) { item.classList.add('open'); var b = item.querySelector('.faq-q'); if(b) b.setAttribute('aria-expanded','true'); }
+        if (q === '') { item.classList.remove('open'); var b2 = item.querySelector('.faq-q'); if(b2) b2.setAttribute('aria-expanded','false'); }
+      });
+      allSections.forEach(function(sec){
+        var visible = sec.querySelectorAll('.faq-item:not(.faq-hidden)').length;
+        sec.style.display = (q !== '' && visible === 0) ? 'none' : '';
+      });
+      var totalVisible = allItems.filter(function(i){ return !i.classList.contains('faq-hidden'); }).length;
+      var noResultsEl = document.getElementById('faqNoResults');
+      if (noResultsEl) noResultsEl.style.display = (q !== '' && totalVisible === 0) ? 'block' : 'none';
+    });
+  }
+
+  // Table of contents active-state highlighting on scroll
+  var tocLinks = Array.from(document.querySelectorAll('.svc-toc a'));
+  var sectionTargets = tocLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if (sectionTargets.length && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          var id = '#' + entry.target.id;
+          tocLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === id); });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sectionTargets.forEach(function(t){ observer.observe(t); });
+  }
+
+  // Floating "Free Audit" CTA — appears after scrolling past the hero
+  var floatBtn = document.getElementById('floatingCta');
+  var hero = document.querySelector('.svc-hero');
+  if (floatBtn && hero) {
+    window.addEventListener('scroll', function(){
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      floatBtn.classList.toggle('show', heroBottom < 0);
+    }, { passive: true });
+  }
+})();
 </script>
 </body>
 </html>
