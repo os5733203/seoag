@@ -98,14 +98,15 @@
       "@type": "ItemList",
       "@id": "https://seowithomar.com/locations/#country-list",
       "name": "SEO Service Locations",
-      "numberOfItems": 6,
+      "numberOfItems": 7,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "SEO Services United Kingdom", "url": "https://seowithomar.com/locations/united-kingdom/" },
         { "@type": "ListItem", "position": 2, "name": "SEO Services Australia", "url": "https://seowithomar.com/locations/australia/" },
         { "@type": "ListItem", "position": 3, "name": "SEO Services Germany", "url": "https://seowithomar.com/locations/germany/" },
         { "@type": "ListItem", "position": 4, "name": "SEO Services France", "url": "https://seowithomar.com/locations/france/" },
         { "@type": "ListItem", "position": 5, "name": "SEO Services Netherlands", "url": "https://seowithomar.com/locations/netherlands/" },
-        { "@type": "ListItem", "position": 6, "name": "SEO Services Canada", "url": "https://seowithomar.com/locations/canada/" }
+        { "@type": "ListItem", "position": 6, "name": "SEO Services Canada", "url": "https://seowithomar.com/locations/canada/" },
+        { "@type": "ListItem", "position": 7, "name": "SEO Services Ireland", "url": "https://seowithomar.com/locations/ireland/" }
       ]
     },
     {
@@ -204,7 +205,15 @@
 .country-card:hover { border-color: var(--border-strong); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,.3); }
 .country-card:hover::before { transform: scaleX(1); }
 .cc-header { display: flex; align-items: center; gap: .85rem; }
-.cc-flag { font-size: 2rem; line-height: 1; }
+.cc-flag {
+  width: 52px; height: 52px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(79,107,255,.25), rgba(0,229,255,.15));
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .95rem; font-weight: 800; color: var(--accent2);
+  letter-spacing: .5px;
+}
 .cc-name { font-size: 1.05rem; font-weight: 700; color: var(--white); }
 .cc-badge { font-size: .68rem; font-weight: 800; color: var(--accent2); background: rgba(0,229,255,.1); border: 1px solid rgba(0,229,255,.25); border-radius: 999px; padding: .2rem .6rem; margin-top: 2px; display: inline-block; }
 .cc-desc { color: var(--muted); font-size: .84rem; line-height: 1.62; flex: 1; }
@@ -221,7 +230,15 @@
 .markets-list { display: flex; flex-direction: column; gap: 1.4rem; max-width: 860px; margin: 0 auto; }
 .market-item { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.6rem 1.8rem; display: grid; grid-template-columns: auto 1fr auto; gap: 1.2rem; align-items: start; transition: border-color .25s; }
 .market-item:hover { border-color: var(--border-strong); }
-.mi-flag { font-size: 2.2rem; padding-top: 3px; }
+.mi-flag {
+  width: 48px; height: 48px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(79,107,255,.25), rgba(0,229,255,.15));
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .9rem; font-weight: 800; color: var(--accent2);
+  letter-spacing: .5px; align-self: start; margin-top: 3px;
+}
 .mi-body h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
 .mi-body p { color: var(--muted); font-size: .86rem; line-height: 1.68; margin: 0; }
 .mi-cta { align-self: center; white-space: nowrap; }
@@ -346,6 +363,7 @@
         <a href="/locations/germany/" role="menuitem">🇩🇪 Germany</a>
         <a href="/locations/france/" role="menuitem">🇫🇷 France</a>
         <a href="/locations/netherlands/" role="menuitem">🇳🇱 Netherlands</a>
+        <a href="/locations/ireland/" role="menuitem">🇮🇪 Ireland</a>
         <a href="/locations/" role="menuitem" class="dd-all" data-en="View All Locations →" data-ar="كل المواقع ←">View All Locations →</a>
       </div>
     </div>
@@ -459,12 +477,12 @@
 
       <!-- NORTH AMERICA -->
       <div class="region-section">
-        <div class="region-title" data-en="🌎 North America" data-ar="🌎 أمريكا الشمالية">🌎 North America</div>
+        <div class="region-title" data-en="🌎 North America" data-ar="🌎 أمريكا الشمالية">North America</div>
         <div class="country-grid">
           <!-- Canada — live -->
           <a href="/locations/canada/" class="country-card" aria-label="SEO Services in Canada">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇨🇦</span>
+              <span class="cc-flag" aria-hidden="true">CA</span>
               <div>
                 <div class="cc-name" data-en="Canada" data-ar="كندا">Canada</div>
                 <span class="cc-badge" data-en="English · French" data-ar="إنجليزية · فرنسية">English · French</span>
@@ -476,7 +494,7 @@
           <!-- USA — TODO -->
           <div class="country-card todo" aria-label="United States — Coming Soon" role="article">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇺🇸</span>
+              <span class="cc-flag" aria-hidden="true">US</span>
               <div>
                 <div class="cc-name" data-en="United States" data-ar="الولايات المتحدة">United States</div>
                 <span class="todo-label">Coming Soon</span>
@@ -489,12 +507,12 @@
 
       <!-- EUROPE -->
       <div class="region-section">
-        <div class="region-title" data-en="🌍 Europe" data-ar="🌍 أوروبا">🌍 Europe</div>
+        <div class="region-title" data-en="🌍 Europe" data-ar="🌍 أوروبا">Europe</div>
         <div class="country-grid">
           <!-- UK — live -->
           <a href="/locations/united-kingdom/" class="country-card" aria-label="SEO Services in United Kingdom">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇬🇧</span>
+              <span class="cc-flag" aria-hidden="true">GB</span>
               <div>
                 <div class="cc-name" data-en="United Kingdom" data-ar="المملكة المتحدة">United Kingdom</div>
                 <span class="cc-badge" data-en="English" data-ar="إنجليزية">English</span>
@@ -506,7 +524,7 @@
           <!-- Germany — live -->
           <a href="/locations/germany/" class="country-card" aria-label="SEO Services in Germany">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇩🇪</span>
+              <span class="cc-flag" aria-hidden="true">DE</span>
               <div>
                 <div class="cc-name" data-en="Germany" data-ar="ألمانيا">Germany</div>
                 <span class="cc-badge" data-en="German" data-ar="ألمانية">German</span>
@@ -518,7 +536,7 @@
           <!-- France — live -->
           <a href="/locations/france/" class="country-card" aria-label="SEO Services in France">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇫🇷</span>
+              <span class="cc-flag" aria-hidden="true">FR</span>
               <div>
                 <div class="cc-name" data-en="France" data-ar="فرنسا">France</div>
                 <span class="cc-badge" data-en="French" data-ar="فرنسية">French</span>
@@ -530,7 +548,7 @@
           <!-- Netherlands — live -->
           <a href="/locations/netherlands/" class="country-card" aria-label="SEO Services in Netherlands">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇳🇱</span>
+              <span class="cc-flag" aria-hidden="true">NL</span>
               <div>
                 <div class="cc-name" data-en="Netherlands" data-ar="هولندا">Netherlands</div>
                 <span class="cc-badge" data-en="Dutch · English" data-ar="هولندية · إنجليزية">Dutch · English</span>
@@ -539,21 +557,22 @@
             <p class="cc-desc" data-en="A tech-forward market with high English proficiency. Dutch-language SEO for local businesses and English SEO for international operations both perform well in this market." data-ar="سوق متقدم تقنياً مع كفاءة عالية في اللغة الإنجليزية. يؤدي كل من سيو اللغة الهولندية للأعمال المحلية والسيو الإنجليزي للعمليات الدولية أداءً جيداً.">A tech-forward market with high English proficiency. Dutch-language SEO for local businesses and English SEO for international operations both perform well in this market.</p>
             <span class="cc-link" data-en="Explore Netherlands SEO" data-ar="استعرض سيو هولندا">Explore Netherlands SEO</span>
           </a>
-          <!-- Ireland — TODO -->
+          <!-- Ireland — live -->
           <a href="/locations/ireland/" class="country-card" aria-label="SEO Services in Ireland">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇮🇪</span>
+              <span class="cc-flag" aria-hidden="true">IE</span>
               <div>
                 <div class="cc-name" data-en="Ireland" data-ar="أيرلندا">Ireland</div>
-                <span class="todo-label">Coming Soon</span>
+                <span class="cc-badge" data-en="English" data-ar="إنجليزية">English</span>
               </div>
             </div>
-            <p class="cc-desc" data-en="A growing tech and SaaS hub with strong English-language search demand. Dedicated page coming soon." data-ar="مركز تكنولوجيا وSaaS متنامٍ مع طلب قوي على البحث باللغة الإنجليزية. الصفحة المخصصة قادمة قريباً.">A growing tech and SaaS hub with strong English-language search demand. Dedicated page coming soon.</p>
-          </div>
+            <p class="cc-desc" data-en="Europe's fastest-growing tech hub. Less competitive than the UK with faster SEO results. Strong opportunities in Dublin, Cork, Galway and Limerick across Tech, SaaS, Legal, Medical and Home Services." data-ar="مركز التكنولوجيا الأسرع نمواً في أوروبا. أقل تنافسية من المملكة المتحدة مع نتائج سيو أسرع. فرص قوية في دبلن وكورك وغالواي ولمريك عبر التكنولوجيا والـ SaaS والقانون والطب والخدمات المنزلية.">Europe's fastest-growing tech hub. Less competitive than the UK with faster SEO results. Strong opportunities in Dublin, Cork, Galway and Limerick across Tech, SaaS, Legal, Medical and Home Services.</p>
+            <span class="cc-link" data-en="Explore Ireland SEO" data-ar="استعرض سيو أيرلندا">Explore Ireland SEO</span>
+          </a>
           <!-- Sweden — TODO -->
           <div class="country-card todo" role="article" aria-label="Sweden — Coming Soon">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇸🇪</span>
+              <span class="cc-flag" aria-hidden="true">SE</span>
               <div>
                 <div class="cc-name" data-en="Sweden" data-ar="السويد">Sweden</div>
                 <span class="todo-label">Coming Soon</span>
@@ -566,12 +585,12 @@
 
       <!-- MIDDLE EAST -->
       <div class="region-section">
-        <div class="region-title" data-en="🌙 Middle East & North Africa" data-ar="🌙 الشرق الأوسط وشمال أفريقيا">🌙 Middle East & North Africa</div>
+        <div class="region-title" data-en="🌙 Middle East & North Africa" data-ar="🌙 الشرق الأوسط وشمال أفريقيا">Middle East &amp; North Africa</div>
         <div class="country-grid">
           <!-- Saudi Arabia — TODO -->
           <div class="country-card todo" role="article" aria-label="Saudi Arabia — Coming Soon">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇸🇦</span>
+              <span class="cc-flag" aria-hidden="true">SA</span>
               <div>
                 <div class="cc-name" data-en="Saudi Arabia" data-ar="المملكة العربية السعودية">Saudi Arabia</div>
                 <span class="todo-label">Coming Soon</span>
@@ -582,7 +601,7 @@
           <!-- UAE — TODO -->
           <div class="country-card todo" role="article" aria-label="UAE — Coming Soon">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇦🇪</span>
+              <span class="cc-flag" aria-hidden="true">AE</span>
               <div>
                 <div class="cc-name" data-en="United Arab Emirates" data-ar="الإمارات العربية المتحدة">United Arab Emirates</div>
                 <span class="todo-label">Coming Soon</span>
@@ -593,7 +612,7 @@
           <!-- Egypt — TODO -->
           <div class="country-card todo" role="article" aria-label="Egypt — Coming Soon">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇪🇬</span>
+              <span class="cc-flag" aria-hidden="true">EG</span>
               <div>
                 <div class="cc-name" data-en="Egypt" data-ar="مصر">Egypt</div>
                 <span class="todo-label">Coming Soon</span>
@@ -606,12 +625,12 @@
 
       <!-- ASIA PACIFIC -->
       <div class="region-section">
-        <div class="region-title" data-en="🌏 Asia Pacific" data-ar="🌏 آسيا والمحيط الهادئ">🌏 Asia Pacific</div>
+        <div class="region-title" data-en="🌏 Asia Pacific" data-ar="🌏 آسيا والمحيط الهادئ">Asia Pacific</div>
         <div class="country-grid">
           <!-- Australia — live -->
           <a href="/locations/australia/" class="country-card" aria-label="SEO Services in Australia">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇦🇺</span>
+              <span class="cc-flag" aria-hidden="true">AU</span>
               <div>
                 <div class="cc-name" data-en="Australia" data-ar="أستراليا">Australia</div>
                 <span class="cc-badge" data-en="English" data-ar="إنجليزية">English</span>
@@ -623,7 +642,7 @@
           <!-- New Zealand — TODO -->
           <div class="country-card todo" role="article" aria-label="New Zealand — Coming Soon">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇳🇿</span>
+              <span class="cc-flag" aria-hidden="true">NZ</span>
               <div>
                 <div class="cc-name" data-en="New Zealand" data-ar="نيوزيلندا">New Zealand</div>
                 <span class="todo-label">Coming Soon</span>
@@ -634,7 +653,7 @@
           <!-- Singapore — TODO -->
           <div class="country-card todo" role="article" aria-label="Singapore — Coming Soon">
             <div class="cc-header">
-              <span class="cc-flag" aria-hidden="true">🇸🇬</span>
+              <span class="cc-flag" aria-hidden="true">SG</span>
               <div>
                 <div class="cc-name" data-en="Singapore" data-ar="سنغافورة">Singapore</div>
                 <span class="todo-label">Coming Soon</span>
@@ -659,7 +678,7 @@
     <p class="section-sub" data-en="Understanding the search landscape in each country before building a strategy is what separates campaigns that rank from campaigns that miss." data-ar="فهم مشهد البحث في كل دولة قبل بناء الاستراتيجية هو ما يفصل الحملات التي تتصدر عن تلك التي تفشل.">Understanding the search landscape in each country before building a strategy is what separates campaigns that rank from campaigns that miss.</p>
     <div class="markets-list">
       <article class="market-item" aria-label="United Kingdom SEO Market">
-        <span class="mi-flag" aria-hidden="true">🇬🇧</span>
+        <span class="mi-flag" aria-hidden="true">GB</span>
         <div class="mi-body">
           <h3 data-en="United Kingdom" data-ar="المملكة المتحدة">United Kingdom</h3>
           <p data-en="The UK is one of the most competitive English-language markets in the world. Google dominates with over 92% search market share. Users are highly research-oriented, and Google's E-E-A-T framework is aggressively enforced — particularly in health, finance, and legal sectors. Local SEO is critical for service businesses across London, Manchester, Birmingham, and Edinburgh. Link building requires UK-specific domains (.co.uk) and publications to signal geographic relevance." data-ar="المملكة المتحدة من أكثر أسواق اللغة الإنجليزية تنافسية في العالم. تهيمن جوجل بحصة سوقية تزيد على 92%. المستخدمون موجهون للبحث بشكل كبير، ويتم تطبيق إطار E-E-A-T من جوجل بصرامة — خاصة في قطاعات الصحة والمال والقانون.">The UK is one of the most competitive English-language markets in the world. Google dominates with over 92% search market share. Users are highly research-oriented, and Google's E-E-A-T framework is aggressively enforced — particularly in health, finance, and legal sectors. Local SEO is critical for service businesses across London, Manchester, Birmingham, and Edinburgh.</p>
@@ -669,7 +688,7 @@
         </div>
       </article>
       <article class="market-item" aria-label="Australia SEO Market">
-        <span class="mi-flag" aria-hidden="true">🇦🇺</span>
+        <span class="mi-flag" aria-hidden="true">AU</span>
         <div class="mi-body">
           <h3 data-en="Australia" data-ar="أستراليا">Australia</h3>
           <p data-en="Australia's digital economy is growing rapidly, with Google holding over 94% of search traffic. Australian English differs from UK and US English in spelling, idiom, and cultural reference — these differences matter for keyword targeting and content quality. Major opportunity exists in Sydney, Melbourne, Brisbane, and Perth across industries including home services, healthcare, finance, and e-commerce. Local SEO in Australia is highly competitive in metro areas and considerably less contested in regional cities." data-ar="الاقتصاد الرقمي الأسترالي ينمو بسرعة، مع هيمنة جوجل على أكثر من 94% من حركة البحث. تختلف اللغة الإنجليزية الأسترالية عن الإنجليزية البريطانية والأمريكية في الإملاء والتعابير والمرجع الثقافي — هذه الفروق مهمة لاستهداف الكلمات المفتاحية وجودة المحتوى.">Australia's digital economy is growing rapidly, with Google holding over 94% of search traffic. Australian English differs from UK and US English in spelling, idiom, and cultural reference — these differences matter for keyword targeting and content quality. Major opportunity exists in Sydney, Melbourne, Brisbane, and Perth.</p>
@@ -679,7 +698,7 @@
         </div>
       </article>
       <article class="market-item" aria-label="Germany SEO Market">
-        <span class="mi-flag" aria-hidden="true">🇩🇪</span>
+        <span class="mi-flag" aria-hidden="true">DE</span>
         <div class="mi-body">
           <h3 data-en="Germany" data-ar="ألمانيا">Germany</h3>
           <p data-en="Germany is Europe's largest economy and a technically demanding SEO market. German users are privacy-conscious, research-driven, and highly skeptical of generic content. Native German copywriting is essential — machine-translated content is immediately identifiable and significantly underperforms. Backlinks from .de domains and established German publications carry considerable weight. Structured data, page speed, and Core Web Vitals are particularly scrutinised by German users accustomed to high-quality digital experiences." data-ar="ألمانيا أكبر اقتصادات أوروبا وسوق سيو يتطلب درجة عالية من الكفاءة التقنية. المستخدمون الألمان واعون بالخصوصية، ويقودهم البحث، وشككون للغاية في المحتوى العام. الكتابة الإعلانية الألمانية الأصلية ضرورية — المحتوى المترجم آلياً يُعرَّف فوراً ويؤدي أداءً أضعف بكثير.">Germany is Europe's largest economy and a technically demanding SEO market. German users are privacy-conscious, research-driven, and highly skeptical of generic content. Native German copywriting is essential. Backlinks from .de domains and established German publications carry considerable weight. Structured data, page speed, and Core Web Vitals are particularly scrutinised.</p>
@@ -689,7 +708,7 @@
         </div>
       </article>
       <article class="market-item" aria-label="France SEO Market">
-        <span class="mi-flag" aria-hidden="true">🇫🇷</span>
+        <span class="mi-flag" aria-hidden="true">FR</span>
         <div class="mi-body">
           <h3 data-en="France" data-ar="فرنسا">France</h3>
           <p data-en="France has a substantial and growing digital economy centred in Paris, with significant activity in Lyon, Marseille, and Bordeaux. French-language content is non-negotiable — French consumers have low tolerance for non-native content. The French e-commerce and SaaS markets are particularly competitive, with local link building from French-language publications providing a significant ranking advantage. GDPR compliance and user trust signals are especially important in this market." data-ar="فرنسا لديها اقتصاد رقمي ضخم ومتنامٍ يتمحور حول باريس، مع نشاط كبير في ليون ومارسيليا وبوردو. المحتوى بالفرنسية غير قابل للتفاوض — المستهلكون الفرنسيون لديهم تحمل منخفض للمحتوى غير الأصلي.">France has a substantial and growing digital economy centred in Paris. French-language content is non-negotiable — French consumers have low tolerance for non-native content. The French e-commerce and SaaS markets are particularly competitive. GDPR compliance and user trust signals are especially important in this market.</p>
@@ -699,7 +718,7 @@
         </div>
       </article>
       <article class="market-item" aria-label="Netherlands SEO Market">
-        <span class="mi-flag" aria-hidden="true">🇳🇱</span>
+        <span class="mi-flag" aria-hidden="true">NL</span>
         <div class="mi-body">
           <h3 data-en="Netherlands" data-ar="هولندا">Netherlands</h3>
           <p data-en="The Netherlands is one of Europe's most digitally advanced markets, with extremely high internet penetration and e-commerce adoption. Dutch users have among the highest English proficiency levels in the non-English-speaking world, meaning both Dutch and English content strategies can perform well depending on the target audience. Amsterdam serves as a major European tech and startup hub, creating strong demand for B2B and SaaS SEO." data-ar="هولندا من أكثر أسواق أوروبا تقدماً رقمياً، مع اختراق إنترنت وتبنٍّ للتجارة الإلكترونية مرتفعين للغاية. المستخدمون الهولنديون لديهم مستويات كفاءة في الإنجليزية من بين الأعلى في العالم غير الناطق بالإنجليزية.">The Netherlands is one of Europe's most digitally advanced markets, with extremely high internet penetration and e-commerce adoption. Dutch users have among the highest English proficiency levels in the world. Amsterdam serves as a major European tech hub, creating strong demand for B2B and SaaS SEO.</p>
@@ -709,7 +728,7 @@
         </div>
       </article>
       <article class="market-item" aria-label="Canada SEO Market">
-        <span class="mi-flag" aria-hidden="true">🇨🇦</span>
+        <span class="mi-flag" aria-hidden="true">CA</span>
         <div class="mi-body">
           <h3 data-en="Canada" data-ar="كندا">Canada</h3>
           <p data-en="Canada is a bilingual market with English dominant in most provinces and French dominant in Quebec. Toronto, Vancouver, and Montreal represent the country's most competitive local search markets. Canadian English SEO is distinct from US English — spelling conventions, cultural references, and search behaviour differ enough to require market-specific content. The Canadian e-commerce and home services markets offer significant organic opportunity." data-ar="كندا سوق ثنائي اللغة حيث تهيمن الإنجليزية في معظم المقاطعات والفرنسية في كيبيك. تورنتو وفانكوفر ومونتريال هي أكثر أسواق البحث المحلي تنافسية في البلاد.">Canada is a bilingual market with English dominant in most provinces and French dominant in Quebec. Toronto, Vancouver, and Montreal represent the country's most competitive local search markets. Canadian English SEO is distinct from US English — spelling conventions, cultural references, and search behaviour differ enough to require market-specific content.</p>
