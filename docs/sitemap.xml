@@ -1,73 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://seowithomar.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/about/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/portfolio/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/posts/technical-seo/first-article/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/posts/local-seo/first-article/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/posts/local-seo/local_seo_checklist_2026_en/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/posts/local-seo/local_seo_checklist_2026/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/posts/technical-seo/technical_seo_audit_guide_2026_en/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/posts/technical-seo/technical_seo_audit_guide_2026/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/posts/technical-seo/core_web_vitals_optimization_2026_en/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/posts/technical-seo/core_web_vitals_optimization_2026/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/posts/technical-seo/website_crawlability_indexing_2026/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://seowithomar.com/blog/posts/technical-seo/website_crawlability_indexing_2026_en/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- Core pages -->
+  <url><loc>https://seowithomar.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://seowithomar.com/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://seowithomar.com/portfolio/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://seowithomar.com/faq/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Services hub + 6 service pages -->
+  <url><loc>https://seowithomar.com/services/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://seowithomar.com/services/technical-seo-audit/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://seowithomar.com/services/content-strategy/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://seowithomar.com/services/link-building/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://seowithomar.com/services/local-seo/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://seowithomar.com/services/ai-powered-seo/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://seowithomar.com/services/international-seo/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Locations hub + country pages -->
+  <url><loc>https://seowithomar.com/locations/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://seowithomar.com/locations/ireland/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Blog hub -->
+  <url><loc>https://seowithomar.com/blog/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Blog posts: Technical SEO (English + Arabic) -->
+  <url><loc>https://seowithomar.com/blog/posts/technical-seo/technical_seo_audit_guide_2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://seowithomar.com/blog/posts/technical-seo/technical_seo_audit_guide_2026_en/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://seowithomar.com/blog/posts/technical-seo/core_web_vitals_optimization_2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://seowithomar.com/blog/posts/technical-seo/core_web_vitals_optimization_2026_en/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://seowithomar.com/blog/posts/technical-seo/website_crawlability_indexing_2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://seowithomar.com/blog/posts/technical-seo/website_crawlability_indexing_2026_en/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Blog posts: Local SEO (English + Arabic) -->
+  <url><loc>https://seowithomar.com/blog/posts/local-seo/local_seo_checklist_2026/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://seowithomar.com/blog/posts/local-seo/local_seo_checklist_2026_en/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Blog posts: Ireland (English only — per Omar's instruction, no Arabic for this market) -->
+  <url><loc>https://seowithomar.com/blog/posts/ireland/dublin-local-seo-services/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!--
+    EXCLUDED (Omar confirmed June 29, 2026): the placeholder "first-article" posts under
+    technical-seo, local-seo, link-building, and ai-seo categories have no real content yet
+    and are intentionally left out of the sitemap until they're written. Once real content
+    is published at those URLs, add them here and they'll also start appearing automatically
+    in Hugo's own blog/sitemap.xml after a fresh `hugo` build.
+  -->
+
 </urlset>
