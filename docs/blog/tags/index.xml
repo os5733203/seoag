@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on My New Hugo Project</title>
-		<link>https://seowithomar.com/blog/tags/</link>
+		<link>https://os5733203.github.io/aiseo/blog/tags/</link>
 		<description>Recent content in Tags on My New Hugo Project</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -10,6 +10,36 @@
 		
 		
 		
-			<atom:link href="https://seowithomar.com/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+			<lastBuildDate>Mon, 29 Jun 2026 10:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://os5733203.github.io/aiseo/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Dublin SEO Services</title>
+				<link>https://os5733203.github.io/aiseo/blog/tags/dublin-seo-services/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://os5733203.github.io/aiseo/blog/tags/dublin-seo-services/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Google Business Profile Dublin</title>
+				<link>https://os5733203.github.io/aiseo/blog/tags/google-business-profile-dublin/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://os5733203.github.io/aiseo/blog/tags/google-business-profile-dublin/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Local SEO Ireland</title>
+				<link>https://os5733203.github.io/aiseo/blog/tags/local-seo-ireland/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://os5733203.github.io/aiseo/blog/tags/local-seo-ireland/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>SEO Dublin</title>
+				<link>https://os5733203.github.io/aiseo/blog/tags/seo-dublin/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://os5733203.github.io/aiseo/blog/tags/seo-dublin/</guid>
+				<description></description>
+			</item>
 	</channel>
 </rss>

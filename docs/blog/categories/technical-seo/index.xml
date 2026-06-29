@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Technical SEO on My New Hugo Project</title>
-		<link>https://seowithomar.com/blog/categories/technical-seo/</link>
+		<link>https://os5733203.github.io/aiseo/blog/categories/technical-seo/</link>
 		<description>Recent content in Technical SEO on My New Hugo Project</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,40 +12,47 @@
 		
 			<lastBuildDate>Tue, 23 Jun 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://seowithomar.com/blog/categories/technical-seo/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://os5733203.github.io/aiseo/blog/categories/technical-seo/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Core Web Vitals Optimization: How to Improve Website Speed and Google Rankings</title>
-				<link>https://seowithomar.com/blog/posts/technical-seo/core_web_vitals_optimization_2026_en/</link>
+				<link>https://os5733203.github.io/aiseo/blog/posts/technical-seo/core_web_vitals_optimization_2026_en/</link>
 				<pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
-				<guid>https://seowithomar.com/blog/posts/technical-seo/core_web_vitals_optimization_2026_en/</guid>
+				<guid>https://os5733203.github.io/aiseo/blog/posts/technical-seo/core_web_vitals_optimization_2026_en/</guid>
 				<description>&lt;h1 id=&#34;core-web-vitals-optimization-how-to-improve-website-speed-and-google-rankings&#34;&gt;Core Web Vitals Optimization: How to Improve Website Speed and Google Rankings&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Core Web Vitals have become one of the most important ranking factors in modern SEO. Google uses these metrics to measure real user experience on your website, focusing on loading speed, interactivity, and visual stability.&lt;/p&gt;&#xA;&lt;p&gt;If your website performs poorly in Core Web Vitals, it may struggle to rank — even if your content and backlinks are strong.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Technical SEO Audit: A Complete Guide to Improve Website Performance and Rankings</title>
-				<link>https://seowithomar.com/blog/posts/technical-seo/technical_seo_audit_guide_2026_en/</link>
+				<link>https://os5733203.github.io/aiseo/blog/posts/technical-seo/technical_seo_audit_guide_2026_en/</link>
 				<pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
-				<guid>https://seowithomar.com/blog/posts/technical-seo/technical_seo_audit_guide_2026_en/</guid>
+				<guid>https://os5733203.github.io/aiseo/blog/posts/technical-seo/technical_seo_audit_guide_2026_en/</guid>
 				<description>&lt;h1 id=&#34;technical-seo-audit-a-complete-guide-to-improve-website-performance-and-rankings&#34;&gt;Technical SEO Audit: A Complete Guide to Improve Website Performance and Rankings&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Technical SEO is the foundation of every successful SEO strategy. While content and backlinks are important ranking factors, a website with technical problems can struggle to appear in search results even with high-quality content.&lt;/p&gt;&#xA;&lt;p&gt;A &lt;strong&gt;Technical SEO Audit&lt;/strong&gt; helps identify hidden issues that prevent search engines from properly crawling, indexing, and ranking your website. From website speed and mobile performance to structured data and security, every technical element affects how Google understands and evaluates your website.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>تحسين Core Web Vitals: كيفية تحسين سرعة الموقع وترتيب جوجل</title>
-				<link>https://seowithomar.com/blog/posts/technical-seo/core_web_vitals_optimization_2026/</link>
+				<title>Website Crawlability and Indexing: How to Fix SEO Issues and Get Pages Ranked</title>
+				<link>https://os5733203.github.io/aiseo/blog/posts/technical-seo/website_crawlability_indexing_2026_en/</link>
 				<pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
-				<guid>https://seowithomar.com/blog/posts/technical-seo/core_web_vitals_optimization_2026/</guid>
+				<guid>https://os5733203.github.io/aiseo/blog/posts/technical-seo/website_crawlability_indexing_2026_en/</guid>
+				<description>&lt;h1 id=&#34;website-crawlability-and-indexing-how-to-fix-seo-issues-and-get-pages-ranked&#34;&gt;Website Crawlability and Indexing: How to Fix SEO Issues and Get Pages Ranked&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Crawlability and indexing are the foundation of how search engines understand and display your website. If Google cannot properly crawl your pages, or if your pages are not indexed, they will not appear in search results — no matter how strong your content or backlinks are.&lt;/p&gt;&#xA;&lt;p&gt;Many websites lose significant organic traffic simply because search engines struggle to access or interpret their structure correctly.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>تحسين Core Web Vitals: كيفية تحسين سرعة الموقع وترتيب جوجل</title>
+				<link>https://os5733203.github.io/aiseo/blog/posts/technical-seo/core_web_vitals_optimization_2026/</link>
+				<pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://os5733203.github.io/aiseo/blog/posts/technical-seo/core_web_vitals_optimization_2026/</guid>
 				<description>&lt;h1 id=&#34;تحسين-core-web-vitals-كيفية-تحسين-سرعة-الموقع-وترتيب-جوجل&#34;&gt;تحسين Core Web Vitals: كيفية تحسين سرعة الموقع وترتيب جوجل&lt;/h1&gt;&#xA;&lt;h2 id=&#34;مقدمة&#34;&gt;مقدمة&lt;/h2&gt;&#xA;&lt;p&gt;أصبحت مؤشرات &lt;strong&gt;Core Web Vitals&lt;/strong&gt; من أهم عوامل الترتيب في محركات البحث&#xA;الحديثة. تستخدم جوجل هذه المؤشرات لقياس تجربة المستخدم الفعلية داخل&#xA;الموقع، من حيث سرعة التحميل، التفاعل، واستقرار الصفحة أثناء التصفح.&lt;/p&gt;&#xA;&lt;p&gt;إذا كان موقعك يعاني من ضعف في هذه المؤشرات، فقد لا يظهر في نتائج البحث&#xA;الأولى حتى لو كان المحتوى قويًا أو لديك روابط خلفية جيدة.&lt;/p&gt;&#xA;&lt;p&gt;في هذا الدليل ستتعلم كيفية تحسين Core Web Vitals خطوة بخطوة لرفع أداء&#xA;موقعك وتحسين ترتيبه في جوجل لعام 2026.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>دليل التدقيق التقني للسيو: كيفية إصلاح مشاكل الموقع وتحسين ترتيب جوجل</title>
-				<link>https://seowithomar.com/blog/posts/technical-seo/technical_seo_audit_guide_2026/</link>
+				<link>https://os5733203.github.io/aiseo/blog/posts/technical-seo/technical_seo_audit_guide_2026/</link>
 				<pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
-				<guid>https://seowithomar.com/blog/posts/technical-seo/technical_seo_audit_guide_2026/</guid>
-				<description>&lt;p&gt;# دليل التدقيق التقني للسيو: كيفية إصلاح مشاكل الموقع وتحسين ترتيب جوجل&lt;/p&gt;&#xA;&lt;p&gt;## مقدمة&lt;/p&gt;&#xA;&lt;p&gt;يُعتبر السيو التقني (Technical SEO) الأساس الحقيقي لأي استراتيجية تحسين محركات بحث ناجحة. فحتى لو كان المحتوى قويًا والروابط الخلفية جيدة، فإن وجود مشاكل تقنية في الموقع يمكن أن يمنع ظهور صفحاتك في نتائج البحث.&lt;/p&gt;&#xA;&lt;p&gt;التدقيق التقني للسيو هو عملية تحليل شاملة للموقع بهدف اكتشاف الأخطاء التي تؤثر على الزحف (Crawling) والفهرسة (Indexing) وأداء الموقع بشكل عام.&lt;/p&gt;</description>
+				<guid>https://os5733203.github.io/aiseo/blog/posts/technical-seo/technical_seo_audit_guide_2026/</guid>
+				<description>&lt;h1 id=&#34;دليل-التدقيق-التقني-للسيو-كيفية-إصلاح-مشاكل-الموقع-وتحسين-ترتيب-جوجل&#34;&gt;دليل التدقيق التقني للسيو: كيفية إصلاح مشاكل الموقع وتحسين ترتيب جوجل&lt;/h1&gt;&#xA;&lt;h2 id=&#34;مقدمة&#34;&gt;مقدمة&lt;/h2&gt;&#xA;&lt;p&gt;يُعتبر السيو التقني (Technical SEO) الأساس الحقيقي لأي استراتيجية تحسين محركات بحث ناجحة. فحتى لو كان المحتوى قويًا والروابط الخلفية جيدة، فإن وجود مشاكل تقنية في الموقع يمكن أن يمنع ظهور صفحاتك في نتائج البحث.&lt;/p&gt;&#xA;&lt;p&gt;التدقيق التقني للسيو هو عملية تحليل شاملة للموقع بهدف اكتشاف الأخطاء التي تؤثر على الزحف (Crawling) والفهرسة (Indexing) وأداء الموقع بشكل عام.&lt;/p&gt;&#xA;&lt;p&gt;في &lt;strong&gt;SEO Digital Mentor&lt;/strong&gt; بقيادة المؤسس &lt;strong&gt;عمر صلاح&lt;/strong&gt;، نساعد أصحاب المواقع على بناء أساس تقني قوي يضمن تحسين الظهور في جوجل وزيادة فرص الحصول على زيارات عضوية مستهدفة.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>قابلية الزحف والفهرسة: كيفية حل مشاكل الأرشفة وظهور موقعك في نتائج جوجل</title>
-				<link>https://seowithomar.com/blog/posts/technical-seo/website_crawlability_indexing_2026/</link>
+				<link>https://os5733203.github.io/aiseo/blog/posts/technical-seo/website_crawlability_indexing_2026/</link>
 				<pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
-				<guid>https://seowithomar.com/blog/posts/technical-seo/website_crawlability_indexing_2026/</guid>
+				<guid>https://os5733203.github.io/aiseo/blog/posts/technical-seo/website_crawlability_indexing_2026/</guid>
 				<description>&lt;h1 id=&#34;قابلية-الزحف-والفهرسة-كيفية-حل-مشاكل-الأرشفة-وظهور-موقعك-في-نتائج-جوجل&#34;&gt;قابلية الزحف والفهرسة: كيفية حل مشاكل الأرشفة وظهور موقعك في نتائج جوجل&lt;/h1&gt;&#xA;&lt;h2 id=&#34;مقدمة&#34;&gt;مقدمة&lt;/h2&gt;&#xA;&lt;p&gt;يُعد موضوع &lt;strong&gt;قابلية الزحف (Crawlability)&lt;/strong&gt; و&lt;strong&gt;الفهرسة (Indexing)&lt;/strong&gt; من أهم أساسيات السيو التقني، لأنه ببساطة يحدد ما إذا كان موقعك سيظهر في نتائج البحث أم لا.&lt;/p&gt;&#xA;&lt;p&gt;قد تمتلك محتوى قويًا جدًا، ولكن إذا لم تستطع محركات البحث الوصول إلى صفحاتك أو لم تقم بفهرستها بشكل صحيح، فلن يظهر موقعك في جوجل.&lt;/p&gt;&#xA;&lt;p&gt;في هذا الدليل ستتعلم كيفية فهم مشاكل الزحف والفهرسة، وكيفية إصلاحها بشكل عملي لتحسين ظهور موقعك في نتائج البحث في عام 2026.&lt;/p&gt;</description>
 			</item>
 	</channel>
