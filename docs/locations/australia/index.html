@@ -50,7 +50,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=Cairo:wght@400;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=Cairo:wght@400;600;700;900&display=swap"></noscript>
 <link rel="stylesheet" href="/style.css"/>
-
+<link rel="stylesheet" href="/header-footer.css"/>
 <!-- ═══════════════════════════════════════════
      SCHEMA MARKUP
      Entities: WebPage · ProfessionalService ·
@@ -405,63 +405,7 @@
 <body>
 
 <!-- ═══ HEADER ═══ -->
-<header class="site-header" role="banner">
-  <a class="site-logo" href="/" aria-label="OS SEO — Home">
-    <img src="/images/logo.webp" alt="OS SEO — SEO Services Australia" width="100" height="40" loading="eager"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';">
-    <span class="logo-text" style="display:none;align-items:center;gap:8px"><span class="logo-dot"></span>ai<span>SEO</span>a</span>
-  </a>
-
-  <nav class="main-nav" aria-label="Primary navigation">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-
-    <div class="has-dropdown">
-      <a href="/services/" aria-haspopup="true">Services</a>
-      <div class="dropdown-panel" role="menu">
-        <a href="/services/technical-seo-audit/" role="menuitem">Technical SEO Audit</a>
-        <a href="/services/local-seo/"           role="menuitem">Local SEO</a>
-        <a href="/services/link-building/"       role="menuitem">Link Building</a>
-        <a href="/services/content-strategy/"    role="menuitem">Content Strategy</a>
-        <a href="/services/ai-powered-seo/"      role="menuitem">AI-Powered SEO</a>
-        <a href="/services/international-seo/"   role="menuitem">International SEO</a>
-        <a href="/services/" role="menuitem" class="dd-all">View All Services →</a>
-      </div>
-    </div>
-
-    <div class="has-dropdown">
-      <a href="/locations/" aria-haspopup="true">Locations</a>
-      <div class="dropdown-panel" role="menu">
-        <div class="dd-section-label">Popular Locations</div>
-        <a href="/locations/united-kingdom/" role="menuitem">🇬🇧 United Kingdom</a>
-        <a href="/locations/australia/"      role="menuitem">🇦🇺 Australia</a>
-        <a href="/locations/canada/"         role="menuitem">🇨🇦 Canada</a>
-        <a href="/locations/germany/"        role="menuitem">🇩🇪 Germany</a>
-        <a href="/locations/france/"         role="menuitem">🇫🇷 France</a>
-        <a href="/locations/netherlands/"    role="menuitem">🇳🇱 Netherlands</a>
-        <a href="/locations/ireland/"        role="menuitem">🇮🇪 Ireland</a>
-        <a href="/locations/" role="menuitem" class="dd-all">View All Locations →</a>
-      </div>
-    </div>
-
-    <a href="/portfolio/">Portfolio</a>
-    <a href="/blog/">Blog</a>
-    <a href="/faq/">FAQ</a>
-    <a href="/#contact">Contact</a>
-  </nav>
-
-  <div class="nav-right">
-    <div class="lang-toggle" role="group" aria-label="Language switch">
-      <span class="lang-opt active" data-lang="en" onclick="setLang('en')" aria-pressed="true">EN</span>
-      <span class="lang-opt"        data-lang="ar" onclick="setLang('ar')" aria-pressed="false">AR</span>
-    </div>
-    <a class="nav-cta" href="/#booking">Free Audit</a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Open navigation menu"
-            aria-expanded="false" aria-controls="mobile-menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+<div id="site-header-include"></div>
 
 <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
   <a href="/">Home</a>
@@ -1206,61 +1150,10 @@
 </main>
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="site-footer" id="contact" role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="site-logo">
-        <img src="/images/logo.webp" alt="OS SEO logo" width="100" height="40" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';">
-        <span class="logo-text" style="display:none;align-items:center;gap:8px"><span class="logo-dot"></span>ai<span style="color:var(--accent2)">SEO</span>a</span>
-      </div>
-      <p>Professional SEO specialist helping businesses across Europe, Australia &amp; the Arab world rank higher and grow faster.</p>
-      <div class="footer-social">
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="OS SEO on LinkedIn">in</a>
-        <a href="https://x.com"        target="_blank" rel="noopener noreferrer" aria-label="OS SEO on X">𝕏</a>
-        <a href="mailto:os5733203@gmail.com" aria-label="Email OS SEO">✉</a>
-      </div>
-    </div>
-
-    <nav class="footer-col" aria-label="Australia SEO pages">
-      <h3>Australia SEO</h3>
-      <a href="/locations/australia/">Australia Overview</a>
-      <a href="/locations/australia/#sydney">SEO Sydney</a>
-      <a href="/locations/australia/#melbourne">SEO Melbourne</a>
-      <a href="/locations/australia/#brisbane">SEO Brisbane</a>
-      <a href="/locations/australia/#perth">SEO Perth</a>
-      <a href="/locations/australia/#adelaide">SEO Adelaide</a>
-    </nav>
-
-    <nav class="footer-col" aria-label="All SEO Services">
-      <h3>Services</h3>
-      <a href="/services/local-seo/">Local SEO</a>
-      <a href="/services/technical-seo-audit/">Technical SEO Audit</a>
-      <a href="/services/link-building/">Link Building</a>
-      <a href="/services/content-strategy/">Content Strategy</a>
-      <a href="/services/ai-powered-seo/">AI-Powered SEO</a>
-      <a href="/services/international-seo/">International SEO</a>
-    </nav>
-
-    <div class="footer-col">
-      <h3>Contact OS SEO</h3>
-      <div class="footer-contact-item"><span class="icon" aria-hidden="true">🌐</span><span>Online SEO Agency — Serving Australia &amp; worldwide</span></div>
-      <div class="footer-contact-item"><span class="icon" aria-hidden="true">📞</span><a href="tel:+201221403257" style="color:inherit;text-decoration:none">+201221403257</a></div>
-      <div class="footer-contact-item"><span class="icon" aria-hidden="true">✉️</span><a href="mailto:os5733203@gmail.com" style="color:inherit;text-decoration:none">os5733203@gmail.com</a></div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 OS SEO — All rights reserved.</p>
-    <div class="footer-bottom-links">
-      <a href="/locations/">All Locations</a>
-      <a href="/faq/">FAQ</a>
-      <a href="/portfolio/">Portfolio</a>
-    </div>
-  </div>
-</footer>
+<div id="site-footer-include"></div>
 
 <script src="/aiseoa.js"></script>
+<script src="/include.js"></script>
 <script>
 (function () {
   'use strict';
