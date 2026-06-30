@@ -9,6 +9,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=Cairo:wght@400;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=Cairo:wght@400;600;700;900&display=swap"></noscript>
 <link rel="stylesheet" href="../style.css"/>
+<link rel="stylesheet" href="/header-footer.css"/>
 <style>
   .port-hero { padding:5.5rem 2.5rem 2.6rem; max-width:1040px; margin:0 auto; text-align:center; }
   .port-hero h1 { font-size:clamp(2.2rem,5vw,3.3rem); font-weight:700; letter-spacing:-1.5px; margin-bottom:.85rem; }
@@ -61,40 +62,7 @@
 <body>
 
 <!-- ═══════════════ HEADER ═══════════════ -->
-<header class="site-header">
-  <a class="site-logo" href="/">
-    <img src="../images/logo.webp" alt="OS SEO logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
-    <span class="logo-text" style="display:none;align-items:center;gap:8px"><span class="logo-dot"></span>ai<span>SEO</span>a</span>
-  </a>
-  <nav class="main-nav" aria-label="Primary">
-    <a href="/" data-en="Home" data-ar="الرئيسية">Home</a>
-    <a href="/about/" data-en="About" data-ar="من نحن">About</a>
-    <a href="/portfolio/" class="active" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
-    <a href="/#services" data-en="Services" data-ar="الخدمات">Services</a>
-    <a href="/blog/" data-en="Blog" data-ar="المدونة">Blog</a>
-    <a href="/#contact" data-en="Contact" data-ar="تواصل">Contact</a>
-  </nav>
-  <div class="nav-right">
-    <div class="lang-toggle" role="group" aria-label="Language switch">
-      <span class="lang-opt active" data-lang="en" onclick="setLang('en')">EN</span>
-      <span class="lang-opt" data-lang="ar" onclick="setLang('ar')">AR</span>
-    </div>
-    <a class="nav-cta" href="/#booking" data-en="Free Audit" data-ar="تدقيق مجاني">Free Audit</a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</header>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="/" data-en="Home" data-ar="الرئيسية">Home</a>
-  <a href="/about/" data-en="About" data-ar="من نحن">About</a>
-  <a href="/portfolio/" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
-  <a href="/#services" data-en="Services" data-ar="الخدمات">Services</a>
-  <a href="/blog/" data-en="Blog" data-ar="المدونة">Blog</a>
-  <a href="/#contact" data-en="Contact" data-ar="تواصل">Contact</a>
-  <div class="lang-toggle">
-    <span class="lang-opt active" data-lang="en" onclick="setLang('en')">EN</span>
-    <span class="lang-opt" data-lang="ar" onclick="setLang('ar')">AR</span>
-  </div>
-</div>
+<div id="site-header-include"></div>
 
 <div class="port-hero fade-in">
   <div class="section-tag" data-en="Case Studies" data-ar="دراسات حالة">Case Studies</div>
@@ -225,52 +193,10 @@
 </section>
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="site-logo">
-        <img src="../images/logo.webp" alt="OS SEO logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
-        <span class="logo-text" style="display:none;align-items:center;gap:8px"><span class="logo-dot"></span>ai<span style="color:var(--accent2)">SEO</span>a</span>
-      </div>
-      <p data-en="Professional SEO specialist helping businesses across Europe, Australia &amp; the Arab world rank higher and grow faster." data-ar="متخصص SEO محترف يساعد الشركات في أوروبا وأستراليا والعالم العربي على التصدر في جوجل والنمو بشكل أسرع.">Professional SEO specialist helping businesses across Europe, Australia & the Arab world rank higher and grow faster.</p>
-      <div class="footer-social">
-        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-        <a href="https://x.com" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
-        <a href="os5733203@gmail.com" aria-label="Email">✉</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4 data-en="Pages" data-ar="الصفحات">Pages</h4>
-      <a href="/" data-en="Home" data-ar="الرئيسية">Home</a>
-      <a href="/about/" data-en="About" data-ar="من نحن">About</a>
-      <a href="/portfolio/" data-en="Portfolio" data-ar="أعمالنا">Portfolio</a>
-      <a href="/blog/" data-en="Blog" data-ar="المدونة">Blog</a>
-    </div>
-    <div class="footer-col">
-      <h4 data-en="Services" data-ar="الخدمات">Services</h4>
-      <a href="/#services" data-en="Technical SEO" data-ar="سيو تقني">Technical SEO</a>
-      <a href="/#services" data-en="Link Building" data-ar="بناء الروابط">Link Building</a>
-      <a href="/#services" data-en="Local SEO" data-ar="السيو المحلي">Local SEO</a>
-      <a href="/#ai-seo" data-en="AI &amp; SEO" data-ar="الذكاء الاصطناعي والسيو">AI & SEO</a>
-    </div>
-    <div class="footer-col">
-      <h4 data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h4>
-      <div class="footer-contact-item"><span class="icon">📍</span><span data-en="Online SEO Agency - Serving Clients Worldwide" data-ar="وكالة سيو أونلاين - نخدم العملاء حول العالم">Online SEO Agency - Serving Clients Worldwide</span></div>
-      <div class="footer-contact-item"><span class="icon">📞</span><span>+201221403257</span></div>
-      <div class="footer-contact-item"><span class="icon">✉️</span><span>os5733203@gmail.com</span></div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p data-en="© 2026 OS SEO— All rights reserved." data-ar="© 2026 OS SEO — جميع الحقوق محفوظة.">© 2026 OS SEO— All rights reserved.</p>
-    <div class="footer-bottom-links">
-      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-      <a href="https://x.com" target="_blank">Twitter</a>
-      <a href="mailto:hello@OS SEO.com" data-en="Email" data-ar="إيميل">Email</a>
-    </div>
-  </div>
-</footer>
+<div id="site-footer-include"></div>
 
 <script src="../aiseoa.js"></script>
+<script src="/include.js"></script>
 <script>
 const cases = {
   case1: { emoji:'🛒', titleEn:'UK Fashion Brand', titleAr:'ماركة أزياء بريطانية', country:'🇬🇧 United Kingdom', countryAr:'🇬🇧 المملكة المتحدة',
